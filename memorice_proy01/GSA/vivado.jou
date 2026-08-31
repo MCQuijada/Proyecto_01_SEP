@@ -1,0 +1,14 @@
+#-----------------------------------------------------------
+# Vivado v2020.1 (64-bit)
+# SW Build 2902540 on Wed May 27 19:54:49 MDT 2020
+# IP Build 2902112 on Wed May 27 22:43:36 MDT 2020
+# Start of session at: Mon Aug 31 09:57:20 2026
+# Process ID: 2840
+# Current directory: D:/VIVADO/Sistemas Electronicos Programables/PROYECTO_1/memorice_proy01/GSA
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent8892 D:\VIVADO\Sistemas Electronicos Programables\PROYECTO_1\memorice_proy01\GSA\GSA.xpr
+# Log file: D:/VIVADO/Sistemas Electronicos Programables/PROYECTO_1/memorice_proy01/GSA/vivado.log
+# Journal file: D:/VIVADO/Sistemas Electronicos Programables/PROYECTO_1/memorice_proy01/GSA\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project {D:/VIVADO/Sistemas Electronicos Programables/PROYECTO_1/memorice_proy01/GSA/GSA.xpr}
+update_compile_order -fileset sources_1
