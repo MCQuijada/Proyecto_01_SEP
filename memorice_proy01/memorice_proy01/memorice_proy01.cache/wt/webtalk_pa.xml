@@ -3,7 +3,11 @@
 <!--The data in this file is primarily intended for consumption by Xilinx tools.
 The structure and the elements are likely to change over the next few releases.
 This means code written to parse this file will need to be revisited each subsequent release.-->
+<<<<<<< HEAD:memorice_proy01/memorice_proy01.cache/wt/webtalk_pa.xml
 <application name="pa" timeStamp="Tue Aug 25 19:55:24 2026">
+=======
+<application name="pa" timeStamp="Mon Aug 31 10:01:43 2026">
+>>>>>>> d2a6050c47d685b535b587a631e3fc06adf70dcc:memorice_proy01/memorice_proy01/memorice_proy01.cache/wt/webtalk_pa.xml
 <section name="Project Information" visible="false">
 <property name="ProjectID" value="dec75ac656734b7492c18637f131e53d" type="ProjectID"/>
 <property name="ProjectIteration" value="1" type="ProjectIteration"/>
@@ -28,7 +32,11 @@ This means code written to parse this file will need to be revisited each subseq
 <property name="BoardChooser_BOARD_TABLE" value="3" type="GuiHandlerData"/>
 <property name="CreateSrcFileDialog_FILE_NAME" value="1" type="GuiHandlerData"/>
 <property name="CreateSrcFileDialog_FILE_TYPE" value="1" type="GuiHandlerData"/>
+<<<<<<< HEAD:memorice_proy01/memorice_proy01.cache/wt/webtalk_pa.xml
 <property name="FileSetPanel_FILE_SET_PANEL_TREE" value="37" type="GuiHandlerData"/>
+=======
+<property name="FileSetPanel_FILE_SET_PANEL_TREE" value="23" type="GuiHandlerData"/>
+>>>>>>> d2a6050c47d685b535b587a631e3fc06adf70dcc:memorice_proy01/memorice_proy01/memorice_proy01.cache/wt/webtalk_pa.xml
 <property name="FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE" value="1" type="GuiHandlerData"/>
 <property name="GettingStartedView_CREATE_NEW_PROJECT" value="1" type="GuiHandlerData"/>
 <property name="MainMenuMgr_CHECKPOINT" value="2" type="GuiHandlerData"/>
@@ -67,9 +75,15 @@ This means code written to parse this file will need to be revisited each subseq
 <property name="SyntheticaGettingStartedView_RECENT_PROJECTS" value="2" type="GuiHandlerData"/>
 </item>
 <item name="Other">
+<<<<<<< HEAD:memorice_proy01/memorice_proy01.cache/wt/webtalk_pa.xml
 <property name="GuiMode" value="19" type="GuiMode"/>
 <property name="BatchMode" value="0" type="BatchMode"/>
 <property name="TclMode" value="15" type="TclMode"/>
+=======
+<property name="GuiMode" value="1" type="GuiMode"/>
+<property name="BatchMode" value="0" type="BatchMode"/>
+<property name="TclMode" value="0" type="TclMode"/>
+>>>>>>> d2a6050c47d685b535b587a631e3fc06adf70dcc:memorice_proy01/memorice_proy01/memorice_proy01.cache/wt/webtalk_pa.xml
 </item>
 </section>
 </application>
