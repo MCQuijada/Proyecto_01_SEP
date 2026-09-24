@@ -1,0 +1,1430 @@
+/*
+
+Xilinx Vivado v2020.1 (64-bit) [Major: 2020, Minor: 1]
+SW Build: 2902540 on Wed May 27 19:54:49 MDT 2020
+IP Build: 2902112 on Wed May 27 22:43:36 MDT 2020
+
+Process ID (PID): 20756
+License: Customer
+
+Current time: 	Mon Sep 21 09:11:22 CLST 2026
+Time zone: 	Chile Standard Time (America/Santiago)
+
+OS: Windows 10
+OS Version: 10.0
+OS Architecture: amd64
+Available processors (cores): 16
+
+Screen size: 1920x1080
+Screen resolution (DPI): 150
+Available screens: 1
+Default font: family=Segoe UI,name=Segoe UI,style=plain,size=18
+
+Java version: 	9.0.4 64-bit
+Java home: 	C:/Xilinx/Vivado/2020.1/tps/win64/jre9.0.4
+Java executable location: 	C:/Xilinx/Vivado/2020.1/tps/win64/jre9.0.4/bin/java.exe
+Java initial memory (-Xms): 	128 MB
+Java maximum memory (-Xmx):	 3 GB
+
+
+User name: 	Manuel
+User home directory: C:/Users/Manuel
+User working directory: C:/SEP y Anal/Proyecto_01_SEP/memorice_proy01/memorice_proy01
+User country: 	CL
+User language: 	es
+User locale: 	es_CL
+
+RDI_BASEROOT: C:/Xilinx/Vivado
+HDI_APPROOT: C:/Xilinx/Vivado/2020.1
+RDI_DATADIR: C:/Xilinx/Vivado/2020.1/data
+RDI_BINDIR: C:/Xilinx/Vivado/2020.1/bin
+
+Vivado preferences file location: C:/Users/Manuel/AppData/Roaming/Xilinx/Vivado/2020.1/vivado.xml
+Vivado preferences directory: C:/Users/Manuel/AppData/Roaming/Xilinx/Vivado/2020.1/
+Vivado layouts directory: C:/Users/Manuel/AppData/Roaming/Xilinx/Vivado/2020.1/data/layouts
+PlanAhead jar file location: 	C:/Xilinx/Vivado/2020.1/lib/classes/planAhead.jar
+Vivado log file location: 	C:/SEP y Anal/Proyecto_01_SEP/memorice_proy01/memorice_proy01/vivado.log
+Vivado journal file location: 	C:/SEP y Anal/Proyecto_01_SEP/memorice_proy01/memorice_proy01/vivado.jou
+Engine tmp dir: 	C:/SEP y Anal/Proyecto_01_SEP/memorice_proy01/memorice_proy01/.Xil/Vivado-20756-DESKTOP-SHNI0N6
+
+Xilinx Environment Variables
+----------------------------
+XILINX: C:/Xilinx/Vivado/2020.1/ids_lite/ISE
+XILINX_DSP: C:/Xilinx/Vivado/2020.1/ids_lite/ISE
+XILINX_PLANAHEAD: C:/Xilinx/Vivado/2020.1
+XILINX_VIVADO: C:/Xilinx/Vivado/2020.1
+XILINX_VIVADO_HLS: C:/Xilinx/Vivado/2020.1
+
+
+GUI allocated memory:	171 MB
+GUI max memory:		3,072 MB
+Engine allocated memory: 967 MB
+
+Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+
+*/
+
+// TclEventType: START_GUI
+// Tcl Message: start_gui 
+// TclEventType: PROJECT_OPEN_DIALOG
+// bz (cs):  Open Project : addNotify
+// Opening Vivado Project: C:\SEP y Anal\Proyecto_01_SEP\memorice_proy01\memorice_proy01\memorice_proy01.xpr. Version: Vivado v2020.1 
+// TclEventType: DEBUG_PROBE_SET_CHANGE
+// Tcl Message: open_project {C:/SEP y Anal/Proyecto_01_SEP/memorice_proy01/memorice_proy01/memorice_proy01.xpr} 
+// TclEventType: MSGMGR_MOVEMSG
+// TclEventType: FILE_SET_NEW
+// TclEventType: RUN_CURRENT
+// TclEventType: PROJECT_DASHBOARD_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_NEW
+// Tcl Message: open_project {C:/SEP y Anal/Proyecto_01_SEP/memorice_proy01/memorice_proy01/memorice_proy01.xpr} 
+// Tcl Message: INFO: [Project 1-313] Project file moved from 'C:/SEP y Anal/Proyecto_01_SEP/memorice_proy01' since last save. 
+// Tcl Message: Scanning sources... Finished scanning sources 
+// Tcl Message: INFO: [filemgmt 56-1] IPUserFilesDir: Directory not found as 'C:/SEP y Anal/Proyecto_01_SEP/memorice_proy01/memorice_proy01/memorice_proy01.ip_user_files'; using path 'C:/SEP y Anal/Proyecto_01_SEP/memorice_proy01/memorice_proy01.ip_user_files' instead. INFO: [IP_Flow 19-234] Refreshing IP repositories INFO: [IP_Flow 19-1704] No user IP repositories specified 
+// HMemoryUtils.trashcanNow. Engine heap size: 967 MB. GUI used memory: 58 MB. Current time: 9/21/26, 9:11:23 AM CLST
+// TclEventType: PROJECT_NEW
+// [GUI Memory]: 104 MB (+106786kb) [00:00:12]
+// [Engine Memory]: 967 MB (+862218kb) [00:00:12]
+// WARNING: HEventQueue.dispatchEvent() is taking  2675 ms.
+// Tcl Message: INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2020.1/data/ip'. 
+// Project name: memorice_proy01; location: C:/SEP y Anal/Proyecto_01_SEP/memorice_proy01/memorice_proy01; part: xc7z010clg400-1
+// Tcl Message: open_project: Time (s): cpu = 00:00:13 ; elapsed = 00:00:07 . Memory (MB): peak = 1016.668 ; gain = 0.000 
+dismissDialog("Open Project"); // bz (cs)
+// [GUI Memory]: 118 MB (+9072kb) [00:00:16]
+// Tcl Command: 'rdi::info_commands {device::*}'
+// Tcl Command: 'rdi::info_commands {debug::*}'
+// Tcl Command: 'rdi::info_commands {*}'
+// Tcl Message: update_compile_order -fileset sources_1 
+// [GUI Memory]: 131 MB (+7228kb) [00:00:21]
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top(Behavioral) (top.vhd)]", 1, false); // B (F, cs)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top(Behavioral) (top.vhd)]", 1, false); // B (F, cs)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top(Behavioral) (top.vhd)]", 1, false, false, false, false, false, true); // B (F, cs) - Double Click
+// Launch External Editor: '"C:/Users/Manuel/AppData/Local/Programs/Microsoft VS Code/Code.exe" -g "C:/SEP y Anal/Proyecto_01_SEP/memorice_proy01/memorice_proy01/memorice_proy01.srcs/sources_1/new/top.vhd":38'
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Constraints]", 2); // B (F, cs)
+collapseTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Constraints]", 2); // B (F, cs)
+closeMainWindow("memorice_proy01 - [C:/SEP y Anal/Proyecto_01_SEP/memorice_proy01/memorice_proy01/memorice_proy01.xpr] - Vivado 2020.1"); // cs
+// Run Command: PAResourceCommand.PACommandNames_EXIT
+// A (cs): Exit Vivado: addNotify
+selectButton(RDIResource.BaseDialog_CANCEL, "Cancel"); // a (A)
+dismissDialog("Exit Vivado"); // A (cs)
+// WARNING: HEventQueue.dispatchEvent() is taking  9330643 ms.
+// HMemoryUtils.trashcanNow. Engine heap size: 967 MB. GUI used memory: 78 MB. Current time: 9/21/26, 11:53:39 AM CLST
+// Elapsed time: 10220 seconds
+selectButton(PAResourceCommand.PACommandNames_ADD_SOURCES, "Sources_add_sources"); // E (g, cs)
+// Run Command: PAResourceCommand.PACommandNames_ADD_SOURCES
+// c (cs): Add Sources: addNotify
+selectButton("NEXT", "Next >"); // JButton (j, c)
+selectButton(PAResourceQtoS.SrcChooserPanel_CREATE_FILE, "Create File"); // a (E, c)
+// F (c): Create Source File: addNotify
+setText(PAResourceAtoD.CreateSrcFileDialog_FILE_NAME, "rand_sec"); // ac (Q, F)
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (F)
+dismissDialog("Create Source File"); // F (c)
+selectButton("FINISH", "Finish"); // JButton (j, c)
+// 'h' command handler elapsed time: 11 seconds
+dismissDialog("Add Sources"); // c (cs)
+// Tcl Message: close [ open {C:/SEP y Anal/Proyecto_01_SEP/memorice_proy01/memorice_proy01/memorice_proy01.srcs/sources_1/new/rand_sec.vhd} w ] 
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: add_files {{C:/SEP y Anal/Proyecto_01_SEP/memorice_proy01/memorice_proy01/memorice_proy01.srcs/sources_1/new/rand_sec.vhd}} 
+// I (cs): Define Module: addNotify
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (I)
+// TclEventType: FILE_SET_CHANGE
+selectButton("OptionPane.button", "Yes"); // JButton (v, C)
+dismissDialog("Define Module"); // I (cs)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: update_compile_order -fileset sources_1 
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, rand_sec(Behavioral) (rand_sec.vhd)]", 2, false); // B (F, cs)
+// Elapsed time: 229 seconds
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top(Behavioral) (top.vhd)]", 1, false); // B (F, cs)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top(Behavioral) (top.vhd)]", 1, false); // B (F, cs)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top(Behavioral) (top.vhd)]", 1, false, false, false, false, false, true); // B (F, cs) - Double Click
+// Launch External Editor: '"C:/Users/Manuel/AppData/Local/Programs/Microsoft VS Code/Code.exe" -g "C:/SEP y Anal/Proyecto_01_SEP/memorice_proy01/memorice_proy01/memorice_proy01.srcs/sources_1/new/top.vhd":38'
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, rand_sec(Behavioral) (rand_sec.vhd)]", 2, false); // B (F, cs)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, rand_sec(Behavioral) (rand_sec.vhd)]", 2, false); // B (F, cs)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, rand_sec(Behavioral) (rand_sec.vhd)]", 2, false, false, false, false, false, true); // B (F, cs) - Double Click
+// Launch External Editor: '"C:/Users/Manuel/AppData/Local/Programs/Microsoft VS Code/Code.exe" -g "C:/SEP y Anal/Proyecto_01_SEP/memorice_proy01/memorice_proy01/memorice_proy01.srcs/sources_1/new/rand_sec.vhd":38'
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, rand_sec(Behavioral) (rand_sec.vhd)]", 2, false, false, false, false, true, false); // B (F, cs) - Popup Trigger
+selectMenu(PAResourceCommand.PACommandNames_AUTO_UPDATE_HIER, "Hierarchy Update"); // af (ao, Popup.HeavyWeightWindow)
+selectMenu(PAResourceQtoS.SrcMenu_IP_HIERARCHY, "IP Hierarchy"); // af (ao, Popup.HeavyWeightWindow)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, rand_sec(Behavioral) (rand_sec.vhd)]", 2, false); // B (F, cs)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, rand_sec(Behavioral) (rand_sec.vhd)]", 2, false, false, false, false, false, true); // B (F, cs) - Double Click
+// Launch External Editor: '"C:/Users/Manuel/AppData/Local/Programs/Microsoft VS Code/Code.exe" -g "C:/SEP y Anal/Proyecto_01_SEP/memorice_proy01/memorice_proy01/memorice_proy01.srcs/sources_1/new/rand_sec.vhd":38'
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// [GUI Memory]: 139 MB (+1937kb) [02:58:15]
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// HMemoryUtils.trashcanNow. Engine heap size: 967 MB. GUI used memory: 72 MB. Current time: 9/21/26, 12:23:39 PM CLST
+// Elapsed time: 1384 seconds
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top(Behavioral) (top.vhd)]", 1, false); // B (F, cs)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, rand_sec(Behavioral) (rand_sec.vhd)]", 2, false); // B (F, cs)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, rand_sec(Behavioral) (rand_sec.vhd)]", 2, false, false, false, false, true, false); // B (F, cs) - Popup Trigger
+selectMenu(PAResourceCommand.PACommandNames_AUTO_UPDATE_HIER, "Hierarchy Update"); // af (ao, Popup.HeavyWeightWindow)
+selectMenu(PAResourceQtoS.SrcMenu_IP_HIERARCHY, "IP Hierarchy"); // af (ao, Popup.HeavyWeightWindow)
+selectMenu(PAResourceQtoS.SrcMenu_IP_HIERARCHY, "IP Hierarchy"); // af (ao, Popup.HeavyWeightWindow)
+selectMenuItem(PAResourceCommand.PACommandNames_SET_AS_TOP, "Set as Top"); // ai (ao, Popup.HeavyWeightWindow)
+// Run Command: PAResourceCommand.PACommandNames_SET_AS_TOP
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: FILE_SET_OPTIONS_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// Tcl Message: set_property top rand_sec [current_fileset] 
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: update_compile_order -fileset sources_1 
+// Elapsed time: 14 seconds
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Constraints]", 3); // B (F, cs)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Constraints, constrs_1]", 4, false); // B (F, cs)
+collapseTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Constraints]", 3); // B (F, cs)
+// Elapsed time: 42 seconds
+selectButton(PAResourceCommand.PACommandNames_ADD_SOURCES, "Sources_add_sources"); // E (g, cs)
+// Run Command: PAResourceCommand.PACommandNames_ADD_SOURCES
+// c (cs): Add Sources: addNotify
+selectRadioButton(PAResourceAtoD.AddSrcWizard_SPECIFY_HDL_NETLIST_BLOCK_DESIGN, "Add or create design sources"); // a (o, c)
+selectRadioButton(PAResourceAtoD.AddSrcWizard_SPECIFY_OR_CREATE_CONSTRAINT_FILES, "Add or create constraints"); // a (o, c)
+selectButton("NEXT", "Next >"); // JButton (j, c)
+selectButton(PAResourceAtoD.ConstraintsChooserPanel_CREATE_FILE, "Create File"); // a (E, c)
+// Tcl Command: 'file mkdir C:/SEP y Anal/Proyecto_01_SEP/memorice_proy01/memorice_proy01/memorice_proy01.srcs/constrs_1'
+// C (cs): Create Constraints File: addNotify
+// Tcl Message: file mkdir C:/SEP y Anal/Proyecto_01_SEP/memorice_proy01/memorice_proy01/memorice_proy01.srcs/constrs_1 
+// Elapsed time: 14 seconds
+setText(PAResourceAtoD.CreateConstraintsFilePanel_FILE_NAME, "zyboZ7"); // ac (D, C)
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (C)
+dismissDialog("Create Constraints File"); // C (cs)
+selectButton("FINISH", "Finish"); // JButton (j, c)
+// 'h' command handler elapsed time: 18 seconds
+// Tcl Command: 'file mkdir C:/SEP y Anal/Proyecto_01_SEP/memorice_proy01/memorice_proy01/memorice_proy01.srcs/constrs_1'
+dismissDialog("Add Sources"); // c (cs)
+// Tcl Command: 'file mkdir C:/SEP y Anal/Proyecto_01_SEP/memorice_proy01/memorice_proy01/memorice_proy01.srcs/constrs_1/new'
+// Tcl Message: file mkdir C:/SEP y Anal/Proyecto_01_SEP/memorice_proy01/memorice_proy01/memorice_proy01.srcs/constrs_1 
+// bz (cs):  Add Constraint  : addNotify
+// Tcl Command: 'file mkdir C:/SEP y Anal/Proyecto_01_SEP/memorice_proy01/memorice_proy01/memorice_proy01.srcs/constrs_1/new'
+// Tcl Message: file mkdir C:/SEP y Anal/Proyecto_01_SEP/memorice_proy01/memorice_proy01/memorice_proy01.srcs/constrs_1/new 
+// Tcl Command: 'file mkdir C:/SEP y Anal/Proyecto_01_SEP/memorice_proy01/memorice_proy01/memorice_proy01.srcs/constrs_1/new'
+// Tcl Message: file mkdir C:/SEP y Anal/Proyecto_01_SEP/memorice_proy01/memorice_proy01/memorice_proy01.srcs/constrs_1/new 
+// Tcl Message: file mkdir C:/SEP y Anal/Proyecto_01_SEP/memorice_proy01/memorice_proy01/memorice_proy01.srcs/constrs_1/new 
+// Tcl Command: 'file mkdir C:/SEP y Anal/Proyecto_01_SEP/memorice_proy01/memorice_proy01/memorice_proy01.srcs/constrs_1/new'
+// Tcl Command: 'file mkdir C:/SEP y Anal/Proyecto_01_SEP/memorice_proy01/memorice_proy01/memorice_proy01.srcs/constrs_1'
+// Tcl Message: file mkdir C:/SEP y Anal/Proyecto_01_SEP/memorice_proy01/memorice_proy01/memorice_proy01.srcs/constrs_1/new 
+// Tcl Message: file mkdir C:/SEP y Anal/Proyecto_01_SEP/memorice_proy01/memorice_proy01/memorice_proy01.srcs/constrs_1 
+// Tcl Message: file mkdir {C:/SEP y Anal/Proyecto_01_SEP/memorice_proy01/memorice_proy01/memorice_proy01.srcs/constrs_1/new} 
+// Tcl Message: close [ open {C:/SEP y Anal/Proyecto_01_SEP/memorice_proy01/memorice_proy01/memorice_proy01.srcs/constrs_1/new/zyboZ7.xdc} w ] 
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: add_files -fileset constrs_1 {{C:/SEP y Anal/Proyecto_01_SEP/memorice_proy01/memorice_proy01/memorice_proy01.srcs/constrs_1/new/zyboZ7.xdc}} 
+dismissDialog("Add Constraint"); // bz (cs)
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Constraints]", 3); // B (F, cs)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Constraints, constrs_1, zyboZ7.xdc]", 5, false); // B (F, cs)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Constraints, constrs_1, zyboZ7.xdc]", 5, false); // B (F, cs)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Constraints, constrs_1, zyboZ7.xdc]", 5, false, false, false, false, false, true); // B (F, cs) - Double Click
+// Launch External Editor: '"C:/Users/Manuel/AppData/Local/Programs/Microsoft VS Code/Code.exe" -g "C:/SEP y Anal/Proyecto_01_SEP/memorice_proy01/memorice_proy01/memorice_proy01.srcs/constrs_1/new/zyboZ7.xdc":0'
+// TclEventType: FILE_SET_CHANGE
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Constraints, constrs_1]", 4, true); // B (F, cs) - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Constraints]", 3, true); // B (F, cs) - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Constraints, constrs_1]", 4, true); // B (F, cs) - Node
+collapseTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Constraints, constrs_1]", 4); // B (F, cs)
+collapseTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Constraints]", 3); // B (F, cs)
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Constraints]", 3); // B (F, cs)
+collapseTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Constraints]", 3); // B (F, cs)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, rand_sec(Behavioral) (rand_sec.vhd)]", 1, false); // B (F, cs)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top(Behavioral) (top.vhd)]", 2, false); // B (F, cs)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top(Behavioral) (top.vhd)]", 2, false, false, false, false, true, false); // B (F, cs) - Popup Trigger
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top(Behavioral) (top.vhd)]", 2, false); // B (F, cs)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top(Behavioral) (top.vhd)]", 2, false, false, false, false, true, false); // B (F, cs) - Popup Trigger
+selectMenu(PAResourceCommand.PACommandNames_AUTO_UPDATE_HIER, "Hierarchy Update"); // af (ao, Popup.HeavyWeightWindow)
+selectMenu(PAResourceCommand.PACommandNames_AUTO_UPDATE_HIER, "Hierarchy Update"); // af (ao, Popup.HeavyWeightWindow)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top(Behavioral) (top.vhd)]", 2, false); // B (F, cs)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top(Behavioral) (top.vhd)]", 2, false, false, false, false, false, true); // B (F, cs) - Double Click
+// Launch External Editor: '"C:/Users/Manuel/AppData/Local/Programs/Microsoft VS Code/Code.exe" -g "C:/SEP y Anal/Proyecto_01_SEP/memorice_proy01/memorice_proy01/memorice_proy01.srcs/sources_1/new/top.vhd":38'
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top(Behavioral) (top.vhd)]", 2, false, false, false, false, true, false); // B (F, cs) - Popup Trigger
+selectMenu(PAResourceCommand.PACommandNames_AUTO_UPDATE_HIER, "Hierarchy Update"); // af (ao, Popup.HeavyWeightWindow)
+selectMenu(PAResourceQtoS.SrcMenu_IP_HIERARCHY, "IP Hierarchy"); // af (ao, Popup.HeavyWeightWindow)
+selectMenu(PAResourceCommand.PACommandNames_AUTO_UPDATE_HIER, "Hierarchy Update"); // af (ao, Popup.HeavyWeightWindow)
+selectMenuItem(RDIResourceCommand.RDICommands_DELETE, "Remove File from Project..."); // ai (ao, Popup.HeavyWeightWindow)
+// Run Command: RDIResourceCommand.RDICommands_DELETE
+// aE (cs): Remove Sources: addNotify
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (aE)
+dismissDialog("Remove Sources"); // aE (cs)
+// Tcl Message: export_ip_user_files -of_objects  [get_files {{C:/SEP y Anal/Proyecto_01_SEP/memorice_proy01/memorice_proy01/memorice_proy01.srcs/sources_1/new/top.vhd}}] -no_script -reset -force -quiet 
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: remove_files  {{C:/SEP y Anal/Proyecto_01_SEP/memorice_proy01/memorice_proy01/memorice_proy01.srcs/sources_1/new/top.vhd}} 
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed time: 293 seconds
+selectButton(PAResourceCommand.PACommandNames_ADD_SOURCES, "Sources_add_sources"); // E (g, cs)
+// Run Command: PAResourceCommand.PACommandNames_ADD_SOURCES
+// c (cs): Add Sources: addNotify
+selectRadioButton(PAResourceAtoD.AddSrcWizard_SPECIFY_SIMULATION_SPECIFIC_HDL_FILES, "Add or create simulation sources"); // a (o, c)
+selectRadioButton(PAResourceAtoD.AddSrcWizard_SPECIFY_HDL_NETLIST_BLOCK_DESIGN, "Add or create design sources"); // a (o, c)
+selectButton("NEXT", "Next >"); // JButton (j, c)
+selectButton(PAResourceQtoS.SrcChooserPanel_CREATE_FILE, "Create File"); // a (E, c)
+// F (c): Create Source File: addNotify
+// Elapsed time: 50 seconds
+setText(PAResourceAtoD.CreateSrcFileDialog_FILE_NAME, "base_game_clk"); // ac (Q, F)
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (F)
+dismissDialog("Create Source File"); // F (c)
+selectButton("FINISH", "Finish"); // JButton (j, c)
+// 'h' command handler elapsed time: 59 seconds
+dismissDialog("Add Sources"); // c (cs)
+// Tcl Message: close [ open {C:/SEP y Anal/Proyecto_01_SEP/memorice_proy01/memorice_proy01/memorice_proy01.srcs/sources_1/new/base_game_clk.vhd} w ] 
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: add_files {{C:/SEP y Anal/Proyecto_01_SEP/memorice_proy01/memorice_proy01/memorice_proy01.srcs/sources_1/new/base_game_clk.vhd}} 
+// I (cs): Define Module: addNotify
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (I)
+// TclEventType: FILE_SET_CHANGE
+selectButton("OptionPane.button", "Yes"); // JButton (v, C)
+dismissDialog("Define Module"); // I (cs)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: update_compile_order -fileset sources_1 
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, base_game_clk(Behavioral) (base_game_clk.vhd)]", 2, false); // B (F, cs)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, base_game_clk(Behavioral) (base_game_clk.vhd)]", 2, false); // B (F, cs)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, base_game_clk(Behavioral) (base_game_clk.vhd)]", 2, false, false, false, false, true, false); // B (F, cs) - Popup Trigger
+selectMenuItem(RDIResourceCommand.RDICommands_DELETE, "Remove File from Project..."); // ai (ao, Popup.HeavyWeightWindow)
+// Run Command: RDIResourceCommand.RDICommands_DELETE
+// aE (cs): Remove Sources: addNotify
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (aE)
+dismissDialog("Remove Sources"); // aE (cs)
+// Tcl Message: export_ip_user_files -of_objects  [get_files {{C:/SEP y Anal/Proyecto_01_SEP/memorice_proy01/memorice_proy01/memorice_proy01.srcs/sources_1/new/base_game_clk.vhd}}] -no_script -reset -force -quiet 
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: remove_files  {{C:/SEP y Anal/Proyecto_01_SEP/memorice_proy01/memorice_proy01/memorice_proy01.srcs/sources_1/new/base_game_clk.vhd}} 
+selectButton(PAResourceCommand.PACommandNames_ADD_SOURCES, "Sources_add_sources"); // E (g, cs)
+// Run Command: PAResourceCommand.PACommandNames_ADD_SOURCES
+// c (cs): Add Sources: addNotify
+selectButton("NEXT", "Next >"); // JButton (j, c)
+selectButton(PAResourceQtoS.SrcChooserPanel_CREATE_FILE, "Create File"); // a (E, c)
+// F (c): Create Source File: addNotify
+// Elapsed time: 47 seconds
+setText(PAResourceAtoD.CreateSrcFileDialog_FILE_NAME, "gclk_sel"); // ac (Q, F)
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (F)
+dismissDialog("Create Source File"); // F (c)
+selectButton("FINISH", "Finish"); // JButton (j, c)
+// 'h' command handler elapsed time: 52 seconds
+dismissDialog("Add Sources"); // c (cs)
+// Tcl Message: close [ open {C:/SEP y Anal/Proyecto_01_SEP/memorice_proy01/memorice_proy01/memorice_proy01.srcs/sources_1/new/gclk_sel.vhd} w ] 
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: add_files {{C:/SEP y Anal/Proyecto_01_SEP/memorice_proy01/memorice_proy01/memorice_proy01.srcs/sources_1/new/gclk_sel.vhd}} 
+// I (cs): Define Module: addNotify
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (I)
+// TclEventType: FILE_SET_CHANGE
+selectButton("OptionPane.button", "Yes"); // JButton (v, C)
+dismissDialog("Define Module"); // I (cs)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: update_compile_order -fileset sources_1 
+// Elapsed time: 102 seconds
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, gclk_sel(Behavioral) (gclk_sel.vhd)]", 2, false); // B (F, cs)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, gclk_sel(Behavioral) (gclk_sel.vhd)]", 2, false); // B (F, cs)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, gclk_sel(Behavioral) (gclk_sel.vhd)]", 2, false, false, false, false, false, true); // B (F, cs) - Double Click
+// Launch External Editor: '"C:/Users/Manuel/AppData/Local/Programs/Microsoft VS Code/Code.exe" -g "C:/SEP y Anal/Proyecto_01_SEP/memorice_proy01/memorice_proy01/memorice_proy01.srcs/sources_1/new/gclk_sel.vhd":38'
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed time: 271 seconds
+selectButton(PAResourceCommand.PACommandNames_ADD_SOURCES, "Sources_add_sources"); // E (g, cs)
+// Run Command: PAResourceCommand.PACommandNames_ADD_SOURCES
+// c (cs): Add Sources: addNotify
+selectButton("NEXT", "Next >"); // JButton (j, c)
+selectButton(PAResourceQtoS.SrcChooserPanel_CREATE_FILE, "Create File"); // a (E, c)
+// F (c): Create Source File: addNotify
+// Elapsed time: 13 seconds
+setText(PAResourceAtoD.CreateSrcFileDialog_FILE_NAME, "led_driver"); // ac (Q, F)
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (F)
+dismissDialog("Create Source File"); // F (c)
+selectButton("FINISH", "Finish"); // JButton (j, c)
+// 'h' command handler elapsed time: 19 seconds
+dismissDialog("Add Sources"); // c (cs)
+// Tcl Message: close [ open {C:/SEP y Anal/Proyecto_01_SEP/memorice_proy01/memorice_proy01/memorice_proy01.srcs/sources_1/new/led_driver.vhd} w ] 
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: add_files {{C:/SEP y Anal/Proyecto_01_SEP/memorice_proy01/memorice_proy01/memorice_proy01.srcs/sources_1/new/led_driver.vhd}} 
+// I (cs): Define Module: addNotify
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (I)
+// TclEventType: FILE_SET_CHANGE
+selectButton("OptionPane.button", "Yes"); // JButton (v, C)
+dismissDialog("Define Module"); // I (cs)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: update_compile_order -fileset sources_1 
+// Elapsed time: 105 seconds
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, rand_sec(Behavioral) (rand_sec.vhd)]", 1, false); // B (F, cs)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, gclk_sel(Behavioral) (gclk_sel.vhd)]", 2, false); // B (F, cs)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, led_driver(Behavioral) (led_driver.vhd)]", 3, false); // B (F, cs)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, led_driver(Behavioral) (led_driver.vhd)]", 3, false, false, false, false, false, true); // B (F, cs) - Double Click
+// Launch External Editor: '"C:/Users/Manuel/AppData/Local/Programs/Microsoft VS Code/Code.exe" -g "C:/SEP y Anal/Proyecto_01_SEP/memorice_proy01/memorice_proy01/memorice_proy01.srcs/sources_1/new/led_driver.vhd":38'
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, led_driver(Behavioral) (led_driver.vhd)]", 3, false); // B (F, cs)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed time: 321 seconds
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Constraints]", 4); // B (F, cs)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Constraints, constrs_1, zyboZ7.xdc]", 6, false); // B (F, cs)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Constraints, constrs_1, zyboZ7.xdc]", 6, false, false, false, false, true, false); // B (F, cs) - Popup Trigger
+selectMenu(PAResourceCommand.PACommandNames_AUTO_UPDATE_HIER, "Hierarchy Update"); // af (ao, Popup.HeavyWeightWindow)
+selectMenu(PAResourceQtoS.SrcMenu_IP_HIERARCHY, "IP Hierarchy"); // af (ao, Popup.HeavyWeightWindow)
+selectMenu(PAResourceQtoS.SrcMenu_IP_HIERARCHY, "IP Hierarchy"); // af (ao, Popup.HeavyWeightWindow)
+selectMenu(PAResourceCommand.PACommandNames_AUTO_UPDATE_HIER, "Hierarchy Update"); // af (ao, Popup.HeavyWeightWindow)
+selectMenuItem(RDIResourceCommand.RDICommands_PROPERTIES, "Source File Properties..."); // ai (ao, Popup.HeavyWeightWindow)
+// Run Command: RDIResourceCommand.RDICommands_PROPERTIES
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Constraints, constrs_1, zyboZ7.xdc]", 6, false, false, false, false, true, false); // B (F, cs) - Popup Trigger
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Constraints, constrs_1, zyboZ7.xdc]", 6, false); // B (F, cs)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Constraints, constrs_1, zyboZ7.xdc]", 6, false, false, false, false, false, true); // B (F, cs) - Double Click
+// Launch External Editor: '"C:/Users/Manuel/AppData/Local/Programs/Microsoft VS Code/Code.exe" -g "C:/SEP y Anal/Proyecto_01_SEP/memorice_proy01/memorice_proy01/memorice_proy01.srcs/constrs_1/new/zyboZ7.xdc":0'
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Constraints, constrs_1, zyboZ7.xdc]", 6, false, false, false, false, true, false); // B (F, cs) - Popup Trigger
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Constraints, constrs_1, zyboZ7.xdc]", 6, false, false, false, false, true, false); // B (F, cs) - Popup Trigger
+selectMenuItem(RDIResourceCommand.RDICommands_DELETE, "Remove File from Project..."); // ai (ao, Popup.HeavyWeightWindow)
+// Run Command: RDIResourceCommand.RDICommands_DELETE
+// aE (cs): Remove Sources: addNotify
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (aE)
+dismissDialog("Remove Sources"); // aE (cs)
+// Tcl Message: export_ip_user_files -of_objects  [get_files {{C:/SEP y Anal/Proyecto_01_SEP/memorice_proy01/memorice_proy01/memorice_proy01.srcs/constrs_1/new/zyboZ7.xdc}}] -no_script -reset -force -quiet 
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: remove_files  -fileset constrs_1 {{C:/SEP y Anal/Proyecto_01_SEP/memorice_proy01/memorice_proy01/memorice_proy01.srcs/constrs_1/new/zyboZ7.xdc}} 
+// HMemoryUtils.trashcanNow. Engine heap size: 967 MB. GUI used memory: 72 MB. Current time: 9/21/26, 12:53:39 PM CLST
+// WARNING: HEventQueue.dispatchEvent() is taking  4595657 ms.
+// HMemoryUtils.trashcanNow. Engine heap size: 967 MB. GUI used memory: 73 MB. Current time: 9/21/26, 2:14:42 PM CLST
+// WARNING: HEventQueue.dispatchEvent() is taking  1810 ms.
+// Elapsed time: 5273 seconds
+selectButton(PAResourceCommand.PACommandNames_ADD_SOURCES, "Sources_add_sources"); // E (g, cs)
+// Run Command: PAResourceCommand.PACommandNames_ADD_SOURCES
+// c (cs): Add Sources: addNotify
+selectRadioButton(PAResourceAtoD.AddSrcWizard_SPECIFY_OR_CREATE_CONSTRAINT_FILES, "Add or create constraints"); // a (o, c)
+selectButton("NEXT", "Next >"); // JButton (j, c)
+selectButton(PAResourceAtoD.ConstraintsChooserPanel_ADD_FILES, "Add Files"); // a (E, c)
+// Elapsed time: 18 seconds
+dismissFileChooser();
+// Elapsed time: 15 seconds
+selectButton(PAResourceAtoD.ConstraintsChooserPanel_ADD_FILES, "Add Files"); // a (E, c)
+dismissFileChooser();
+selectButton(PAResourceAtoD.ConstraintsChooserPanel_CREATE_FILE, "Create File"); // a (E, c)
+// C (cs): Create Constraints File: addNotify
+setText(PAResourceAtoD.CreateConstraintsFilePanel_FILE_NAME, "Zybo-Z7-Master"); // ac (D, C)
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (C)
+dismissDialog("Create Constraints File"); // C (cs)
+selectButton("FINISH", "Finish"); // JButton (j, c)
+// 'h' command handler elapsed time: 53 seconds
+dismissDialog("Add Sources"); // c (cs)
+// Tcl Message: close [ open {C:/SEP y Anal/Proyecto_01_SEP/memorice_proy01/memorice_proy01/memorice_proy01.srcs/constrs_1/new/Zybo-Z7-Master.xdc} w ] 
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: add_files -fileset constrs_1 {{C:/SEP y Anal/Proyecto_01_SEP/memorice_proy01/memorice_proy01/memorice_proy01.srcs/constrs_1/new/Zybo-Z7-Master.xdc}} 
+// Elapsed time: 17 seconds
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Constraints, constrs_1]", 5, true); // B (F, cs) - Node
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Constraints, constrs_1]", 5); // B (F, cs)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Constraints, constrs_1, Zybo-Z7-Master.xdc]", 6, false); // B (F, cs)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Constraints, constrs_1, Zybo-Z7-Master.xdc]", 6, false); // B (F, cs)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Constraints, constrs_1, Zybo-Z7-Master.xdc]", 6, false, false, false, false, false, true); // B (F, cs) - Double Click
+// Launch External Editor: '"C:/Users/Manuel/AppData/Local/Programs/Microsoft VS Code/Code.exe" -g "C:/SEP y Anal/Proyecto_01_SEP/memorice_proy01/memorice_proy01/memorice_proy01.srcs/constrs_1/new/Zybo-Z7-Master.xdc":0'
+// TclEventType: FILE_SET_CHANGE
+// Elapsed time: 158 seconds
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Constraints, constrs_1, Zybo-Z7-Master.xdc]", 6, false); // B (F, cs)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Constraints, constrs_1, Zybo-Z7-Master.xdc]", 6, false, false, false, false, false, true); // B (F, cs) - Double Click
+// Launch External Editor: '"C:/Users/Manuel/AppData/Local/Programs/Microsoft VS Code/Code.exe" -g "C:/SEP y Anal/Proyecto_01_SEP/memorice_proy01/memorice_proy01/memorice_proy01.srcs/constrs_1/new/Zybo-Z7-Master.xdc":0'
+// Elapsed time: 12 seconds
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, gclk_sel(Behavioral) (gclk_sel.vhd)]", 2, false); // B (F, cs)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, led_driver(Behavioral) (led_driver.vhd)]", 3, false); // B (F, cs)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, led_driver(Behavioral) (led_driver.vhd)]", 3, false, false, false, false, false, true); // B (F, cs) - Double Click
+// Launch External Editor: '"C:/Users/Manuel/AppData/Local/Programs/Microsoft VS Code/Code.exe" -g "C:/SEP y Anal/Proyecto_01_SEP/memorice_proy01/memorice_proy01/memorice_proy01.srcs/sources_1/new/led_driver.vhd":12'
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, gclk_sel(Behavioral) (gclk_sel.vhd)]", 2, false); // B (F, cs)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, gclk_sel(Behavioral) (gclk_sel.vhd)]", 2, false, false, false, false, false, true); // B (F, cs) - Double Click
+// Launch External Editor: '"C:/Users/Manuel/AppData/Local/Programs/Microsoft VS Code/Code.exe" -g "C:/SEP y Anal/Proyecto_01_SEP/memorice_proy01/memorice_proy01/memorice_proy01.srcs/sources_1/new/gclk_sel.vhd":12'
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// WARNING: HEventQueue.dispatchEvent() is taking  810198 ms.
+// HMemoryUtils.trashcanNow. Engine heap size: 967 MB. GUI used memory: 73 MB. Current time: 9/21/26, 2:52:13 PM CLST
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed time: 1701 seconds
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, rand_sec(Behavioral) (rand_sec.vhd)]", 1, false); // B (F, cs)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, rand_sec(Behavioral) (rand_sec.vhd)]", 1, false, false, false, false, false, true); // B (F, cs) - Double Click
+// Launch External Editor: '"C:/Users/Manuel/AppData/Local/Programs/Microsoft VS Code/Code.exe" -g "C:/SEP y Anal/Proyecto_01_SEP/memorice_proy01/memorice_proy01/memorice_proy01.srcs/sources_1/new/rand_sec.vhd":12'
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed time: 225 seconds
+selectButton(PAResourceCommand.PACommandNames_ADD_SOURCES, "Sources_add_sources"); // E (g, cs)
+// Run Command: PAResourceCommand.PACommandNames_ADD_SOURCES
+// c (cs): Add Sources: addNotify
+selectRadioButton(PAResourceAtoD.AddSrcWizard_SPECIFY_HDL_NETLIST_BLOCK_DESIGN, "Add or create design sources"); // a (o, c)
+selectButton("NEXT", "Next >"); // JButton (j, c)
+selectButton(PAResourceQtoS.SrcChooserPanel_CREATE_FILE, "Create File"); // a (E, c)
+// F (c): Create Source File: addNotify
+// Elapsed time: 40 seconds
+setText(PAResourceAtoD.CreateSrcFileDialog_FILE_NAME, "rand_led"); // ac (Q, F)
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (F)
+dismissDialog("Create Source File"); // F (c)
+selectButton("FINISH", "Finish"); // JButton (j, c)
+// 'h' command handler elapsed time: 49 seconds
+dismissDialog("Add Sources"); // c (cs)
+// Tcl Message: close [ open {C:/SEP y Anal/Proyecto_01_SEP/memorice_proy01/memorice_proy01/memorice_proy01.srcs/sources_1/new/rand_led.vhd} w ] 
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: add_files {{C:/SEP y Anal/Proyecto_01_SEP/memorice_proy01/memorice_proy01/memorice_proy01.srcs/sources_1/new/rand_led.vhd}} 
+// I (cs): Define Module: addNotify
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (I)
+// TclEventType: FILE_SET_CHANGE
+selectButton("OptionPane.button", "Yes"); // JButton (v, C)
+dismissDialog("Define Module"); // I (cs)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: update_compile_order -fileset sources_1 
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, rand_led(Behavioral) (rand_led.vhd)]", 4, false); // B (F, cs)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, rand_led(Behavioral) (rand_led.vhd)]", 4, false, false, false, false, false, true); // B (F, cs) - Double Click
+// Launch External Editor: '"C:/Users/Manuel/AppData/Local/Programs/Microsoft VS Code/Code.exe" -g "C:/SEP y Anal/Proyecto_01_SEP/memorice_proy01/memorice_proy01/memorice_proy01.srcs/sources_1/new/rand_led.vhd":38'
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// Elapsed time: 25 seconds
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Synthesis, Run Synthesis]", 14, false); // u (J, cs)
+// Run Command: PAResourceCommand.PACommandNames_RUN_SYNTHESIS
+// f (cs): Launch Runs: addNotify
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (f)
+// bz (cs):  Starting Design Runs : addNotify
+dismissDialog("Launch Runs"); // f (cs)
+// Tcl Message: launch_runs synth_1 -jobs 8 
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_MODIFY
+// Tcl Message: [Mon Sep 21 14:58:43 2026] Launched synth_1... Run output will be captured here: C:/SEP y Anal/Proyecto_01_SEP/memorice_proy01/memorice_proy01/memorice_proy01.runs/synth_1/runme.log 
+dismissDialog("Starting Design Runs"); // bz (cs)
+// TclEventType: RUN_STATUS_CHANGE
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, rand_led(Structural) (rand_led.vhd)]", 1, true); // B (F, cs) - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, rand_led(Structural) (rand_led.vhd)]", 1, true, false, false, false, true, false); // B (F, cs) - Popup Trigger - Node
+selectMenu(PAResourceCommand.PACommandNames_AUTO_UPDATE_HIER, "Hierarchy Update"); // af (ao, Popup.HeavyWeightWindow)
+selectMenu(PAResourceQtoS.SrcMenu_IP_HIERARCHY, "IP Hierarchy"); // af (ao, Popup.HeavyWeightWindow)
+selectMenuItem(PAResourceCommand.PACommandNames_SET_AS_TOP, "Set as Top"); // ai (ao, Popup.HeavyWeightWindow)
+// Run Command: PAResourceCommand.PACommandNames_SET_AS_TOP
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: FILE_SET_OPTIONS_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// Tcl Message: set_property top rand_led [current_fileset] 
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: update_compile_order -fileset sources_1 
+collapseTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, rand_led(Structural) (rand_led.vhd)]", 1); // B (F, cs)
+collapseTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Constraints]", 2); // B (F, cs)
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// ag (cs): Synthesis Completed: addNotify
+// Elapsed time: 122 seconds
+dismissDialog("Synthesis Completed"); // ag (cs)
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Synthesis, Run Synthesis]", 14, false); // u (J, cs)
+// Run Command: PAResourceCommand.PACommandNames_RUN_SYNTHESIS
+// bz (cs):  Resetting Runs : addNotify
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_RESET
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+// Tcl Message: reset_run synth_1 
+// f (cs): Launch Runs: addNotify
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (f)
+// bz (cs):  Starting Design Runs : addNotify
+dismissDialog("Launch Runs"); // f (cs)
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_MODIFY
+// Tcl Message: launch_runs synth_1 -jobs 8 
+// Tcl Message: [Mon Sep 21 15:01:08 2026] Launched synth_1... Run output will be captured here: C:/SEP y Anal/Proyecto_01_SEP/memorice_proy01/memorice_proy01/memorice_proy01.runs/synth_1/runme.log 
+// 'k' command handler elapsed time: 3 seconds
+// TclEventType: RUN_STATUS_CHANGE
+dismissDialog("Starting Design Runs"); // bz (cs)
+// TclEventType: RUN_FAILED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// ag (cs): Synthesis Failed: addNotify
+// Elapsed time: 38 seconds
+dismissDialog("Synthesis Failed"); // ag (cs)
+collapseTreeTable(PAResourceEtoH.ExpRunTreePanel_EXP_RUN_TREE_TABLE, "synth_1 ; constrs_1 ; synth_design ERROR ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ; Mon Sep 21 15:01:16 CLST 2026 ; 00:00:15 ; Vivado Synthesis Defaults (Vivado Synthesis 2020) ; Vivado Synthesis Default Reports (Vivado Synthesis 2020) ; xc7z010clg400-1 ; Vivado Synthesis Defaults", 0); // az (J, cs)
+selectTreeTable(PAResourceEtoH.ExpRunTreePanel_EXP_RUN_TREE_TABLE, "synth_1 ; constrs_1 ; synth_design ERROR ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ; Mon Sep 21 15:01:16 CLST 2026 ; 00:00:15 ; Vivado Synthesis Defaults (Vivado Synthesis 2020) ; Vivado Synthesis Default Reports (Vivado Synthesis 2020) ; xc7z010clg400-1 ; Vivado Synthesis Defaults", 0, "synth_1", 0, true); // az (J, cs) - Node
+// PAPropertyPanels.initPanels (synth_1) elapsed time: 0.4s
+selectTab((HResource) null, (HResource) null, "Reports", 3); // aL (aI, cs)
+selectTab((HResource) null, (HResource) null, "Messages", 1); // aL (aI, cs)
+// Elapsed time: 26 seconds
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, rand_led(Structural) (rand_led.vhd)]", 1); // B (F, cs)
+selectTab(RDIResource.PropertiesView_TABBED_PANE, (HResource) null, "Messages", 5); // i (c, cs)
+// Elapsed time: 19 seconds
+collapseTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, rand_led(Structural) (rand_led.vhd)]", 1); // B (F, cs)
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, rand_led(Structural) (rand_led.vhd)]", 1); // B (F, cs)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, rand_led(Structural) (rand_led.vhd), U_GCLK_SEL : gclk_sel(Behavioral) (gclk_sel.vhd)]", 2, false); // B (F, cs)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, rand_led(Structural) (rand_led.vhd), U_GCLK_SEL : gclk_sel(Behavioral) (gclk_sel.vhd)]", 2, false); // B (F, cs)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, rand_led(Structural) (rand_led.vhd), U_GCLK_SEL : gclk_sel(Behavioral) (gclk_sel.vhd)]", 2, false, false, false, false, false, true); // B (F, cs) - Double Click
+// Launch External Editor: '"C:/Users/Manuel/AppData/Local/Programs/Microsoft VS Code/Code.exe" -g "C:/SEP y Anal/Proyecto_01_SEP/memorice_proy01/memorice_proy01/memorice_proy01.srcs/sources_1/new/gclk_sel.vhd":12'
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed time: 46 seconds
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Synthesis, Run Synthesis]", 14, false); // u (J, cs)
+// Run Command: PAResourceCommand.PACommandNames_RUN_SYNTHESIS
+// bz (cs):  Resetting Runs : addNotify
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_RESET
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+// Tcl Message: reset_run synth_1 
+// f (cs): Launch Runs: addNotify
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (f)
+// bz (cs):  Starting Design Runs : addNotify
+dismissDialog("Launch Runs"); // f (cs)
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_MODIFY
+// Tcl Message: launch_runs synth_1 -jobs 8 
+// Tcl Message: [Mon Sep 21 15:03:40 2026] Launched synth_1... Run output will be captured here: C:/SEP y Anal/Proyecto_01_SEP/memorice_proy01/memorice_proy01/memorice_proy01.runs/synth_1/runme.log 
+// 'k' command handler elapsed time: 3 seconds
+dismissDialog("Starting Design Runs"); // bz (cs)
+// TclEventType: RUN_STATUS_CHANGE
+// Elapsed time: 10 seconds
+selectTab((HResource) null, (HResource) null, "Tcl Console", 0); // aL (aI, cs)
+selectTab((HResource) null, (HResource) null, "Log", 2); // aL (aI, cs)
+selectTab((HResource) null, (HResource) null, "Reports", 3); // aL (aI, cs)
+selectTab((HResource) null, (HResource) null, "Design Runs", 4); // aL (aI, cs)
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// ag (cs): Synthesis Completed: addNotify
+// Elapsed time: 236 seconds
+selectRadioButton(PAResourceCommand.PACommandNames_REPORTS_WINDOW, "View Reports"); // a (Q, ag)
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (ag)
+// Run Command: PAResourceCommand.PACommandNames_REPORTS_WINDOW
+dismissDialog("Synthesis Completed"); // ag (cs)
+selectButton(PAResourceQtoS.RunGadget_SHOW_ERROR_AND_CRITICAL_WARNING_MESSAGES, "4 critical warnings"); // h (Q, cs)
+// Run Command: PAResourceCommand.PACommandNames_MESSAGE_WINDOW
+expandTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Synthesis, [Common 17-55] 'set_property' expects at least one object. [C:/SEP y Anal/Proyecto_01_SEP/memorice_proy01/memorice_proy01/memorice_proy01.srcs/constrs_1/new/Zybo-Z7-Master.xdc:27]. ]", 1); // ah (J, cs)
+// Elapsed time: 13 seconds
+collapseTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Synthesis, [Common 17-55] 'set_property' expects at least one object. [C:/SEP y Anal/Proyecto_01_SEP/memorice_proy01/memorice_proy01/memorice_proy01.srcs/constrs_1/new/Zybo-Z7-Master.xdc:27]. ]", 1); // ah (J, cs)
+expandTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Synthesis, [Common 17-55] 'set_property' expects at least one object. [C:/SEP y Anal/Proyecto_01_SEP/memorice_proy01/memorice_proy01/memorice_proy01.srcs/constrs_1/new/Zybo-Z7-Master.xdc:27]. ]", 1); // ah (J, cs)
+// Elapsed time: 20 seconds
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Constraints]", 5); // B (F, cs)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Constraints, constrs_1, Zybo-Z7-Master.xdc]", 7, false); // B (F, cs)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Constraints, constrs_1, Zybo-Z7-Master.xdc]", 7, false, false, false, false, false, true); // B (F, cs) - Double Click
+// Launch External Editor: '"C:/Users/Manuel/AppData/Local/Programs/Microsoft VS Code/Code.exe" -g "C:/SEP y Anal/Proyecto_01_SEP/memorice_proy01/memorice_proy01/memorice_proy01.srcs/constrs_1/new/Zybo-Z7-Master.xdc":0'
+// Elapsed time: 82 seconds
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, rand_led(Structural) (rand_led.vhd)]", 1, true); // B (F, cs) - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, rand_led(Structural) (rand_led.vhd)]", 1, true, false, false, false, false, true); // B (F, cs) - Double Click - Node
+// Launch External Editor: '"C:/Users/Manuel/AppData/Local/Programs/Microsoft VS Code/Code.exe" -g "C:/SEP y Anal/Proyecto_01_SEP/memorice_proy01/memorice_proy01/memorice_proy01.srcs/sources_1/new/rand_led.vhd":12'
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed time: 11 seconds
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Synthesis, Run Synthesis]", 14, false); // u (J, cs)
+// Run Command: PAResourceCommand.PACommandNames_RUN_SYNTHESIS
+// bz (cs):  Resetting Runs : addNotify
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_RESET
+// Tcl Message: reset_run synth_1 
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+// f (cs): Launch Runs: addNotify
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (f)
+// bz (cs):  Starting Design Runs : addNotify
+dismissDialog("Launch Runs"); // f (cs)
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_MODIFY
+// Tcl Message: launch_runs synth_1 -jobs 8 
+// Tcl Message: [Mon Sep 21 15:10:18 2026] Launched synth_1... Run output will be captured here: C:/SEP y Anal/Proyecto_01_SEP/memorice_proy01/memorice_proy01/memorice_proy01.runs/synth_1/runme.log 
+dismissDialog("Starting Design Runs"); // bz (cs)
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_FAILED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// ag (cs): Synthesis Failed: addNotify
+// HMemoryUtils.trashcanNow. Engine heap size: 967 MB. GUI used memory: 79 MB. Current time: 9/21/26, 4:43:19 PM CLST
+// WARNING: HEventQueue.dispatchEvent() is taking  1321 ms.
+// Elapsed time: 5607 seconds
+dismissDialog("Synthesis Failed"); // ag (cs)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, rand_led(Structural) (rand_led.vhd)]", 1, true); // B (F, cs) - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, rand_led(Structural) (rand_led.vhd), U_GCLK_SEL : gclk_sel(Behavioral) (gclk_sel.vhd)]", 2, false, false, false, false, false, true); // B (F, cs) - Double Click
+// Launch External Editor: '"C:/Users/Manuel/AppData/Local/Programs/Microsoft VS Code/Code.exe" -g "C:/SEP y Anal/Proyecto_01_SEP/memorice_proy01/memorice_proy01/memorice_proy01.srcs/sources_1/new/rand_led.vhd":12'
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed time: 316 seconds
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Synthesis, Run Synthesis]", 14, false); // u (J, cs)
+// Run Command: PAResourceCommand.PACommandNames_RUN_SYNTHESIS
+// bz (cs):  Resetting Runs : addNotify
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_RESET
+// TclEventType: RUN_STATUS_CHANGE
+// Tcl Message: reset_run synth_1 
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+// f (cs): Launch Runs: addNotify
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (f)
+// bz (cs):  Starting Design Runs : addNotify
+dismissDialog("Launch Runs"); // f (cs)
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_MODIFY
+// Tcl Message: launch_runs synth_1 -jobs 8 
+// Tcl Message: [Mon Sep 21 16:49:13 2026] Launched synth_1... Run output will be captured here: C:/SEP y Anal/Proyecto_01_SEP/memorice_proy01/memorice_proy01/memorice_proy01.runs/synth_1/runme.log 
+// TclEventType: RUN_STATUS_CHANGE
+dismissDialog("Starting Design Runs"); // bz (cs)
+// TclEventType: RUN_FAILED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// ag (cs): Synthesis Failed: addNotify
+// Elapsed time: 26 seconds
+dismissDialog("Synthesis Failed"); // ag (cs)
+// Elapsed time: 76 seconds
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, rand_led(Structural) (rand_led.vhd)]", 1, true); // B (F, cs) - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, rand_led(Structural) (rand_led.vhd)]", 1, true, false, false, false, false, true); // B (F, cs) - Double Click - Node
+// Launch External Editor: '"C:/Users/Manuel/AppData/Local/Programs/Microsoft VS Code/Code.exe" -g "C:/SEP y Anal/Proyecto_01_SEP/memorice_proy01/memorice_proy01/memorice_proy01.srcs/sources_1/new/rand_led.vhd":12'
+// Elapsed time: 35 seconds
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Constraints, constrs_1, Zybo-Z7-Master.xdc]", 4, false); // B (F, cs)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Constraints, constrs_1, Zybo-Z7-Master.xdc]", 4, false, false, false, false, false, true); // B (F, cs) - Double Click
+// Launch External Editor: '"C:/Users/Manuel/AppData/Local/Programs/Microsoft VS Code/Code.exe" -g "C:/SEP y Anal/Proyecto_01_SEP/memorice_proy01/memorice_proy01/memorice_proy01.srcs/constrs_1/new/Zybo-Z7-Master.xdc":0'
+// Elapsed time: 85 seconds
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, rand_led(Structural) (rand_led.vhd)]", 1); // B (F, cs)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, rand_led(Structural) (rand_led.vhd), U_LED_DRIVER : led_driver(Behavioral) (led_driver.vhd)]", 4, false); // B (F, cs)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, rand_led(Structural) (rand_led.vhd), U_LED_DRIVER : led_driver(Behavioral) (led_driver.vhd)]", 4, false); // B (F, cs)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, rand_led(Structural) (rand_led.vhd), U_LED_DRIVER : led_driver(Behavioral) (led_driver.vhd)]", 4, false, false, false, false, false, true); // B (F, cs) - Double Click
+// Launch External Editor: '"C:/Users/Manuel/AppData/Local/Programs/Microsoft VS Code/Code.exe" -g "C:/SEP y Anal/Proyecto_01_SEP/memorice_proy01/memorice_proy01/memorice_proy01.srcs/sources_1/new/led_driver.vhd":13'
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed time: 22 seconds
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Synthesis, Run Synthesis]", 14, false); // u (J, cs)
+// Run Command: PAResourceCommand.PACommandNames_RUN_SYNTHESIS
+// bz (cs):  Resetting Runs : addNotify
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_RESET
+// TclEventType: RUN_STATUS_CHANGE
+// Tcl Message: reset_run synth_1 
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+// f (cs): Launch Runs: addNotify
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (f)
+// bz (cs):  Starting Design Runs : addNotify
+dismissDialog("Launch Runs"); // f (cs)
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_STATUS_CHANGE
+// Tcl Message: launch_runs synth_1 -jobs 8 
+// Tcl Message: [Mon Sep 21 16:53:27 2026] Launched synth_1... Run output will be captured here: C:/SEP y Anal/Proyecto_01_SEP/memorice_proy01/memorice_proy01/memorice_proy01.runs/synth_1/runme.log 
+// 'k' command handler elapsed time: 3 seconds
+dismissDialog("Starting Design Runs"); // bz (cs)
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// ag (cs): Synthesis Completed: addNotify
+// Elapsed time: 52 seconds
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (ag)
+// Run Command: PAResourceCommand.PACommandNames_RUN_IMPLEMENTATION
+// f (cs): Launch Runs: addNotify
+// Elapsed time: 10 seconds
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (f)
+// bz (cs):  Starting Design Runs : addNotify
+dismissDialog("Launch Runs"); // f (cs)
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_MODIFY
+// Tcl Message: launch_runs impl_1 -jobs 8 
+// Tcl Message: [Mon Sep 21 16:54:31 2026] Launched impl_1... Run output will be captured here: C:/SEP y Anal/Proyecto_01_SEP/memorice_proy01/memorice_proy01/memorice_proy01.runs/impl_1/runme.log 
+// 'c' command handler elapsed time: 11 seconds
+dismissDialog("Starting Design Runs"); // bz (cs)
+// TclEventType: RUN_STATUS_CHANGE
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Implementation, Run Implementation]", 17, false); // u (J, cs)
+// Run Command: PAResourceCommand.PACommandNames_RUN_IMPLEMENTATION
+// 'c' command handler elapsed time: 3 seconds
+selectTab((HResource) null, (HResource) null, "Tcl Console", 0); // aL (aI, cs)
+selectTab((HResource) null, (HResource) null, "Messages", 1); // aL (aI, cs)
+selectTab((HResource) null, (HResource) null, "Design Runs", 4); // aL (aI, cs)
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Implementation, Run Implementation]", 17, false); // u (J, cs)
+// Run Command: PAResourceCommand.PACommandNames_RUN_IMPLEMENTATION
+// TclEventType: RUN_STEP_COMPLETED
+// 'c' command handler elapsed time: 5 seconds
+// TclEventType: RUN_STEP_COMPLETED
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// WARNING: HTimer (ExpRunMgr Pending Runs Timer) is taking 409ms to process. Increasing delay to 3000 ms.
+// ag (cs): Implementation Completed: addNotify
+// Elapsed time: 51 seconds
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (ag)
+// Run Command: PAResourceCommand.PACommandNames_GOTO_IMPLEMENTED_DESIGN
+// bz (cs):  Open Implemented Design : addNotify
+// Tcl Message: open_run impl_1 
+// HMemoryUtils.trashcanNow. Engine heap size: 1,246 MB. GUI used memory: 80 MB. Current time: 9/21/26, 4:55:58 PM CLST
+// TclEventType: SDC_CONSTRAINT_ADD
+// TclEventType: POWER_CNS_STALE
+// TclEventType: FLOORPLAN_MODIFY
+// TclEventType: DESIGN_NEW
+// HMemoryUtils.trashcanNow. Engine heap size: 1,640 MB. GUI used memory: 80 MB. Current time: 9/21/26, 4:56:08 PM CLST
+// [Engine Memory]: 1,648 MB (+663381kb) [07:44:57]
+// [Engine Memory]: 1,741 MB (+10934kb) [07:44:57]
+// Xgd.load filename: C:/Xilinx/Vivado/2020.1/data/parts/xilinx/zynq/devint/zynq/xc7z010/xc7z010.xgd; ZipEntry: xc7z010_detail.xgd elapsed time: 0.5s
+// DeviceModel: Load Xgds SwingWorker Join Forever elapsed time: 0.7s
+// TclEventType: DESIGN_NEW
+// TclEventType: HFED_INIT_ROUTE_STORAGE_COMPLETED
+// Device: addNotify
+// DeviceView Instantiated
+// WARNING: HEventQueue.dispatchEvent() is taking  2231 ms.
+// TclEventType: CURR_DESIGN_SET
+// Tcl Message: INFO: [Device 21-403] Loading part xc7z010clg400-1 
+// Tcl Message: Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1318.121 ; gain = 0.000 
+// Tcl Message: INFO: [Project 1-479] Netlist was created with Vivado 2020.1 INFO: [Project 1-570] Preparing netlist for logic optimization INFO: [Timing 38-478] Restoring timing data from binary archive. INFO: [Timing 38-479] Binary timing data restore complete. INFO: [Project 1-856] Restoring constraints from binary archive. INFO: [Project 1-853] Binary constraint restore complete. 
+// Tcl Message: Reading XDEF placement. Reading placer database... Reading XDEF routing. 
+// Tcl Message: Read XDEF File: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.055 . Memory (MB): peak = 1875.785 ; gain = 0.000 
+// Tcl Message: Restored from archive | CPU: 0.000000 secs | Memory: 0.000000 MB | 
+// Tcl Message: Finished XDEF File Restore: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.056 . Memory (MB): peak = 1875.785 ; gain = 0.000 Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1875.785 ; gain = 0.000 
+// Tcl Message: INFO: [Project 1-111] Unisim Transformation Summary: No Unisim elements were transformed.  
+// [GUI Memory]: 156 MB (+10628kb) [07:45:00]
+// Device view-level: 0,0
+// RouteApi: Init Delay Mediator Swing Worker Finished
+// Tcl Message: open_run: Time (s): cpu = 00:00:32 ; elapsed = 00:00:24 . Memory (MB): peak = 2025.504 ; gain = 952.555 
+// TclEventType: DRC_ADDED
+// TclEventType: METHODOLOGY_ADDED
+// Device view-level: 0,1
+// TclEventType: METHODOLOGY_ADDED
+// TclEventType: POWER_UPDATED
+// [Engine Memory]: 1,838 MB (+11293kb) [07:45:01]
+// TclEventType: TIMING_SUMMARY_UPDATED
+// 'dZ' command handler elapsed time: 26 seconds
+// Device view-level: 0,3
+// Device view-level: 0,1
+// Elapsed time: 27 seconds
+dismissDialog("Open Implemented Design"); // bz (cs)
+// [GUI Memory]: 170 MB (+5560kb) [07:45:07]
+// [GUI Memory]: 178 MB (+38kb) [07:45:10]
+// Device view-level: 0,7
+// HMemoryUtils.trashcanNow. Engine heap size: 1,851 MB. GUI used memory: 118 MB. Current time: 9/21/26, 4:56:22 PM CLST
+maximizeView(PAResourceOtoP.PAViews_BASE_WORKSPACE, "BaseWorkspace"); // F (aI, cs)
+// Device view-level: 1,0
+// Device view-level: 1,8
+// Device view-level: 2,4
+// Device view-level: 3,3
+// Device view-level: 3,6
+// HMemoryUtils.trashcanNow. Engine heap size: 1,851 MB. GUI used memory: 138 MB. Current time: 9/21/26, 4:56:24 PM CLST
+// Device view-level: 3,9
+// Device view-level: 3,6
+// Device view-level: 3,3
+// Device view-level: 3,0
+// HMemoryUtils.trashcanNow. Engine heap size: 1,859 MB. GUI used memory: 119 MB. Current time: 9/21/26, 4:56:25 PM CLST
+// Device view-level: 2,7
+// Device view-level: 2,1
+// Device view-level: 1,3
+// Device view-level: 1,0
+// Device view-level: 0,7
+// HMemoryUtils.trashcanNow. Engine heap size: 1,859 MB. GUI used memory: 120 MB. Current time: 9/21/26, 4:56:26 PM CLST
+// Device view-level: 1,0
+// Device view-level: 1,8
+// Device view-level: 2,4
+// Device view-level: 2,7
+// Device view-level: 3,0
+// HMemoryUtils.trashcanNow. Engine heap size: 1,863 MB. GUI used memory: 120 MB. Current time: 9/21/26, 4:56:33 PM CLST
+// Device view-level: 3,3
+// Device view-level: 3,6
+// Device view-level: 3,9
+// Device view-level: 4,2
+// HMemoryUtils.trashcanNow. Engine heap size: 1,863 MB. GUI used memory: 134 MB. Current time: 9/21/26, 4:56:34 PM CLST
+// Device view-level: 4,5
+// Device view-level: 4,2
+// Device view-level: 3,9
+// Device view-level: 3,6
+// Device view-level: 3,3
+// HMemoryUtils.trashcanNow. Engine heap size: 1,863 MB. GUI used memory: 123 MB. Current time: 9/21/26, 4:56:36 PM CLST
+// Device view-level: 3,0
+// Device view-level: 2,7
+// Device view-level: 2,1
+// Device view-level: 1,8
+// Device view-level: 1,6
+// Device view-level: 1,3
+// HMemoryUtils.trashcanNow. Engine heap size: 1,863 MB. GUI used memory: 120 MB. Current time: 9/21/26, 4:56:37 PM CLST
+// Device view-level: 1,0
+// Device view-level: 0,7
+// Elapsed time: 20 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "Project Summary", 0); // m (l, cs)
+expandTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Implementation]", 16); // u (J, cs)
+collapseTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Implementation]", 16); // u (J, cs)
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Program and Debug, Generate Bitstream]", 18, false); // u (J, cs)
+// Run Command: PAResourceCommand.PACommandNames_RUN_BITGEN
+// f (cs): Launch Runs: addNotify
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (f)
+// TclEventType: RUN_LAUNCH
+dismissDialog("Launch Runs"); // f (cs)
+// bz (cs):  Generate Bitstream : addNotify
+// TclEventType: RUN_MODIFY
+// Tcl Message: launch_runs impl_1 -to_step write_bitstream -jobs 8 
+// Tcl Message: [Mon Sep 21 16:56:51 2026] Launched impl_1... Run output will be captured here: C:/SEP y Anal/Proyecto_01_SEP/memorice_proy01/memorice_proy01/memorice_proy01.runs/impl_1/runme.log 
+dismissDialog("Generate Bitstream"); // bz (cs)
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_FAILED
+// TclEventType: RUN_STATUS_CHANGE
+// ag (cs): Bitstream Generation Failed: addNotify
+// Elapsed time: 54 seconds
+dismissDialog("Bitstream Generation Failed"); // ag (cs)
+unMinimizeFrame(PAResourceOtoP.PAViews_SOURCES, "Sources"); // aA
+unMinimizeFrame(RDIResource.RDIViews_PROPERTIES, "Source File Properties"); // aA
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Program and Debug]", 17, true); // u (J, cs) - Node
+selectButton(PAResourceOtoP.ProjectSummaryDRCPanel_OPEN_DRC_REPORT, "Implemented DRC Report"); // h (Q, cs)
+// Run Command: PAResourceCommand.PACommandNames_OPEN_REPORT_DRC
+// Elapsed time: 41 seconds
+collapseTreeTable(PAResourceTtoZ.VioTreeTablePanel_VIO_TREE_TABLE, "ZPS7-1 ; ", 9); // P (J, cs)
+expandTreeTable(PAResourceTtoZ.VioTreeTablePanel_VIO_TREE_TABLE, "ZPS7-1 ; ", 9); // P (J, cs)
+// Elapsed time: 32 seconds
+collapseTreeTable(PAResourceTtoZ.VioTreeTablePanel_VIO_TREE_TABLE, "PS7 (1) ; ", 8); // P (J, cs)
+collapseTreeTable(PAResourceTtoZ.VioTreeTablePanel_VIO_TREE_TABLE, "Pin Planning (2) ; ", 1); // P (J, cs)
+collapseTreeTable(PAResourceTtoZ.VioTreeTablePanel_VIO_TREE_TABLE, "All Violations (3) ; ", 0); // P (J, cs)
+expandTreeTable(PAResourceTtoZ.VioTreeTablePanel_VIO_TREE_TABLE, "All Violations (3) ; ", 0); // P (J, cs)
+expandTreeTable(PAResourceTtoZ.VioTreeTablePanel_VIO_TREE_TABLE, "Pin Planning (2) ; ", 1); // P (J, cs)
+collapseTreeTable(PAResourceTtoZ.VioTreeTablePanel_VIO_TREE_TABLE, "NSTD-1 ; ", 2); // P (J, cs)
+collapseTreeTable(PAResourceTtoZ.VioTreeTablePanel_VIO_TREE_TABLE, "UCIO-1 ; ", 3); // P (J, cs)
+collapseTreeTable(PAResourceTtoZ.VioTreeTablePanel_VIO_TREE_TABLE, "PS7 (1) ; ", 4); // P (J, cs)
+collapseTreeTable(PAResourceTtoZ.VioTreeTablePanel_VIO_TREE_TABLE, "All Violations (3) ; ", 0); // P (J, cs)
+expandTreeTable(PAResourceTtoZ.VioTreeTablePanel_VIO_TREE_TABLE, "All Violations (3) ; ", 0); // P (J, cs)
+collapseTreeTable(PAResourceTtoZ.VioTreeTablePanel_VIO_TREE_TABLE, "Pin Planning (2) ; ", 1); // P (J, cs)
+expandTreeTable(PAResourceTtoZ.VioTreeTablePanel_VIO_TREE_TABLE, "Pin Planning (2) ; ", 1); // P (J, cs)
+expandTreeTable(PAResourceTtoZ.VioTreeTablePanel_VIO_TREE_TABLE, "NSTD-1 ; ", 2); // P (J, cs)
+// Elapsed time: 34 seconds
+selectTreeTable(PAResourceTtoZ.VioTreeTablePanel_VIO_TREE_TABLE, "NSTD #1 ; 1 out of 6 logical ports use I/O standard (IOSTANDARD) value 'DEFAULT', instead of a user assigned specific value. This may cause I/O contention or incompatibility with the board power or connectivity affecting performance, signal integrity or in extreme cases cause damage to the device or the components to which it is connected. To correct this violation, specify all I/O standards. This design will fail to generate a bitstream unless all logical ports have a user specified I/O standard value defined. To allow bitstream creation with unspecified I/O standard values (not recommended), use this command: set_property SEVERITY {Warning} [get_drc_checks NSTD-1].  NOTE: When using the Vivado Runs infrastructure (e.g. launch_runs Tcl command), add this command to a .tcl file and add that file as a pre-hook for write_bitstream step for the implementation run. Problem ports: rst.", 3, "Critical Warning", 1, false); // P (J, cs)
+// Elapsed time: 17 seconds
+collapseTreeTable(PAResourceTtoZ.VioTreeTablePanel_VIO_TREE_TABLE, "NSTD-1 ; ", 2); // P (J, cs)
+expandTreeTable(PAResourceTtoZ.VioTreeTablePanel_VIO_TREE_TABLE, "UCIO-1 ; ", 3); // P (J, cs)
+selectTreeTable(PAResourceTtoZ.VioTreeTablePanel_VIO_TREE_TABLE, "UCIO #1 ; 1 out of 6 logical ports have no user assigned specific location constraint (LOC). This may cause I/O contention or incompatibility with the board power or connectivity affecting performance, signal integrity or in extreme cases cause damage to the device or the components to which it is connected. To correct this violation, specify all pin locations. This design will fail to generate a bitstream unless all logical ports have a user specified site LOC constraint defined.  To allow bitstream creation with unspecified pin locations (not recommended), use this command: set_property SEVERITY {Warning} [get_drc_checks UCIO-1].  NOTE: When using the Vivado Runs infrastructure (e.g. launch_runs Tcl command), add this command to a .tcl file and add that file as a pre-hook for write_bitstream step for the implementation run.  Problem ports: rst.", 4, "Critical Warning", 1, false); // P (J, cs)
+// Elapsed time: 16 seconds
+collapseTreeTable(PAResourceTtoZ.VioTreeTablePanel_VIO_TREE_TABLE, "UCIO-1 ; ", 3); // P (J, cs)
+collapseTreeTable(PAResourceTtoZ.VioTreeTablePanel_VIO_TREE_TABLE, "Pin Planning (2) ; ", 1); // P (J, cs)
+expandTreeTable(PAResourceTtoZ.VioTreeTablePanel_VIO_TREE_TABLE, "PS7 (1) ; ", 2); // P (J, cs)
+expandTreeTable(PAResourceTtoZ.VioTreeTablePanel_VIO_TREE_TABLE, "PS7 (1) ; ", 4); // P (J, cs)
+selectTreeTable(PAResourceTtoZ.VioTreeTablePanel_VIO_TREE_TABLE, "ZPS7 #1 ; The PS7 cell must be used in this Zynq design in order to enable correct default configuration.", 6, "Warning", 1, false); // P (J, cs)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed time: 285 seconds
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, rand_led(Structural) (rand_led.vhd), U_GCLK_SEL : gclk_sel(Behavioral) (gclk_sel.vhd)]", 2, false); // B (F, cs)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, rand_led(Structural) (rand_led.vhd), U_GCLK_SEL : gclk_sel(Behavioral) (gclk_sel.vhd)]", 2, false, false, false, false, false, true); // B (F, cs) - Double Click
+// Launch External Editor: '"C:/Users/Manuel/AppData/Local/Programs/Microsoft VS Code/Code.exe" -g "C:/SEP y Anal/Proyecto_01_SEP/memorice_proy01/memorice_proy01/memorice_proy01.srcs/sources_1/new/gclk_sel.vhd":12'
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, rand_led(Structural) (rand_led.vhd), U_RAND_SEC : rand_sec(Behavioral) (rand_sec.vhd)]", 3, false); // B (F, cs)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, rand_led(Structural) (rand_led.vhd), U_RAND_SEC : rand_sec(Behavioral) (rand_sec.vhd)]", 3, false, false, false, false, false, true); // B (F, cs) - Double Click
+// Launch External Editor: '"C:/Users/Manuel/AppData/Local/Programs/Microsoft VS Code/Code.exe" -g "C:/SEP y Anal/Proyecto_01_SEP/memorice_proy01/memorice_proy01/memorice_proy01.srcs/sources_1/new/rand_sec.vhd":12'
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, rand_led(Structural) (rand_led.vhd), U_LED_DRIVER : led_driver(Behavioral) (led_driver.vhd)]", 4, false); // B (F, cs)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, rand_led(Structural) (rand_led.vhd), U_LED_DRIVER : led_driver(Behavioral) (led_driver.vhd)]", 4, false, false, false, false, false, true); // B (F, cs) - Double Click
+// Launch External Editor: '"C:/Users/Manuel/AppData/Local/Programs/Microsoft VS Code/Code.exe" -g "C:/SEP y Anal/Proyecto_01_SEP/memorice_proy01/memorice_proy01/memorice_proy01.srcs/sources_1/new/led_driver.vhd":12'
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: update_compile_order -fileset sources_1 
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// WARNING: HEventQueue.dispatchEvent() is taking  897441 ms.
+// HMemoryUtils.trashcanNow. Engine heap size: 1,863 MB. GUI used memory: 121 MB. Current time: 9/21/26, 5:26:39 PM CLST
+// Elapsed time: 1261 seconds
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Synthesis, Run Synthesis]", 14, false); // u (J, cs)
+// Run Command: PAResourceCommand.PACommandNames_RUN_SYNTHESIS
+// bz (cs):  Resetting Runs : addNotify
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_RESET
+// TclEventType: RUN_STATUS_CHANGE
+// Tcl Message: reset_run synth_1 
+// TclEventType: RUN_RESET
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+// f (cs): Launch Runs: addNotify
+// Elapsed time: 21 seconds
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (f)
+// bz (cs):  Starting Design Runs : addNotify
+dismissDialog("Launch Runs"); // f (cs)
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_MODIFY
+// Tcl Message: launch_runs synth_1 -jobs 8 
+// Tcl Message: [Mon Sep 21 17:27:25 2026] Launched synth_1... Run output will be captured here: C:/SEP y Anal/Proyecto_01_SEP/memorice_proy01/memorice_proy01/memorice_proy01.runs/synth_1/runme.log 
+// 'k' command handler elapsed time: 22 seconds
+dismissDialog("Starting Design Runs"); // bz (cs)
+// TclEventType: RUN_STATUS_CHANGE
+// Elapsed time: 42 seconds
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Syntax Error Files]", 1); // B (F, cs)
+collapseTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Syntax Error Files]", 1); // B (F, cs)
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// ag (cs): Synthesis Completed: addNotify
+// Elapsed time: 16 seconds
+dismissDialog("Synthesis Completed"); // ag (cs)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: update_compile_order -fileset sources_1 
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed time: 301 seconds
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Synthesis, Run Synthesis]", 14, false); // u (J, cs)
+// Run Command: PAResourceCommand.PACommandNames_RUN_SYNTHESIS
+// bz (cs):  Resetting Runs : addNotify
+// TclEventType: RUN_MODIFY
+// TclEventType: DESIGN_STALE
+// TclEventType: RUN_RESET
+// Tcl Message: reset_run synth_1 
+// TclEventType: RUN_RESET
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+// f (cs): Launch Runs: addNotify
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (f)
+// bz (cs):  Starting Design Runs : addNotify
+dismissDialog("Launch Runs"); // f (cs)
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_MODIFY
+// Tcl Message: launch_runs synth_1 -jobs 8 
+// Tcl Message: [Mon Sep 21 17:33:34 2026] Launched synth_1... Run output will be captured here: C:/SEP y Anal/Proyecto_01_SEP/memorice_proy01/memorice_proy01/memorice_proy01.runs/synth_1/runme.log 
+// 'k' command handler elapsed time: 5 seconds
+// TclEventType: RUN_STATUS_CHANGE
+dismissDialog("Starting Design Runs"); // bz (cs)
+// Elapsed time: 37 seconds
+selectButton(PAResourceCommand.PACommandNames_RUN_SYNTHESIS, "Run Synthesis"); // d (c, cs)
+// Run Command: PAResourceCommand.PACommandNames_RUN_SYNTHESIS
+// 'k' command handler elapsed time: 10 seconds
+// Elapsed time: 10 seconds
+selectButton("OptionPane.button", "Cancel"); // JButton (v, B)
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// ag (cs): Synthesis Completed: addNotify
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (ag)
+// Run Command: PAResourceCommand.PACommandNames_RUN_IMPLEMENTATION
+// f (cs): Launch Runs: addNotify
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (f)
+// bz (cs):  Starting Design Runs : addNotify
+dismissDialog("Launch Runs"); // f (cs)
+// TclEventType: DESIGN_STALE
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_MODIFY
+// Tcl Message: launch_runs impl_1 -jobs 8 
+// Tcl Message: [Mon Sep 21 17:34:29 2026] Launched impl_1... Run output will be captured here: C:/SEP y Anal/Proyecto_01_SEP/memorice_proy01/memorice_proy01/memorice_proy01.runs/impl_1/runme.log 
+dismissDialog("Starting Design Runs"); // bz (cs)
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// TclEventType: DESIGN_STALE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// ag (cs): Implementation Completed: addNotify
+// Elapsed time: 63 seconds
+selectRadioButton(PAResourceCommand.PACommandNames_RUN_BITGEN, "Generate Bitstream"); // a (Q, ag)
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (ag)
+// Run Command: PAResourceCommand.PACommandNames_RUN_BITGEN
+// f (cs): Launch Runs: addNotify
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (f)
+// TclEventType: RUN_LAUNCH
+dismissDialog("Launch Runs"); // f (cs)
+// bz (cs):  Generate Bitstream : addNotify
+// TclEventType: RUN_MODIFY
+// Tcl Message: launch_runs impl_1 -to_step write_bitstream -jobs 8 
+// Tcl Message: [Mon Sep 21 17:35:38 2026] Launched impl_1... Run output will be captured here: C:/SEP y Anal/Proyecto_01_SEP/memorice_proy01/memorice_proy01/memorice_proy01.runs/impl_1/runme.log 
+dismissDialog("Generate Bitstream"); // bz (cs)
+// TclEventType: RUN_STATUS_CHANGE
+// Elapsed time: 22 seconds
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Program and Debug]", 17, true); // u (J, cs) - Node
+collapseTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Program and Debug]", 17); // u (J, cs)
+expandTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Program and Debug]", 17); // u (J, cs)
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Program and Debug, Open Hardware Manager]", 19, true); // u (J, cs) - Node
+// Run Command: PAResourceCommand.PACommandNames_OPEN_HARDWARE_MANAGER
+// Tcl Command: 'rdi::info_commands get_hw_probes'
+// Tcl Command: 'load_features labtools'
+// TclEventType: LOAD_FEATURE
+// bz (cs):  Open Hardware Manager : addNotify
+// TclEventType: HW_SESSION_OPEN
+// Tcl Message: open_hw_manager 
+closeView(PAResourceOtoP.PAViews_PROJECT_SUMMARY, "Project Summary"); // v
+dismissDialog("Open Hardware Manager"); // bz (cs)
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// ag (cs): Bitstream Generation Completed: addNotify
+// Elapsed time: 38 seconds
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (ag)
+// Run Command: PAResourceCommand.PACommandNames_REPORTS_WINDOW
+dismissDialog("Bitstream Generation Completed"); // ag (cs)
+// Elapsed time: 75 seconds
+selectButton(PAResourceOtoP.ProgramDebugTab_OPEN_TARGET, "Open target"); // h (ds, cs)
+selectMenuItem(PAResourceCommand.PACommandNames_AUTO_CONNECT_TARGET, "Auto Connect"); // ai (ao, cs)
+// Run Command: PAResourceCommand.PACommandNames_AUTO_CONNECT_TARGET
+// bz (cs):  Auto Connect : addNotify
+// Tcl Message: connect_hw_server -allow_non_jtag 
+// Tcl Message: INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121 
+// Tcl Message: INFO: [Labtools 27-2222] Launching hw_server... 
+// TclEventType: HW_SERVER_UPDATE
+// Tcl Message: INFO: [Labtools 27-2221] Launch Output:  ****** Xilinx hw_server v2020.1   **** Build date : May 27 2020 at 20:24:38     ** Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.   
+// TclEventType: HW_SERVER_UPDATE
+// Tcl Message: INFO: [Labtools 27-3415] Connecting to cs_server url TCP:localhost:3042 
+// Tcl Message: INFO: [Labtools 27-3417] Launching cs_server... 
+// TclEventType: HW_SERVER_UPDATE
+// Tcl Message: INFO: [Labtools 27-2221] Launch Output:   ****** Xilinx cs_server v2020.1.0   **** Build date : May 13 2020-21:10:29     ** Copyright 2017-2020 Xilinx, Inc. All Rights Reserved.    
+// Tcl Message: connect_hw_server: Time (s): cpu = 00:00:02 ; elapsed = 00:00:11 . Memory (MB): peak = 2025.504 ; gain = 0.000 
+// TclEventType: HW_TARGET_CHANGE
+// TclEventType: HW_TARGET_CLOSE
+// Tcl Message: open_hw_target 
+// Tcl Message: INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210351B3FC05A 
+// TclEventType: HW_DEVICE_CHANGE
+// TclEventType: HW_SYSMON_ADD
+// TclEventType: HW_TARGET_UPDATE
+// WARNING: HEventQueue.dispatchEvent() is taking  6353 ms.
+// HMemoryUtils.trashcanNow. Engine heap size: 3,094 MB. GUI used memory: 126 MB. Current time: 9/21/26, 5:38:33 PM CLST
+// Tcl Message: open_hw_target: Time (s): cpu = 00:00:07 ; elapsed = 00:00:10 . Memory (MB): peak = 3295.301 ; gain = 1269.797 
+// TclEventType: HW_DEVICE_CHANGE
+// Tcl Message: set_property PROGRAM.FILE {C:/SEP y Anal/Proyecto_01_SEP/memorice_proy01/memorice_proy01/memorice_proy01.runs/impl_1/rand_led.bit} [get_hw_devices xc7z010_1] 
+// Tcl Message: current_hw_device [get_hw_devices xc7z010_1] 
+// TclEventType: HW_DEVICE_CHANGE
+// TclEventType: HW_SYSMON_CHANGE
+// TclEventType: HW_ILA_CHANGE
+// TclEventType: HW_VIO_CHANGE
+// TclEventType: HW_DEVICE_UPDATE
+// [Engine Memory]: 3,142 MB (+1270546kb) [08:27:23]
+// [GUI Memory]: 194 MB (+7627kb) [08:27:25]
+// WARNING: HEventQueue.dispatchEvent() is taking  3165 ms.
+// TclEventType: HW_DEVICE_CHANGE
+// Tcl Message: refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7z010_1] 0] 
+// Tcl Message: INFO: [Labtools 27-2302] Device xc7z010 (JTAG device index = 1) is programmed with a design that has 1 ILA core(s). INFO: [Labtools 27-2302] Device xc7z010 (JTAG device index = 1) is programmed with a design that has 1 VIO core(s). 
+// TclEventType: HW_DEVICE_CHANGE
+// TclEventType: HW_ILA_CHANGE
+// Elapsed time: 25 seconds
+dismissDialog("Auto Connect"); // bz (cs)
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Program and Debug, Open Hardware Manager, Program Device]", 21, false); // u (J, cs)
+// Run Command: PAResourceCommand.PACommandNames_PROGRAM_FPGA
+selectMenuItem((HResource) null, "xc7z010_1"); // ai (ao, cs)
+// Run Command: PAResourceCommand.PACommandNames_OPEN_HARDWARE_MANAGER
+// Tcl Command: 'rdi::info_commands get_hw_probes'
+// Run Command: PAResourceCommand.PACommandNames_PROGRAM_FPGA
+// bC (cs): Program Device: addNotify
+selectButton(PAResourceOtoP.ProgramFpgaDialog_PROGRAM, "Program"); // a (bC)
+// bz (cs):  Program Device : addNotify
+dismissDialog("Program Device"); // bC (cs)
+// TclEventType: HW_DEVICE_CHANGE
+// Tcl Message: set_property PROBES.FILE {} [get_hw_devices xc7z010_1] 
+// Tcl Message: set_property FULL_PROBES.FILE {} [get_hw_devices xc7z010_1] 
+// TclEventType: HW_DEVICE_CHANGE
+// Tcl Message: set_property PROGRAM.FILE {C:/SEP y Anal/Proyecto_01_SEP/memorice_proy01/memorice_proy01/memorice_proy01.runs/impl_1/rand_led.bit} [get_hw_devices xc7z010_1] 
+// TclEventType: HW_OBJECT_DELETE
+// TclEventType: HW_DEVICE_UPDATE
+// Tcl Message: program_hw_devices [get_hw_devices xc7z010_1] 
+// TclEventType: HW_DEVICE_CHANGE
+// Tcl Message: INFO: [Labtools 27-3164] End of startup status: HIGH 
+// TclEventType: HW_DEVICE_CHANGE
+// TclEventType: HW_SYSMON_CHANGE
+// TclEventType: HW_DEVICE_UPDATE
+// TclEventType: HW_DEVICE_CHANGE
+// TclEventType: HW_DEVICE_PROBES_CHANGE
+// TclEventType: DEBUG_PROBE_SET_CHANGE
+// TclEventType: HW_DEVICE_PROBES_CHANGE
+// Tcl Message: refresh_hw_device [lindex [get_hw_devices xc7z010_1] 0] 
+// Tcl Message: INFO: [Labtools 27-1434] Device xc7z010 (JTAG device index = 1) is programmed with a design that has no supported debug core(s) in it. 
+// 'I' command handler elapsed time: 4 seconds
+dismissDialog("Program Device"); // bz (cs)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed time: 508 seconds
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Synthesis, Run Synthesis]", 14, false); // u (J, cs)
+// Run Command: PAResourceCommand.PACommandNames_RUN_SYNTHESIS
+// A (cs): Run Synthesis: addNotify
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (A)
+// bz (cs):  Resetting Runs : addNotify
+// TclEventType: RUN_MODIFY
+dismissDialog("Run Synthesis"); // A (cs)
+// TclEventType: RUN_RESET
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_RESET
+// Tcl Message: reset_run synth_1 
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+// f (cs): Launch Runs: addNotify
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (f)
+// bz (cs):  Starting Design Runs : addNotify
+dismissDialog("Launch Runs"); // f (cs)
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_MODIFY
+// Tcl Message: launch_runs synth_1 -jobs 8 
+// Tcl Message: [Mon Sep 21 17:47:32 2026] Launched synth_1... Run output will be captured here: C:/SEP y Anal/Proyecto_01_SEP/memorice_proy01/memorice_proy01/memorice_proy01.runs/synth_1/runme.log 
+// 'k' command handler elapsed time: 10 seconds
+dismissDialog("Starting Design Runs"); // bz (cs)
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// ag (cs): Synthesis Completed: addNotify
+// Elapsed time: 73 seconds
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (ag)
+// Run Command: PAResourceCommand.PACommandNames_REPORTS_WINDOW
+dismissDialog("Synthesis Completed"); // ag (cs)
+// Elapsed time: 67 seconds
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Program and Debug, Generate Bitstream]", 18, false); // u (J, cs)
+// Run Command: PAResourceCommand.PACommandNames_RUN_BITGEN
+// A (cs): No Implementation Results Available: addNotify
+// 'cD' command handler elapsed time: 3 seconds
+dismissDialog("No Implementation Results Available"); // A (cs)
+selectTab((HResource) null, (HResource) null, "Tcl Console", 0); // aL (aI, cs)
+// Elapsed time: 119 seconds
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Program and Debug, Generate Bitstream]", 18, false); // u (J, cs)
+// Run Command: PAResourceCommand.PACommandNames_RUN_BITGEN
+// A (cs): No Implementation Results Available: addNotify
+selectButton(RDIResource.BaseDialog_YES, "Yes"); // a (A)
+// bz (cs):  Resetting Runs : addNotify
+// f (cs): Launch Runs: addNotify
+dismissDialog("No Implementation Results Available"); // A (cs)
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (f)
+// 'cD' command handler elapsed time: 6 seconds
+dismissDialog("Launch Runs"); // f (cs)
+// TclEventType: DESIGN_STALE
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_MODIFY
+// Tcl Message: launch_runs impl_1 -to_step write_bitstream -jobs 8 
+// Tcl Message: [Mon Sep 21 17:52:09 2026] Launched impl_1... Run output will be captured here: C:/SEP y Anal/Proyecto_01_SEP/memorice_proy01/memorice_proy01/memorice_proy01.runs/impl_1/runme.log 
+// bz (cs):  Generate Bitstream : addNotify
+dismissDialog("Generate Bitstream"); // bz (cs)
+// TclEventType: RUN_STATUS_CHANGE
+collapseTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Implementation]", 16); // u (J, cs)
+expandTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Implementation]", 16); // u (J, cs)
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Implementation]", 16, true); // u (J, cs) - Node
+// Run Command: PAResourceCommand.PACommandNames_SHOW_IMPLEMENTED_DESIGN
+// TclEventType: RUN_STEP_COMPLETED
+// Elapsed time: 84 seconds
+expandTreeTable(PAResourceTtoZ.VioTreeTablePanel_VIO_TREE_TABLE, "Pin Planning (2) ; ", 1); // P (J, cs)
+collapseTreeTable(PAResourceTtoZ.VioTreeTablePanel_VIO_TREE_TABLE, "Pin Planning (2) ; ", 1); // P (J, cs)
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// ag (cs): Bitstream Generation Completed: addNotify
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (ag)
+// Run Command: PAResourceCommand.PACommandNames_REPORTS_WINDOW
+dismissDialog("Bitstream Generation Completed"); // ag (cs)
+selectButton(PAResourceOtoP.ProjectTab_RELOAD, "Reload"); // h (ds, cs)
+// bz (cs):  Reloading : addNotify
+// TclEventType: DESIGN_REFRESH
+// HMemoryUtils.trashcanNow. Engine heap size: 3,148 MB. GUI used memory: 108 MB. Current time: 9/21/26, 5:53:57 PM CLST
+// TclEventType: TIMING_RESULTS_UNLOAD
+// Engine heap size: 3,148 MB. GUI used memory: 109 MB. Current time: 9/21/26, 5:53:57 PM CLST
+// WARNING: HEventQueue.dispatchEvent() is taking  2054 ms.
+// Tcl Message: refresh_design 
+// TclEventType: SDC_CONSTRAINT_ADD
+// TclEventType: POWER_CNS_STALE
+// TclEventType: FLOORPLAN_MODIFY
+// TclEventType: DESIGN_REFRESH
+// HMemoryUtils.trashcanNow. Engine heap size: 3,148 MB. GUI used memory: 101 MB. Current time: 9/21/26, 5:54:01 PM CLST
+// Xgd.load filename: C:/Xilinx/Vivado/2020.1/data/parts/xilinx/zynq/devint/zynq/xc7z010/xc7z010.xgd; ZipEntry: xc7z010_floorplan.xgd elapsed time: 0.6s
+// TclEventType: HFED_INIT_ROUTE_STORAGE_COMPLETED
+// Device: addNotify
+// DeviceView Instantiated
+// WARNING: HEventQueue.dispatchEvent() is taking  2737 ms.
+// Tcl Message: Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3361.469 ; gain = 0.000 
+// Tcl Message: INFO: [Project 1-479] Netlist was created with Vivado 2020.1 INFO: [Project 1-570] Preparing netlist for logic optimization INFO: [Timing 38-478] Restoring timing data from binary archive. INFO: [Timing 38-479] Binary timing data restore complete. INFO: [Project 1-856] Restoring constraints from binary archive. INFO: [Project 1-853] Binary constraint restore complete. 
+// Tcl Message: Reading XDEF placement. Reading placer database... Reading XDEF routing. 
+// Tcl Message: Read XDEF File: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.209 . Memory (MB): peak = 3361.469 ; gain = 0.000 
+// Tcl Message: Restored from archive | CPU: 0.000000 secs | Memory: 0.000000 MB | 
+// Tcl Message: Finished XDEF File Restore: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.209 . Memory (MB): peak = 3361.469 ; gain = 0.000 
+// TclEventType: DRC_ADDED
+// RouteApi: Init Delay Mediator Swing Worker Finished
+// Tcl Message: refresh_design: Time (s): cpu = 00:00:14 ; elapsed = 00:00:08 . Memory (MB): peak = 3361.469 ; gain = 13.773 
+// TclEventType: DRC_ADDED
+// TclEventType: METHODOLOGY_ADDED
+// TclEventType: POWER_UPDATED
+// TclEventType: TIMING_SUMMARY_UPDATED
+// Elapsed time: 10 seconds
+dismissDialog("Reloading"); // bz (cs)
+selectButton(PAResourceQtoS.RunGadget_SHOW_WARNING_AND_ERROR_MESSAGES_IN_MESSAGES, "1 warning"); // h (Q, cs)
+// Run Command: PAResourceCommand.PACommandNames_MESSAGE_WINDOW
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Program and Debug, Generate Bitstream]", 20, false); // u (J, cs)
+// Run Command: PAResourceCommand.PACommandNames_RUN_BITGEN
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Program and Debug, Open Hardware Manager, Program Device]", 23, false); // u (J, cs)
+// Run Command: PAResourceCommand.PACommandNames_PROGRAM_FPGA
+selectMenuItem((HResource) null, "xc7z010_1"); // ai (ao, cs)
+// Run Command: PAResourceCommand.PACommandNames_OPEN_HARDWARE_MANAGER
+// Tcl Command: 'rdi::info_commands get_hw_probes'
+// Run Command: PAResourceCommand.PACommandNames_PROGRAM_FPGA
+// bC (cs): Program Device: addNotify
+closeView(PAResourceOtoP.PAViews_PROJECT_SUMMARY, "Project Summary"); // v
+selectButton(PAResourceOtoP.ProgramFpgaDialog_PROGRAM, "Program"); // a (bC)
+// bz (cs):  Program Device : addNotify
+dismissDialog("Program Device"); // bC (cs)
+// TclEventType: HW_DEVICE_CHANGE
+// Tcl Message: set_property PROBES.FILE {} [get_hw_devices xc7z010_1] 
+// Tcl Message: set_property FULL_PROBES.FILE {} [get_hw_devices xc7z010_1] 
+// TclEventType: HW_DEVICE_CHANGE
+// Tcl Message: set_property PROGRAM.FILE {C:/SEP y Anal/Proyecto_01_SEP/memorice_proy01/memorice_proy01/memorice_proy01.runs/impl_1/rand_led.bit} [get_hw_devices xc7z010_1] 
+// Tcl Message: program_hw_devices [get_hw_devices xc7z010_1] 
+// TclEventType: HW_DEVICE_CHANGE
+// Tcl Message: INFO: [Labtools 27-3164] End of startup status: HIGH 
+// TclEventType: HW_DEVICE_CHANGE
+// TclEventType: HW_SYSMON_CHANGE
+// TclEventType: HW_DEVICE_UPDATE
+// TclEventType: HW_DEVICE_CHANGE
+// TclEventType: HW_DEVICE_PROBES_CHANGE
+// TclEventType: DEBUG_PROBE_SET_CHANGE
+// TclEventType: HW_DEVICE_PROBES_CHANGE
+// Tcl Message: refresh_hw_device [lindex [get_hw_devices xc7z010_1] 0] 
+// Tcl Message: INFO: [Labtools 27-1434] Device xc7z010 (JTAG device index = 1) is programmed with a design that has no supported debug core(s) in it. 
+// 'I' command handler elapsed time: 4 seconds
+dismissDialog("Program Device"); // bz (cs)
+// TclEventType: HW_TARGET_NEEDS_CLOSE
+// TclEventType: HW_TARGET_CLOSE
+// TclEventType: HW_TARGET_NEEDS_CLOSE
+// TclEventType: HW_SYSMON_DELETE
+closeView(PAResourceOtoP.PAViews_DASHBOARD, "hw_ila_1"); // i
+// TclEventType: HW_TARGET_NEEDS_CLOSE
+closeView(PAResourceOtoP.PAViews_DASHBOARD, "hw_vios"); // i
+// TclEventType: HW_SYSMON_DELETE
+// TclEventType: HW_TARGET_NEEDS_CLOSE
+// TclEventType: HW_TARGET_UPDATE
+// TclEventType: DEBUG_PROBE_DELETE
+// Tcl Message: ERROR: [Labtoolstcl 44-513] HW Target shutdown. Closing target: localhost:3121/xilinx_tcf/Digilent/210351B3FC05A 
+// n (cs): Close Hardware Target: addNotify
+// TclEventType: HW_TARGET_NEEDS_CLOSE
+// TclEventType: HW_TARGET_CHANGE
+// TclEventType: HW_TARGET_CLOSE
+// TclEventType: HW_DEVICE_CHANGE
+// TclEventType: HW_SYSMON_ADD
+// TclEventType: HW_TARGET_UPDATE
+// TclEventType: HW_DEVICE_CHANGE
+// TclEventType: HW_SYSMON_CHANGE
+// TclEventType: HW_ILA_CHANGE
+// TclEventType: HW_VIO_CHANGE
+// TclEventType: HW_DEVICE_UPDATE
+// WARNING: HEventQueue.dispatchEvent() is taking  3814 ms.
+// TclEventType: HW_DEVICE_CHANGE
+selectButton(PAResourceAtoD.CmdMsgDialog_OK, "OK"); // f (n)
+// TclEventType: HW_ILA_CHANGE
+dismissDialog("Close Hardware Target"); // n (cs)
+// TclEventType: HW_TARGET_NEEDS_CLOSE
+// TclEventType: HW_TARGET_CLOSE
+// TclEventType: HW_TARGET_NEEDS_CLOSE
+// TclEventType: HW_OBJECT_DELETE
+// Elapsed time: 17 seconds
+closeView(PAResourceOtoP.PAViews_DASHBOARD, "hw_ila_1"); // i
+// TclEventType: HW_TARGET_NEEDS_CLOSE
+closeView(PAResourceOtoP.PAViews_DASHBOARD, "hw_vios"); // i
+// TclEventType: HW_OBJECT_DELETE
+// TclEventType: HW_TARGET_NEEDS_CLOSE
+// TclEventType: HW_OBJECT_DELETE
+// TclEventType: HW_TARGET_NEEDS_CLOSE
+// TclEventType: HW_OBJECT_DELETE
+// TclEventType: HW_SYSMON_DELETE
+// TclEventType: HW_TARGET_UPDATE
+// TclEventType: DEBUG_PROBE_DELETE
+// Tcl Message: ERROR: [Labtoolstcl 44-513] HW Target shutdown. Closing target: localhost:3121/xilinx_tcf/Digilent/210351B3FC05A 
+// n (cs): Close Hardware Target: addNotify
+// TclEventType: HW_SERVER_UPDATE
+// [GUI Memory]: 210 MB (+5903kb) [08:43:51]
+// WARNING: HEventQueue.dispatchEvent() is taking  6389494 ms.
+// HMemoryUtils.trashcanNow. Engine heap size: 3,148 MB. GUI used memory: 121 MB. Current time: 9/21/26, 7:41:37 PM CLST
+// WARNING: HEventQueue.dispatchEvent() is taking  77196 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  3360 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1086 ms.
+// HMemoryUtils.trashcanNow. Engine heap size: 3,148 MB. GUI used memory: 117 MB. Current time: 9/21/26, 8:11:39 PM CLST
+// WARNING: HEventQueue.dispatchEvent() is taking  1480266 ms.
+// WARNING: HTimer (ActiveMsgMonitor Process Messages Timer) is taking 44340723ms to process. Increasing delay to 2000 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  44340723 ms.
+// HMemoryUtils.trashcanNow. Engine heap size: 3,148 MB. GUI used memory: 117 MB. Current time: 9/22/26, 8:55:52 AM CLST
+// WARNING: HSwingWorker (Refresh Filesets Swing Worker) is taking 44342841 ms. Increasing delay to 133028523 ms.
+// HMemoryUtils.trashcanNow. Engine heap size: 3,148 MB. GUI used memory: 117 MB. Current time: 9/22/26, 9:25:51 AM CLST
+// HMemoryUtils.trashcanNow. Engine heap size: 3,148 MB. GUI used memory: 117 MB. Current time: 9/22/26, 9:55:51 AM CLST
+// WARNING: HEventQueue.dispatchEvent() is taking  7513827 ms.
+// HMemoryUtils.trashcanNow. Engine heap size: 3,148 MB. GUI used memory: 117 MB. Current time: 9/22/26, 12:20:41 PM CLST
+// WARNING: HEventQueue.dispatchEvent() is taking  1153 ms.
+// Elapsed time: 66554 seconds
+selectButton(PAResourceAtoD.CmdMsgDialog_OK, "OK"); // f (n)
+dismissDialog("Close Hardware Target"); // n (cs)
+expandTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Program and Debug, Open Hardware Manager]", 21); // u (J, cs)
+collapseTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Program and Debug, Open Hardware Manager]", 21); // u (J, cs)
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Project Manager]", 0, true); // u (J, cs) - Node
+// Run Command: PAResourceCommand.PACommandNames_GOTO_PROJECT_MANAGER
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, rand_led(Structural) (rand_led.vhd)]", 1, true); // B (F, cs) - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, rand_led(Structural) (rand_led.vhd)]", 1, true, false, false, false, false, true); // B (F, cs) - Double Click - Node
+// Launch External Editor: '"C:/Users/Manuel/AppData/Local/Programs/Microsoft VS Code/Code.exe" -g "C:/SEP y Anal/Proyecto_01_SEP/memorice_proy01/memorice_proy01/memorice_proy01.srcs/sources_1/new/rand_led.vhd":11'
+// Elapsed time: 49 seconds
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, rand_led(Structural) (rand_led.vhd)]", 1); // B (F, cs)

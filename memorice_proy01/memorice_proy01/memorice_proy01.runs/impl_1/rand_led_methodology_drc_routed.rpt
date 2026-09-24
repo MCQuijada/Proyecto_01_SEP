@@ -1,0 +1,76 @@
+Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2020.1 (win64) Build 2902540 Wed May 27 19:54:49 MDT 2020
+| Date         : Tue Sep 22 13:00:59 2026
+| Host         : DESKTOP-SHNI0N6 running 64-bit major release  (build 9200)
+| Command      : report_methodology -file rand_led_methodology_drc_routed.rpt -pb rand_led_methodology_drc_routed.pb -rpx rand_led_methodology_drc_routed.rpx
+| Design       : rand_led
+| Device       : xc7z010clg400-1
+| Speed File   : -1
+| Design State : Fully Routed
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Report Methodology
+
+Table of Contents
+-----------------
+1. REPORT SUMMARY
+2. REPORT DETAILS
+
+1. REPORT SUMMARY
+-----------------
+            Netlist: netlist
+          Floorplan: design_1
+      Design limits: <entire design considered>
+             Max violations: <unlimited>
+             Violations found: 8
++-----------+------------------+-------------------------------+------------+
+| Rule      | Severity         | Description                   | Violations |
++-----------+------------------+-------------------------------+------------+
+| TIMING-17 | Critical Warning | Non-clocked sequential cell   | 4          |
+| TIMING-18 | Warning          | Missing input or output delay | 4          |
++-----------+------------------+-------------------------------+------------+
+
+2. REPORT DETAILS
+-----------------
+TIMING-17#1 Critical Warning
+Non-clocked sequential cell  
+The clock pin U_RAND_SEC/lfsr_reg_reg[0]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#2 Critical Warning
+Non-clocked sequential cell  
+The clock pin U_RAND_SEC/lfsr_reg_reg[1]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#3 Critical Warning
+Non-clocked sequential cell  
+The clock pin U_RAND_SEC/lfsr_reg_reg[2]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#4 Critical Warning
+Non-clocked sequential cell  
+The clock pin U_RAND_SEC/lfsr_reg_reg[3]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-18#1 Warning
+Missing input or output delay  
+An output delay is missing on led[0] relative to clock(s) sys_clk_pin
+Related violations: <none>
+
+TIMING-18#2 Warning
+Missing input or output delay  
+An output delay is missing on led[1] relative to clock(s) sys_clk_pin
+Related violations: <none>
+
+TIMING-18#3 Warning
+Missing input or output delay  
+An output delay is missing on led[2] relative to clock(s) sys_clk_pin
+Related violations: <none>
+
+TIMING-18#4 Warning
+Missing input or output delay  
+An output delay is missing on led[3] relative to clock(s) sys_clk_pin
+Related violations: <none>
+
+

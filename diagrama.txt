@@ -1,0 +1,47 @@
+Modulos:
+
+Realizador de secuencias:
+Input: Nivel de partida
+Output: Arrays de 4 bits
+
+Registrador de memoria
+Input: Arrays de 4 bits y modo de uso (lectura, escritura, borrado), reloj
+Output: Depende del modo de uso, en modo lectura simplemente tira lo que esta en su memoria a cierta frecuencia que le indican
+en modo de escritura no hay output pero guarda lo que recibe en memoria a cierta frecuencia, en borrado no hay output, pero borra todo
+lo que tiene en su memoria, se compone de:
+
+- Memoria de 4 bits, componente de Xilinx por defecto.
+
+Led Driver
+Input: Arrays de 4 bits
+Output: Prender leds fisicos
+
+Comprobador de inputs
+
+
+
+
+Realizador de secuencias
+- Generador de frecuencias partidas, segun el nivel que hay en memoria el reloj va subiendo de velocidad, maximo 3 velocidades
+	- Input: Integer de partidas ganadas
+	- Output: frecuencia partida de 1.5 segundos, 1 segundo, 0.5 segundos.
+- Detector de partidas: Son 3 partidas en total, detecta la condicion de ganar o no ganar
+	- Input: Recibe un binario de ganar o no ganar en cierto flanco, lo cual se guarda en su propia memoria
+	- Output: Imprime lo que tiene en memoria para que lo ocupe otro bloque
+- Generador de secuencias aleatorias: 
+	- Input: reloj partido para poder ejecutar las secuencias al mismo tiempo que se prenden los leds
+	- Output: arreglo de 4 bits para prender los 4 leds
+- Led driver: Prender los 4 leds
+	- Input: 4 bits de informacion para prender el array de leds
+	- Ouput: no tiene, se manifiesta fisicamente en la tarjeta.
+
+
+
+Comprobador de inputs
+
+
+
+
+
+
+
