@@ -1,0 +1,1 @@
+-wto "fd5f3f7b2c9a4b1dab94c50f51e45970" --incr --debug "typical" --relax --mt "2" -L "xil_defaultlib" -L "secureip" --snapshot "game_core_behav" "xil_defaultlib.game_core" -log "elaborate.log" 

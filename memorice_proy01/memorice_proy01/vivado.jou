@@ -2,57 +2,21 @@
 # Vivado v2020.1 (64-bit)
 # SW Build 2902540 on Wed May 27 19:54:49 MDT 2020
 # IP Build 2902112 on Wed May 27 22:43:36 MDT 2020
-# Start of session at: Mon Sep 21 09:11:00 2026
-# Process ID: 20756
-# Current directory: C:/SEP y Anal/Proyecto_01_SEP/memorice_proy01/memorice_proy01
-# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent20020 C:\SEP y Anal\Proyecto_01_SEP\memorice_proy01\memorice_proy01\memorice_proy01.xpr
-# Log file: C:/SEP y Anal/Proyecto_01_SEP/memorice_proy01/memorice_proy01/vivado.log
-# Journal file: C:/SEP y Anal/Proyecto_01_SEP/memorice_proy01/memorice_proy01\vivado.jou
+# Start of session at: Thu Sep 24 16:10:27 2026
+# Process ID: 14964
+# Current directory: D:/VIVADO/Sistemas Electronicos Programables/PROYECTO_1/memorice_proy01/memorice_proy01
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent29808 D:\VIVADO\Sistemas Electronicos Programables\PROYECTO_1\memorice_proy01\memorice_proy01\memorice_proy01.xpr
+# Log file: D:/VIVADO/Sistemas Electronicos Programables/PROYECTO_1/memorice_proy01/memorice_proy01/vivado.log
+# Journal file: D:/VIVADO/Sistemas Electronicos Programables/PROYECTO_1/memorice_proy01/memorice_proy01\vivado.jou
 #-----------------------------------------------------------
 start_gui
-open_project {C:/SEP y Anal/Proyecto_01_SEP/memorice_proy01/memorice_proy01/memorice_proy01.xpr}
+open_project {D:/VIVADO/Sistemas Electronicos Programables/PROYECTO_1/memorice_proy01/memorice_proy01/memorice_proy01.xpr}
 update_compile_order -fileset sources_1
-close [ open {C:/SEP y Anal/Proyecto_01_SEP/memorice_proy01/memorice_proy01/memorice_proy01.srcs/sources_1/new/rand_sec.vhd} w ]
-add_files {{C:/SEP y Anal/Proyecto_01_SEP/memorice_proy01/memorice_proy01/memorice_proy01.srcs/sources_1/new/rand_sec.vhd}}
+open_project {D:/VIVADO/Sistemas Electronicos Programables/PROYECTO_1/memorice_proy01/GSA/GSA.xpr}
 update_compile_order -fileset sources_1
-# Disabling source management mode.  This is to allow the top design properties to be set without GUI intervention.
-set_property source_mgmt_mode None [current_project]
-set_property top rand_sec [current_fileset]
-# Re-enabling previously disabled source management mode.
-set_property source_mgmt_mode All [current_project]
+close_project
+add_files -norecurse {{D:/VIVADO/Sistemas Electronicos Programables/PROYECTO_1/memorice_proy01/memorice_proy01/memorice_proy01.srcs/sources_1/new/led_driver.vhd} {D:/VIVADO/Sistemas Electronicos Programables/PROYECTO_1/memorice_proy01/memorice_proy01/memorice_proy01.srcs/sources_1/new/base_game_clk.vhd} {D:/VIVADO/Sistemas Electronicos Programables/PROYECTO_1/memorice_proy01/memorice_proy01/memorice_proy01.srcs/sources_1/new/rand_led.vhd} {D:/VIVADO/Sistemas Electronicos Programables/PROYECTO_1/memorice_proy01/memorice_proy01/memorice_proy01.srcs/sources_1/new/top.vhd}}
 update_compile_order -fileset sources_1
-file mkdir C:/SEP y Anal/Proyecto_01_SEP/memorice_proy01/memorice_proy01/memorice_proy01.srcs/constrs_1
-file mkdir C:/SEP y Anal/Proyecto_01_SEP/memorice_proy01/memorice_proy01/memorice_proy01.srcs/constrs_1
-file mkdir C:/SEP y Anal/Proyecto_01_SEP/memorice_proy01/memorice_proy01/memorice_proy01.srcs/constrs_1/new
-file mkdir C:/SEP y Anal/Proyecto_01_SEP/memorice_proy01/memorice_proy01/memorice_proy01.srcs/constrs_1/new
-file mkdir C:/SEP y Anal/Proyecto_01_SEP/memorice_proy01/memorice_proy01/memorice_proy01.srcs/constrs_1/new
-file mkdir C:/SEP y Anal/Proyecto_01_SEP/memorice_proy01/memorice_proy01/memorice_proy01.srcs/constrs_1/new
-file mkdir C:/SEP y Anal/Proyecto_01_SEP/memorice_proy01/memorice_proy01/memorice_proy01.srcs/constrs_1
-file mkdir {C:/SEP y Anal/Proyecto_01_SEP/memorice_proy01/memorice_proy01/memorice_proy01.srcs/constrs_1/new}
-close [ open {C:/SEP y Anal/Proyecto_01_SEP/memorice_proy01/memorice_proy01/memorice_proy01.srcs/constrs_1/new/zyboZ7.xdc} w ]
-add_files -fileset constrs_1 {{C:/SEP y Anal/Proyecto_01_SEP/memorice_proy01/memorice_proy01/memorice_proy01.srcs/constrs_1/new/zyboZ7.xdc}}
-export_ip_user_files -of_objects  [get_files {{C:/SEP y Anal/Proyecto_01_SEP/memorice_proy01/memorice_proy01/memorice_proy01.srcs/sources_1/new/top.vhd}}] -no_script -reset -force -quiet
-remove_files  {{C:/SEP y Anal/Proyecto_01_SEP/memorice_proy01/memorice_proy01/memorice_proy01.srcs/sources_1/new/top.vhd}}
-close [ open {C:/SEP y Anal/Proyecto_01_SEP/memorice_proy01/memorice_proy01/memorice_proy01.srcs/sources_1/new/base_game_clk.vhd} w ]
-add_files {{C:/SEP y Anal/Proyecto_01_SEP/memorice_proy01/memorice_proy01/memorice_proy01.srcs/sources_1/new/base_game_clk.vhd}}
-update_compile_order -fileset sources_1
-export_ip_user_files -of_objects  [get_files {{C:/SEP y Anal/Proyecto_01_SEP/memorice_proy01/memorice_proy01/memorice_proy01.srcs/sources_1/new/base_game_clk.vhd}}] -no_script -reset -force -quiet
-remove_files  {{C:/SEP y Anal/Proyecto_01_SEP/memorice_proy01/memorice_proy01/memorice_proy01.srcs/sources_1/new/base_game_clk.vhd}}
-close [ open {C:/SEP y Anal/Proyecto_01_SEP/memorice_proy01/memorice_proy01/memorice_proy01.srcs/sources_1/new/gclk_sel.vhd} w ]
-add_files {{C:/SEP y Anal/Proyecto_01_SEP/memorice_proy01/memorice_proy01/memorice_proy01.srcs/sources_1/new/gclk_sel.vhd}}
-update_compile_order -fileset sources_1
-close [ open {C:/SEP y Anal/Proyecto_01_SEP/memorice_proy01/memorice_proy01/memorice_proy01.srcs/sources_1/new/led_driver.vhd} w ]
-add_files {{C:/SEP y Anal/Proyecto_01_SEP/memorice_proy01/memorice_proy01/memorice_proy01.srcs/sources_1/new/led_driver.vhd}}
-update_compile_order -fileset sources_1
-export_ip_user_files -of_objects  [get_files {{C:/SEP y Anal/Proyecto_01_SEP/memorice_proy01/memorice_proy01/memorice_proy01.srcs/constrs_1/new/zyboZ7.xdc}}] -no_script -reset -force -quiet
-remove_files  -fileset constrs_1 {{C:/SEP y Anal/Proyecto_01_SEP/memorice_proy01/memorice_proy01/memorice_proy01.srcs/constrs_1/new/zyboZ7.xdc}}
-close [ open {C:/SEP y Anal/Proyecto_01_SEP/memorice_proy01/memorice_proy01/memorice_proy01.srcs/constrs_1/new/Zybo-Z7-Master.xdc} w ]
-add_files -fileset constrs_1 {{C:/SEP y Anal/Proyecto_01_SEP/memorice_proy01/memorice_proy01/memorice_proy01.srcs/constrs_1/new/Zybo-Z7-Master.xdc}}
-close [ open {C:/SEP y Anal/Proyecto_01_SEP/memorice_proy01/memorice_proy01/memorice_proy01.srcs/sources_1/new/rand_led.vhd} w ]
-add_files {{C:/SEP y Anal/Proyecto_01_SEP/memorice_proy01/memorice_proy01/memorice_proy01.srcs/sources_1/new/rand_led.vhd}}
-update_compile_order -fileset sources_1
-launch_runs synth_1 -jobs 8
-wait_on_run synth_1
 # Disabling source management mode.  This is to allow the top design properties to be set without GUI intervention.
 set_property source_mgmt_mode None [current_project]
 set_property top rand_led [current_fileset]
@@ -60,56 +24,142 @@ set_property top rand_led [current_fileset]
 set_property source_mgmt_mode All [current_project]
 update_compile_order -fileset sources_1
 reset_run synth_1
-launch_runs synth_1 -jobs 8
+launch_runs synth_1 -jobs 4
 wait_on_run synth_1
-reset_run synth_1
-launch_runs synth_1 -jobs 8
-wait_on_run synth_1
-reset_run synth_1
-launch_runs synth_1 -jobs 8
-wait_on_run synth_1
-reset_run synth_1
-launch_runs synth_1 -jobs 8
-wait_on_run synth_1
-reset_run synth_1
-launch_runs synth_1 -jobs 8
-wait_on_run synth_1
-launch_runs impl_1 -jobs 8
+launch_runs impl_1 -jobs 4
 wait_on_run impl_1
-open_run impl_1
-launch_runs impl_1 -to_step write_bitstream -jobs 8
-wait_on_run impl_1
-update_compile_order -fileset sources_1
-reset_run synth_1
-launch_runs synth_1 -jobs 8
-wait_on_run synth_1
-update_compile_order -fileset sources_1
-reset_run synth_1
-launch_runs synth_1 -jobs 8
-wait_on_run synth_1
-launch_runs impl_1 -jobs 8
-wait_on_run impl_1
-launch_runs impl_1 -to_step write_bitstream -jobs 8
+launch_runs impl_1 -to_step write_bitstream -jobs 4
 wait_on_run impl_1
 open_hw_manager
 connect_hw_server -allow_non_jtag
 open_hw_target
-set_property PROGRAM.FILE {C:/SEP y Anal/Proyecto_01_SEP/memorice_proy01/memorice_proy01/memorice_proy01.runs/impl_1/rand_led.bit} [get_hw_devices xc7z010_1]
+set_property PROGRAM.FILE {D:/VIVADO/Sistemas Electronicos Programables/PROYECTO_1/memorice_proy01/memorice_proy01/memorice_proy01.runs/impl_1/rand_led.bit} [get_hw_devices xc7z010_1]
 current_hw_device [get_hw_devices xc7z010_1]
 refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7z010_1] 0]
 set_property PROBES.FILE {} [get_hw_devices xc7z010_1]
 set_property FULL_PROBES.FILE {} [get_hw_devices xc7z010_1]
-set_property PROGRAM.FILE {C:/SEP y Anal/Proyecto_01_SEP/memorice_proy01/memorice_proy01/memorice_proy01.runs/impl_1/rand_led.bit} [get_hw_devices xc7z010_1]
+set_property PROGRAM.FILE {D:/VIVADO/Sistemas Electronicos Programables/PROYECTO_1/memorice_proy01/memorice_proy01/memorice_proy01.runs/impl_1/rand_led.bit} [get_hw_devices xc7z010_1]
 program_hw_devices [get_hw_devices xc7z010_1]
 refresh_hw_device [lindex [get_hw_devices xc7z010_1] 0]
+refresh_hw_device [lindex [get_hw_devices xc7z010_1] 0]
+close_hw_manager
 reset_run synth_1
-launch_runs synth_1 -jobs 8
+launch_runs synth_1 -jobs 4
 wait_on_run synth_1
-launch_runs impl_1 -to_step write_bitstream -jobs 8
+launch_runs impl_1 -jobs 4
 wait_on_run impl_1
-refresh_design
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+wait_on_run impl_1
+open_hw_manager
+connect_hw_server -allow_non_jtag
+open_hw_target
+set_property PROGRAM.FILE {D:/VIVADO/Sistemas Electronicos Programables/PROYECTO_1/memorice_proy01/memorice_proy01/memorice_proy01.runs/impl_1/rand_led.bit} [get_hw_devices xc7z010_1]
+current_hw_device [get_hw_devices xc7z010_1]
+refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7z010_1] 0]
 set_property PROBES.FILE {} [get_hw_devices xc7z010_1]
 set_property FULL_PROBES.FILE {} [get_hw_devices xc7z010_1]
-set_property PROGRAM.FILE {C:/SEP y Anal/Proyecto_01_SEP/memorice_proy01/memorice_proy01/memorice_proy01.runs/impl_1/rand_led.bit} [get_hw_devices xc7z010_1]
+set_property PROGRAM.FILE {D:/VIVADO/Sistemas Electronicos Programables/PROYECTO_1/memorice_proy01/memorice_proy01/memorice_proy01.runs/impl_1/rand_led.bit} [get_hw_devices xc7z010_1]
 program_hw_devices [get_hw_devices xc7z010_1]
 refresh_hw_device [lindex [get_hw_devices xc7z010_1] 0]
+close_hw_manager
+export_ip_user_files -of_objects  [get_files {{D:/VIVADO/Sistemas Electronicos Programables/PROYECTO_1/memorice_proy01/memorice_proy01/memorice_proy01.srcs/sources_1/new/base_game_clk.vhd}}] -no_script -reset -force -quiet
+remove_files  {{D:/VIVADO/Sistemas Electronicos Programables/PROYECTO_1/memorice_proy01/memorice_proy01/memorice_proy01.srcs/sources_1/new/base_game_clk.vhd}}
+close [ open {D:/VIVADO/Sistemas Electronicos Programables/PROYECTO_1/memorice_proy01/memorice_proy01/memorice_proy01.srcs/sources_1/new/game_fsm.vhd} w ]
+add_files {{D:/VIVADO/Sistemas Electronicos Programables/PROYECTO_1/memorice_proy01/memorice_proy01/memorice_proy01.srcs/sources_1/new/game_fsm.vhd}}
+update_compile_order -fileset sources_1
+close [ open {D:/VIVADO/Sistemas Electronicos Programables/PROYECTO_1/memorice_proy01/memorice_proy01/memorice_proy01.srcs/sources_1/new/timer.vhd} w ]
+add_files {{D:/VIVADO/Sistemas Electronicos Programables/PROYECTO_1/memorice_proy01/memorice_proy01/memorice_proy01.srcs/sources_1/new/timer.vhd}}
+update_compile_order -fileset sources_1
+close [ open {D:/VIVADO/Sistemas Electronicos Programables/PROYECTO_1/memorice_proy01/memorice_proy01/memorice_proy01.srcs/sources_1/new/seq_cmp.vhd} w ]
+add_files {{D:/VIVADO/Sistemas Electronicos Programables/PROYECTO_1/memorice_proy01/memorice_proy01/memorice_proy01.srcs/sources_1/new/seq_cmp.vhd}}
+update_compile_order -fileset sources_1
+create_bd_design "design_1"
+update_compile_order -fileset sources_1
+export_ip_user_files -of_objects  [get_files {{D:/VIVADO/Sistemas Electronicos Programables/PROYECTO_1/memorice_proy01/memorice_proy01/memorice_proy01.srcs/sources_1/new/game_fsm.vhd}}] -no_script -reset -force -quiet
+remove_files  {{D:/VIVADO/Sistemas Electronicos Programables/PROYECTO_1/memorice_proy01/memorice_proy01/memorice_proy01.srcs/sources_1/new/game_fsm.vhd}}
+close_bd_design [get_bd_designs design_1]
+export_ip_user_files -of_objects  [get_files {{D:/VIVADO/Sistemas Electronicos Programables/PROYECTO_1/memorice_proy01/memorice_proy01/memorice_proy01.srcs/sources_1/bd/design_1/design_1.bd}}] -no_script -reset -force -quiet
+remove_files  {{D:/VIVADO/Sistemas Electronicos Programables/PROYECTO_1/memorice_proy01/memorice_proy01/memorice_proy01.srcs/sources_1/bd/design_1/design_1.bd}}
+add_files -norecurse {{D:/VIVADO/Sistemas Electronicos Programables/PROYECTO_1/memorice_proy01/memorice_proy01/memorice_proy01.srcs/sources_1/new/game_fsm.vhd}}
+update_compile_order -fileset sources_1
+close [ open {D:/VIVADO/Sistemas Electronicos Programables/PROYECTO_1/memorice_proy01/memorice_proy01/memorice_proy01.srcs/sources_1/new/input_det.vhd} w ]
+add_files {{D:/VIVADO/Sistemas Electronicos Programables/PROYECTO_1/memorice_proy01/memorice_proy01/memorice_proy01.srcs/sources_1/new/input_det.vhd}}
+close [ open {D:/VIVADO/Sistemas Electronicos Programables/PROYECTO_1/memorice_proy01/memorice_proy01/memorice_proy01.srcs/sources_1/new/debounce.vhd} w ]
+add_files {{D:/VIVADO/Sistemas Electronicos Programables/PROYECTO_1/memorice_proy01/memorice_proy01/memorice_proy01.srcs/sources_1/new/debounce.vhd}}
+update_compile_order -fileset sources_1
+export_ip_user_files -of_objects  [get_files {{D:/VIVADO/Sistemas Electronicos Programables/PROYECTO_1/memorice_proy01/memorice_proy01/memorice_proy01.srcs/sources_1/new/top.vhd}}] -no_script -reset -force -quiet
+remove_files  {{D:/VIVADO/Sistemas Electronicos Programables/PROYECTO_1/memorice_proy01/memorice_proy01/memorice_proy01.srcs/sources_1/new/top.vhd}}
+close [ open {D:/VIVADO/Sistemas Electronicos Programables/PROYECTO_1/memorice_proy01/memorice_proy01/memorice_proy01.srcs/sources_1/new/game_pkg.vhd} w ]
+add_files {{D:/VIVADO/Sistemas Electronicos Programables/PROYECTO_1/memorice_proy01/memorice_proy01/memorice_proy01.srcs/sources_1/new/game_pkg.vhd}}
+update_compile_order -fileset sources_1
+close [ open {D:/VIVADO/Sistemas Electronicos Programables/PROYECTO_1/memorice_proy01/memorice_proy01/memorice_proy01.srcs/sources_1/new/game_core.vhd} w ]
+add_files {{D:/VIVADO/Sistemas Electronicos Programables/PROYECTO_1/memorice_proy01/memorice_proy01/memorice_proy01.srcs/sources_1/new/game_core.vhd}}
+update_compile_order -fileset sources_1
+export_ip_user_files -of_objects  [get_files {{D:/VIVADO/Sistemas Electronicos Programables/PROYECTO_1/memorice_proy01/memorice_proy01/memorice_proy01.srcs/sources_1/new/rand_led.vhd}}] -no_script -reset -force -quiet
+remove_files  {{D:/VIVADO/Sistemas Electronicos Programables/PROYECTO_1/memorice_proy01/memorice_proy01/memorice_proy01.srcs/sources_1/new/rand_led.vhd}}
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+launch_simulation
+source game_core.tcl
+add_force {/game_core/sysclk} -radix hex {1 0ns} {0 4000ps} -repeat_every 8000ps
+run all
+add_force {/game_core/sysclk} -radix hex {1 0ns} {0 4000ps} -repeat_every 8000ps
+add_force {/game_core/sysclk} -radix hex {1 0ns} {0 4000ps} -repeat_every 8000ps
+add_force {/game_core/sw} -radix hex {2 0ns}
+relaunch_sim
+add_force {/game_core/sysclk} -radix hex {1 0ns} {0 4000ps} -repeat_every 8000ps
+add_force {/game_core/sw} -radix hex {2 0ns}
+run 48 ns
+run 48 ns
+relaunch_sim
+relaunch_sim
+restart
+add_force {/game_core/sysclk} -radix hex {1 0ns} {0 4000ps} -repeat_every 8000ps
+add_force {/game_core/sw} -radix hex {5 16ns} -cancel_after 24ns
+add_force {/game_core/sw[2]} -radix hex {1 8ns} -cancel_after 16ns
+add_force {/game_core/sw[0]} -radix hex {1 24ns} -cancel_after 32ns
+add_force {/game_core/sw[3]} -radix hex {1 40ns} -cancel_after 16ns
+add_force {/game_core/sw[3]} -radix hex {1 40ns} -cancel_after 16ns
+add_force {/game_core/sw[3]} -radix hex {1 40ns} -cancel_after 56ns
+add_force {/game_core/sw[2]} -radix hex {1 8ns} -cancel_after 40ns
+add_force {/game_core/sw[0]} -radix hex {1 24ns} -cancel_after 56ns
+run 64 ns
+close_sim
+launch_simulation
+source game_core.tcl
+relaunch_sim
+restart
+close_sim
+launch_simulation
+source game_core.tcl
+restart
+restart
+relaunch_sim
+restart
+add_force sysclk {0 0ns} {1 4ns} -repeat_every 8ns
+add_force sw 0100 -radix bin
+run 500 us
+add_force sw 0101 -radix bin
+run 500 us
+add_force sw 1001 -radix bin
+run 100 us
+close_sim
+reset_run synth_1
+launch_runs synth_1 -jobs 4
+wait_on_run synth_1
+launch_runs impl_1 -jobs 4
+wait_on_run impl_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+wait_on_run impl_1
+open_hw_manager
+connect_hw_server -allow_non_jtag
+open_hw_target
+set_property PROGRAM.FILE {D:/VIVADO/Sistemas Electronicos Programables/PROYECTO_1/memorice_proy01/memorice_proy01/memorice_proy01.runs/impl_1/game_core.bit} [get_hw_devices xc7z010_1]
+current_hw_device [get_hw_devices xc7z010_1]
+refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7z010_1] 0]
+set_property PROBES.FILE {} [get_hw_devices xc7z010_1]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7z010_1]
+set_property PROGRAM.FILE {D:/VIVADO/Sistemas Electronicos Programables/PROYECTO_1/memorice_proy01/memorice_proy01/memorice_proy01.runs/impl_1/game_core.bit} [get_hw_devices xc7z010_1]
+program_hw_devices [get_hw_devices xc7z010_1]
+refresh_hw_device [lindex [get_hw_devices xc7z010_1] 0]
+close_hw_manager
