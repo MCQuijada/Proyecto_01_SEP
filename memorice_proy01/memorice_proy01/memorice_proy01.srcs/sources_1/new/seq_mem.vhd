@@ -4,7 +4,7 @@ use IEEE.NUMERIC_STD.ALL;
 
 entity seq_mem is
     Generic (
-        DATA_WIDTH : positive := 4;     -- 4 BITS DE ENCENDIDO O APAGADO DE LEDS
+        DATA_WIDTH : positive := 4;     -- 4 BITS DE ENCENDIDO O APAGADO DE LED
         ADDR_WIDTH : positive := 5      -- 5 BITS (0 A 31) PARA EL VALOR MAXIMO DE SECUENCIAS (16)
     );
     Port (

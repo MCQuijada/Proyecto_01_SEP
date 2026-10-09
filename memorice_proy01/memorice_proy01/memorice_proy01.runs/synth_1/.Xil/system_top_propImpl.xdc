@@ -22,8 +22,8 @@ set_property -dict { PACKAGE_PIN G14   IOSTANDARD LVCMOS33 } [get_ports { led[2]
 set_property src_info {type:XDC file:1 line:30 export:INPUT save:INPUT read:READ} [current_design]
 set_property -dict { PACKAGE_PIN D18   IOSTANDARD LVCMOS33 } [get_ports { led[3] }]; #IO_L3N_T0_DQS_AD1N_35 Sch=led[3]
 set_property src_info {type:XDC file:1 line:39 export:INPUT save:INPUT read:READ} [current_design]
-set_property -dict { PACKAGE_PIN V16   IOSTANDARD LVCMOS33 } [get_ports { rgb[0] }]; #IO_L18P_T2_34 Sch=led6_r
+set_property -dict { PACKAGE_PIN V16   IOSTANDARD LVCMOS33 } [get_ports { rgb[2] }]; #IO_L18P_T2_34 Sch=led6_r
 set_property src_info {type:XDC file:1 line:40 export:INPUT save:INPUT read:READ} [current_design]
 set_property -dict { PACKAGE_PIN F17   IOSTANDARD LVCMOS33 } [get_ports { rgb[1] }]; #IO_L6N_T0_VREF_35 Sch=led6_g
 set_property src_info {type:XDC file:1 line:41 export:INPUT save:INPUT read:READ} [current_design]
-set_property -dict { PACKAGE_PIN M17   IOSTANDARD LVCMOS33 } [get_ports { rgb[2] }]; #IO_L8P_T1_AD10P_35 Sch=led6_b
+set_property -dict { PACKAGE_PIN M17   IOSTANDARD LVCMOS33 } [get_ports { rgb[0] }]; #IO_L8P_T1_AD10P_35 Sch=led6_b

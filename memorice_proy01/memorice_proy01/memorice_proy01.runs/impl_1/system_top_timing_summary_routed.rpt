@@ -1,7 +1,7 @@
 Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2020.1 (win64) Build 2902540 Wed May 27 19:54:49 MDT 2020
-| Date         : Fri Oct  9 18:52:26 2026
+| Date         : Fri Oct  9 19:56:16 2026
 | Host         : DESKTOP-SHNI0N6 running 64-bit major release  (build 9200)
 | Command      : report_timing_summary -max_paths 10 -file system_top_timing_summary_routed.rpt -pb system_top_timing_summary_routed.pb -rpx system_top_timing_summary_routed.rpx -warn_on_violation
 | Design       : system_top
@@ -128,7 +128,7 @@ Table of Contents
 
     WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints     WPWS(ns)     TPWS(ns)  TPWS Failing Endpoints  TPWS Total Endpoints  
     -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------     --------     --------  ----------------------  --------------------  
-      3.206        0.000                      0                  526        0.179        0.000                      0                  526        3.500        0.000                       0                   265  
+      2.912        0.000                      0                  505        0.192        0.000                      0                  505        3.500        0.000                       0                   261  
 
 
 All user specified timing constraints are met.
@@ -151,7 +151,7 @@ sys_clk_pin  {0.000 4.000}        8.000           125.000
 
 Clock             WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints     WPWS(ns)     TPWS(ns)  TPWS Failing Endpoints  TPWS Total Endpoints  
 -----             -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------     --------     --------  ----------------------  --------------------  
-sys_clk_pin         3.206        0.000                      0                  526        0.179        0.000                      0                  526        3.500        0.000                       0                   265  
+sys_clk_pin         2.912        0.000                      0                  505        0.192        0.000                      0                  505        3.500        0.000                       0                   261  
 
 
 ------------------------------------------------------------------------------------------------
@@ -182,27 +182,27 @@ Path Group    From Clock    To Clock          WNS(ns)      TNS(ns)  TNS Failing 
 From Clock:  sys_clk_pin
   To Clock:  sys_clk_pin
 
-Setup :            0  Failing Endpoints,  Worst Slack        3.206ns,  Total Violation        0.000ns
-Hold  :            0  Failing Endpoints,  Worst Slack        0.179ns,  Total Violation        0.000ns
+Setup :            0  Failing Endpoints,  Worst Slack        2.912ns,  Total Violation        0.000ns
+Hold  :            0  Failing Endpoints,  Worst Slack        0.192ns,  Total Violation        0.000ns
 PW    :            0  Failing Endpoints,  Worst Slack        3.500ns,  Total Violation        0.000ns
 ---------------------------------------------------------------------------------------------------
 
 
 Max Delay Paths
 --------------------------------------------------------------------------------------
-Slack (MET) :             3.206ns  (required time - arrival time)
-  Source:                 U_GAME_LOGIC/U_FSM/FSM_onehot_state_reg[3]/C
+Slack (MET) :             2.912ns  (required time - arrival time)
+  Source:                 U_GAME_LOGIC/U_FSM/FSM_sequential_state_reg[0]/C
                             (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@4.000ns period=8.000ns})
-  Destination:            U_SEQ_MEM/data_out_reg[2]/D
+  Destination:            U_SEQ_MEM/ram_block_reg[26][1]/CE
                             (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@4.000ns period=8.000ns})
   Path Group:             sys_clk_pin
   Path Type:              Setup (Max at Slow Process Corner)
   Requirement:            8.000ns  (sys_clk_pin rise@8.000ns - sys_clk_pin rise@0.000ns)
-  Data Path Delay:        4.679ns  (logic 1.077ns (23.017%)  route 3.602ns (76.983%))
-  Logic Levels:           4  (LUT5=1 LUT6=1 MUXF7=1 MUXF8=1)
-  Clock Path Skew:        -0.143ns (DCD - SCD + CPR)
-    Destination Clock Delay (DCD):    4.862ns = ( 12.862 - 8.000 ) 
-    Source Clock Delay      (SCD):    5.396ns
+  Data Path Delay:        4.744ns  (logic 0.704ns (14.841%)  route 4.040ns (85.159%))
+  Logic Levels:           2  (LUT4=1 LUT6=1)
+  Clock Path Skew:        -0.140ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    4.867ns = ( 12.867 - 8.000 ) 
+    Source Clock Delay      (SCD):    5.398ns
     Clock Pessimism Removal (CPR):    0.391ns
   Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
     Total System Jitter     (TSJ):    0.071ns
@@ -219,20 +219,16 @@ Slack (MET) :             3.206ns  (required time - arrival time)
     K17                  IBUF (Prop_ibuf_I_O)         1.492     1.492 r  sysclk_IBUF_inst/O
                          net (fo=1, routed)           2.076     3.568    sysclk_IBUF
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.101     3.669 r  sysclk_IBUF_BUFG_inst/O
-                         net (fo=264, routed)         1.727     5.396    U_GAME_LOGIC/U_FSM/CLK
-    SLICE_X42Y70         FDRE                                         r  U_GAME_LOGIC/U_FSM/FSM_onehot_state_reg[3]/C
+                         net (fo=260, routed)         1.729     5.398    U_GAME_LOGIC/U_FSM/CLK
+    SLICE_X39Y67         FDRE                                         r  U_GAME_LOGIC/U_FSM/FSM_sequential_state_reg[0]/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X42Y70         FDRE (Prop_fdre_C_Q)         0.518     5.914 r  U_GAME_LOGIC/U_FSM/FSM_onehot_state_reg[3]/Q
-                         net (fo=85, routed)          2.371     8.285    U_GAME_LOGIC/U_CMP/lose_reg_reg_0[0]
-    SLICE_X35Y72         LUT5 (Prop_lut5_I2_O)        0.124     8.409 r  U_GAME_LOGIC/U_CMP/data_out[2]_i_21/O
-                         net (fo=1, routed)           1.231     9.640    U_GAME_LOGIC/U_CMP/data_out[2]_i_21_n_0
-    SLICE_X33Y74         LUT6 (Prop_lut6_I1_O)        0.124     9.764 r  U_GAME_LOGIC/U_CMP/data_out[2]_i_7/O
-                         net (fo=1, routed)           0.000     9.764    U_GAME_LOGIC/U_CMP/data_out[2]_i_7_n_0
-    SLICE_X33Y74         MUXF7 (Prop_muxf7_I1_O)      0.217     9.981 r  U_GAME_LOGIC/U_CMP/data_out_reg[2]_i_3/O
-                         net (fo=1, routed)           0.000     9.981    U_GAME_LOGIC/U_CMP/data_out_reg[2]_i_3_n_0
-    SLICE_X33Y74         MUXF8 (Prop_muxf8_I1_O)      0.094    10.075 r  U_GAME_LOGIC/U_CMP/data_out_reg[2]_i_1/O
-                         net (fo=1, routed)           0.000    10.075    U_SEQ_MEM/data_out_reg[3]_1[2]
-    SLICE_X33Y74         FDRE                                         r  U_SEQ_MEM/data_out_reg[2]/D
+    SLICE_X39Y67         FDRE (Prop_fdre_C_Q)         0.456     5.854 r  U_GAME_LOGIC/U_FSM/FSM_sequential_state_reg[0]/Q
+                         net (fo=35, routed)          1.655     7.509    U_GAME_LOGIC/U_FSM/Q[0]
+    SLICE_X37Y67         LUT4 (Prop_lut4_I2_O)        0.124     7.633 r  U_GAME_LOGIC/U_FSM/ram_block[0][3]_i_3/O
+                         net (fo=32, routed)          1.823     9.456    U_GAME_LOGIC/U_FSM/sig_we
+    SLICE_X32Y70         LUT6 (Prop_lut6_I0_O)        0.124     9.580 r  U_GAME_LOGIC/U_FSM/ram_block[26][3]_i_1/O
+                         net (fo=4, routed)           0.562    10.141    U_SEQ_MEM/ram_block_reg[26][3]_0[0]
+    SLICE_X34Y71         FDRE                                         r  U_SEQ_MEM/ram_block_reg[26][1]/CE
   -------------------------------------------------------------------    -------------------
 
                          (clock sys_clk_pin rise edge)
@@ -242,30 +238,30 @@ Slack (MET) :             3.206ns  (required time - arrival time)
     K17                  IBUF (Prop_ibuf_I_O)         1.421     9.421 r  sysclk_IBUF_inst/O
                          net (fo=1, routed)           1.880    11.301    sysclk_IBUF
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    11.392 r  sysclk_IBUF_BUFG_inst/O
-                         net (fo=264, routed)         1.470    12.862    U_SEQ_MEM/CLK
-    SLICE_X33Y74         FDRE                                         r  U_SEQ_MEM/data_out_reg[2]/C
-                         clock pessimism              0.391    13.253    
-                         clock uncertainty           -0.035    13.217    
-    SLICE_X33Y74         FDRE (Setup_fdre_C_D)        0.064    13.281    U_SEQ_MEM/data_out_reg[2]
+                         net (fo=260, routed)         1.475    12.867    U_SEQ_MEM/CLK
+    SLICE_X34Y71         FDRE                                         r  U_SEQ_MEM/ram_block_reg[26][1]/C
+                         clock pessimism              0.391    13.258    
+                         clock uncertainty           -0.035    13.222    
+    SLICE_X34Y71         FDRE (Setup_fdre_C_CE)      -0.169    13.053    U_SEQ_MEM/ram_block_reg[26][1]
   -------------------------------------------------------------------
-                         required time                         13.281    
-                         arrival time                         -10.075    
+                         required time                         13.053    
+                         arrival time                         -10.141    
   -------------------------------------------------------------------
-                         slack                                  3.206    
+                         slack                                  2.912    
 
-Slack (MET) :             3.251ns  (required time - arrival time)
-  Source:                 U_GAME_LOGIC/U_FSM/FSM_onehot_state_reg[3]/C
+Slack (MET) :             2.926ns  (required time - arrival time)
+  Source:                 U_GAME_LOGIC/U_FSM/FSM_sequential_state_reg[0]/C
                             (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@4.000ns period=8.000ns})
-  Destination:            U_SEQ_MEM/data_out_reg[3]/D
+  Destination:            U_SEQ_MEM/ram_block_reg[26][2]/CE
                             (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@4.000ns period=8.000ns})
   Path Group:             sys_clk_pin
   Path Type:              Setup (Max at Slow Process Corner)
   Requirement:            8.000ns  (sys_clk_pin rise@8.000ns - sys_clk_pin rise@0.000ns)
-  Data Path Delay:        4.712ns  (logic 1.072ns (22.752%)  route 3.640ns (77.248%))
-  Logic Levels:           4  (LUT5=1 LUT6=1 MUXF7=1 MUXF8=1)
-  Clock Path Skew:        -0.066ns (DCD - SCD + CPR)
-    Destination Clock Delay (DCD):    4.939ns = ( 12.939 - 8.000 ) 
-    Source Clock Delay      (SCD):    5.396ns
+  Data Path Delay:        4.694ns  (logic 0.704ns (14.997%)  route 3.990ns (85.003%))
+  Logic Levels:           2  (LUT4=1 LUT6=1)
+  Clock Path Skew:        -0.139ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    4.868ns = ( 12.868 - 8.000 ) 
+    Source Clock Delay      (SCD):    5.398ns
     Clock Pessimism Removal (CPR):    0.391ns
   Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
     Total System Jitter     (TSJ):    0.071ns
@@ -282,20 +278,16 @@ Slack (MET) :             3.251ns  (required time - arrival time)
     K17                  IBUF (Prop_ibuf_I_O)         1.492     1.492 r  sysclk_IBUF_inst/O
                          net (fo=1, routed)           2.076     3.568    sysclk_IBUF
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.101     3.669 r  sysclk_IBUF_BUFG_inst/O
-                         net (fo=264, routed)         1.727     5.396    U_GAME_LOGIC/U_FSM/CLK
-    SLICE_X42Y70         FDRE                                         r  U_GAME_LOGIC/U_FSM/FSM_onehot_state_reg[3]/C
+                         net (fo=260, routed)         1.729     5.398    U_GAME_LOGIC/U_FSM/CLK
+    SLICE_X39Y67         FDRE                                         r  U_GAME_LOGIC/U_FSM/FSM_sequential_state_reg[0]/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X42Y70         FDRE (Prop_fdre_C_Q)         0.518     5.914 r  U_GAME_LOGIC/U_FSM/FSM_onehot_state_reg[3]/Q
-                         net (fo=85, routed)          2.367     8.281    U_GAME_LOGIC/U_CMP/lose_reg_reg_0[0]
-    SLICE_X33Y75         LUT5 (Prop_lut5_I2_O)        0.124     8.405 r  U_GAME_LOGIC/U_CMP/data_out[3]_i_21/O
-                         net (fo=1, routed)           1.272     9.677    U_GAME_LOGIC/U_CMP/data_out[3]_i_21_n_0
-    SLICE_X36Y73         LUT6 (Prop_lut6_I1_O)        0.124     9.801 r  U_GAME_LOGIC/U_CMP/data_out[3]_i_8/O
-                         net (fo=1, routed)           0.000     9.801    U_GAME_LOGIC/U_CMP/data_out[3]_i_8_n_0
-    SLICE_X36Y73         MUXF7 (Prop_muxf7_I0_O)      0.212    10.013 r  U_GAME_LOGIC/U_CMP/data_out_reg[3]_i_4/O
-                         net (fo=1, routed)           0.000    10.013    U_GAME_LOGIC/U_CMP/data_out_reg[3]_i_4_n_0
-    SLICE_X36Y73         MUXF8 (Prop_muxf8_I1_O)      0.094    10.107 r  U_GAME_LOGIC/U_CMP/data_out_reg[3]_i_1/O
-                         net (fo=1, routed)           0.000    10.107    U_SEQ_MEM/data_out_reg[3]_1[3]
-    SLICE_X36Y73         FDRE                                         r  U_SEQ_MEM/data_out_reg[3]/D
+    SLICE_X39Y67         FDRE (Prop_fdre_C_Q)         0.456     5.854 r  U_GAME_LOGIC/U_FSM/FSM_sequential_state_reg[0]/Q
+                         net (fo=35, routed)          1.655     7.509    U_GAME_LOGIC/U_FSM/Q[0]
+    SLICE_X37Y67         LUT4 (Prop_lut4_I2_O)        0.124     7.633 r  U_GAME_LOGIC/U_FSM/ram_block[0][3]_i_3/O
+                         net (fo=32, routed)          1.823     9.456    U_GAME_LOGIC/U_FSM/sig_we
+    SLICE_X32Y70         LUT6 (Prop_lut6_I0_O)        0.124     9.580 r  U_GAME_LOGIC/U_FSM/ram_block[26][3]_i_1/O
+                         net (fo=4, routed)           0.512    10.092    U_SEQ_MEM/ram_block_reg[26][3]_0[0]
+    SLICE_X35Y70         FDRE                                         r  U_SEQ_MEM/ram_block_reg[26][2]/CE
   -------------------------------------------------------------------    -------------------
 
                          (clock sys_clk_pin rise edge)
@@ -305,30 +297,30 @@ Slack (MET) :             3.251ns  (required time - arrival time)
     K17                  IBUF (Prop_ibuf_I_O)         1.421     9.421 r  sysclk_IBUF_inst/O
                          net (fo=1, routed)           1.880    11.301    sysclk_IBUF
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    11.392 r  sysclk_IBUF_BUFG_inst/O
-                         net (fo=264, routed)         1.547    12.939    U_SEQ_MEM/CLK
-    SLICE_X36Y73         FDRE                                         r  U_SEQ_MEM/data_out_reg[3]/C
-                         clock pessimism              0.391    13.330    
-                         clock uncertainty           -0.035    13.294    
-    SLICE_X36Y73         FDRE (Setup_fdre_C_D)        0.064    13.358    U_SEQ_MEM/data_out_reg[3]
+                         net (fo=260, routed)         1.476    12.868    U_SEQ_MEM/CLK
+    SLICE_X35Y70         FDRE                                         r  U_SEQ_MEM/ram_block_reg[26][2]/C
+                         clock pessimism              0.391    13.259    
+                         clock uncertainty           -0.035    13.223    
+    SLICE_X35Y70         FDRE (Setup_fdre_C_CE)      -0.205    13.018    U_SEQ_MEM/ram_block_reg[26][2]
   -------------------------------------------------------------------
-                         required time                         13.358    
-                         arrival time                         -10.107    
+                         required time                         13.018    
+                         arrival time                         -10.092    
   -------------------------------------------------------------------
-                         slack                                  3.251    
+                         slack                                  2.926    
 
-Slack (MET) :             3.332ns  (required time - arrival time)
-  Source:                 U_GAME_LOGIC/U_FSM/FSM_onehot_state_reg[3]/C
+Slack (MET) :             2.926ns  (required time - arrival time)
+  Source:                 U_GAME_LOGIC/U_FSM/FSM_sequential_state_reg[0]/C
                             (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@4.000ns period=8.000ns})
-  Destination:            U_SEQ_MEM/data_out_reg[1]/D
+  Destination:            U_SEQ_MEM/ram_block_reg[26][3]/CE
                             (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@4.000ns period=8.000ns})
   Path Group:             sys_clk_pin
   Path Type:              Setup (Max at Slow Process Corner)
   Requirement:            8.000ns  (sys_clk_pin rise@8.000ns - sys_clk_pin rise@0.000ns)
-  Data Path Delay:        4.554ns  (logic 1.115ns (24.486%)  route 3.439ns (75.514%))
-  Logic Levels:           4  (LUT5=1 LUT6=1 MUXF7=1 MUXF8=1)
-  Clock Path Skew:        -0.143ns (DCD - SCD + CPR)
-    Destination Clock Delay (DCD):    4.862ns = ( 12.862 - 8.000 ) 
-    Source Clock Delay      (SCD):    5.396ns
+  Data Path Delay:        4.694ns  (logic 0.704ns (14.997%)  route 3.990ns (85.003%))
+  Logic Levels:           2  (LUT4=1 LUT6=1)
+  Clock Path Skew:        -0.139ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    4.868ns = ( 12.868 - 8.000 ) 
+    Source Clock Delay      (SCD):    5.398ns
     Clock Pessimism Removal (CPR):    0.391ns
   Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
     Total System Jitter     (TSJ):    0.071ns
@@ -345,20 +337,16 @@ Slack (MET) :             3.332ns  (required time - arrival time)
     K17                  IBUF (Prop_ibuf_I_O)         1.492     1.492 r  sysclk_IBUF_inst/O
                          net (fo=1, routed)           2.076     3.568    sysclk_IBUF
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.101     3.669 r  sysclk_IBUF_BUFG_inst/O
-                         net (fo=264, routed)         1.727     5.396    U_GAME_LOGIC/U_FSM/CLK
-    SLICE_X42Y70         FDRE                                         r  U_GAME_LOGIC/U_FSM/FSM_onehot_state_reg[3]/C
+                         net (fo=260, routed)         1.729     5.398    U_GAME_LOGIC/U_FSM/CLK
+    SLICE_X39Y67         FDRE                                         r  U_GAME_LOGIC/U_FSM/FSM_sequential_state_reg[0]/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X42Y70         FDRE (Prop_fdre_C_Q)         0.518     5.914 r  U_GAME_LOGIC/U_FSM/FSM_onehot_state_reg[3]/Q
-                         net (fo=85, routed)          2.462     8.376    U_GAME_LOGIC/U_CMP/lose_reg_reg_0[0]
-    SLICE_X34Y76         LUT5 (Prop_lut5_I2_O)        0.124     8.500 r  U_GAME_LOGIC/U_CMP/data_out[1]_i_13/O
-                         net (fo=1, routed)           0.976     9.476    U_GAME_LOGIC/U_CMP/data_out[1]_i_13_n_0
-    SLICE_X35Y74         LUT6 (Prop_lut6_I1_O)        0.124     9.600 r  U_GAME_LOGIC/U_CMP/data_out[1]_i_5/O
-                         net (fo=1, routed)           0.000     9.600    U_GAME_LOGIC/U_CMP/data_out[1]_i_5_n_0
-    SLICE_X35Y74         MUXF7 (Prop_muxf7_I1_O)      0.245     9.845 r  U_GAME_LOGIC/U_CMP/data_out_reg[1]_i_2/O
-                         net (fo=1, routed)           0.000     9.845    U_GAME_LOGIC/U_CMP/data_out_reg[1]_i_2_n_0
-    SLICE_X35Y74         MUXF8 (Prop_muxf8_I0_O)      0.104     9.949 r  U_GAME_LOGIC/U_CMP/data_out_reg[1]_i_1/O
-                         net (fo=1, routed)           0.000     9.949    U_SEQ_MEM/data_out_reg[3]_1[1]
-    SLICE_X35Y74         FDRE                                         r  U_SEQ_MEM/data_out_reg[1]/D
+    SLICE_X39Y67         FDRE (Prop_fdre_C_Q)         0.456     5.854 r  U_GAME_LOGIC/U_FSM/FSM_sequential_state_reg[0]/Q
+                         net (fo=35, routed)          1.655     7.509    U_GAME_LOGIC/U_FSM/Q[0]
+    SLICE_X37Y67         LUT4 (Prop_lut4_I2_O)        0.124     7.633 r  U_GAME_LOGIC/U_FSM/ram_block[0][3]_i_3/O
+                         net (fo=32, routed)          1.823     9.456    U_GAME_LOGIC/U_FSM/sig_we
+    SLICE_X32Y70         LUT6 (Prop_lut6_I0_O)        0.124     9.580 r  U_GAME_LOGIC/U_FSM/ram_block[26][3]_i_1/O
+                         net (fo=4, routed)           0.512    10.092    U_SEQ_MEM/ram_block_reg[26][3]_0[0]
+    SLICE_X35Y70         FDRE                                         r  U_SEQ_MEM/ram_block_reg[26][3]/CE
   -------------------------------------------------------------------    -------------------
 
                          (clock sys_clk_pin rise edge)
@@ -368,30 +356,30 @@ Slack (MET) :             3.332ns  (required time - arrival time)
     K17                  IBUF (Prop_ibuf_I_O)         1.421     9.421 r  sysclk_IBUF_inst/O
                          net (fo=1, routed)           1.880    11.301    sysclk_IBUF
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    11.392 r  sysclk_IBUF_BUFG_inst/O
-                         net (fo=264, routed)         1.470    12.862    U_SEQ_MEM/CLK
-    SLICE_X35Y74         FDRE                                         r  U_SEQ_MEM/data_out_reg[1]/C
-                         clock pessimism              0.391    13.253    
-                         clock uncertainty           -0.035    13.217    
-    SLICE_X35Y74         FDRE (Setup_fdre_C_D)        0.064    13.281    U_SEQ_MEM/data_out_reg[1]
+                         net (fo=260, routed)         1.476    12.868    U_SEQ_MEM/CLK
+    SLICE_X35Y70         FDRE                                         r  U_SEQ_MEM/ram_block_reg[26][3]/C
+                         clock pessimism              0.391    13.259    
+                         clock uncertainty           -0.035    13.223    
+    SLICE_X35Y70         FDRE (Setup_fdre_C_CE)      -0.205    13.018    U_SEQ_MEM/ram_block_reg[26][3]
   -------------------------------------------------------------------
-                         required time                         13.281    
-                         arrival time                          -9.949    
+                         required time                         13.018    
+                         arrival time                         -10.092    
   -------------------------------------------------------------------
-                         slack                                  3.332    
+                         slack                                  2.926    
 
-Slack (MET) :             3.407ns  (required time - arrival time)
-  Source:                 U_GAME_LOGIC/U_FSM/FSM_onehot_state_reg[3]/C
+Slack (MET) :             3.074ns  (required time - arrival time)
+  Source:                 U_GAME_LOGIC/U_FSM/FSM_sequential_state_reg[0]/C
                             (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@4.000ns period=8.000ns})
-  Destination:            U_SEQ_MEM/data_out_reg[0]/D
+  Destination:            U_SEQ_MEM/ram_block_reg[24][0]/CE
                             (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@4.000ns period=8.000ns})
   Path Group:             sys_clk_pin
   Path Type:              Setup (Max at Slow Process Corner)
   Requirement:            8.000ns  (sys_clk_pin rise@8.000ns - sys_clk_pin rise@0.000ns)
-  Data Path Delay:        4.528ns  (logic 1.068ns (23.589%)  route 3.460ns (76.411%))
-  Logic Levels:           4  (LUT5=1 LUT6=1 MUXF7=1 MUXF8=1)
-  Clock Path Skew:        -0.143ns (DCD - SCD + CPR)
-    Destination Clock Delay (DCD):    4.862ns = ( 12.862 - 8.000 ) 
-    Source Clock Delay      (SCD):    5.396ns
+  Data Path Delay:        4.583ns  (logic 0.704ns (15.361%)  route 3.879ns (84.639%))
+  Logic Levels:           2  (LUT4=1 LUT6=1)
+  Clock Path Skew:        -0.139ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    4.868ns = ( 12.868 - 8.000 ) 
+    Source Clock Delay      (SCD):    5.398ns
     Clock Pessimism Removal (CPR):    0.391ns
   Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
     Total System Jitter     (TSJ):    0.071ns
@@ -408,20 +396,16 @@ Slack (MET) :             3.407ns  (required time - arrival time)
     K17                  IBUF (Prop_ibuf_I_O)         1.492     1.492 r  sysclk_IBUF_inst/O
                          net (fo=1, routed)           2.076     3.568    sysclk_IBUF
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.101     3.669 r  sysclk_IBUF_BUFG_inst/O
-                         net (fo=264, routed)         1.727     5.396    U_GAME_LOGIC/U_FSM/CLK
-    SLICE_X42Y70         FDRE                                         r  U_GAME_LOGIC/U_FSM/FSM_onehot_state_reg[3]/C
+                         net (fo=260, routed)         1.729     5.398    U_GAME_LOGIC/U_FSM/CLK
+    SLICE_X39Y67         FDRE                                         r  U_GAME_LOGIC/U_FSM/FSM_sequential_state_reg[0]/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X42Y70         FDRE (Prop_fdre_C_Q)         0.518     5.914 r  U_GAME_LOGIC/U_FSM/FSM_onehot_state_reg[3]/Q
-                         net (fo=85, routed)          2.333     8.247    U_GAME_LOGIC/U_CMP/lose_reg_reg_0[0]
-    SLICE_X33Y72         LUT5 (Prop_lut5_I2_O)        0.124     8.371 r  U_GAME_LOGIC/U_CMP/data_out[0]_i_20/O
-                         net (fo=1, routed)           1.126     9.497    U_GAME_LOGIC/U_CMP/data_out[0]_i_20_n_0
-    SLICE_X34Y74         LUT6 (Prop_lut6_I0_O)        0.124     9.621 r  U_GAME_LOGIC/U_CMP/data_out[0]_i_7/O
-                         net (fo=1, routed)           0.000     9.621    U_GAME_LOGIC/U_CMP/data_out[0]_i_7_n_0
-    SLICE_X34Y74         MUXF7 (Prop_muxf7_I1_O)      0.214     9.835 r  U_GAME_LOGIC/U_CMP/data_out_reg[0]_i_3/O
-                         net (fo=1, routed)           0.000     9.835    U_GAME_LOGIC/U_CMP/data_out_reg[0]_i_3_n_0
-    SLICE_X34Y74         MUXF8 (Prop_muxf8_I1_O)      0.088     9.923 r  U_GAME_LOGIC/U_CMP/data_out_reg[0]_i_1/O
-                         net (fo=1, routed)           0.000     9.923    U_SEQ_MEM/data_out_reg[3]_1[0]
-    SLICE_X34Y74         FDRE                                         r  U_SEQ_MEM/data_out_reg[0]/D
+    SLICE_X39Y67         FDRE (Prop_fdre_C_Q)         0.456     5.854 r  U_GAME_LOGIC/U_FSM/FSM_sequential_state_reg[0]/Q
+                         net (fo=35, routed)          1.655     7.509    U_GAME_LOGIC/U_FSM/Q[0]
+    SLICE_X37Y67         LUT4 (Prop_lut4_I2_O)        0.124     7.633 r  U_GAME_LOGIC/U_FSM/ram_block[0][3]_i_3/O
+                         net (fo=32, routed)          1.825     9.458    U_GAME_LOGIC/U_FSM/sig_we
+    SLICE_X32Y70         LUT6 (Prop_lut6_I0_O)        0.124     9.582 r  U_GAME_LOGIC/U_FSM/ram_block[24][3]_i_1/O
+                         net (fo=4, routed)           0.399     9.981    U_SEQ_MEM/ram_block_reg[24][3]_0[0]
+    SLICE_X32Y70         FDRE                                         r  U_SEQ_MEM/ram_block_reg[24][0]/CE
   -------------------------------------------------------------------    -------------------
 
                          (clock sys_clk_pin rise edge)
@@ -431,30 +415,30 @@ Slack (MET) :             3.407ns  (required time - arrival time)
     K17                  IBUF (Prop_ibuf_I_O)         1.421     9.421 r  sysclk_IBUF_inst/O
                          net (fo=1, routed)           1.880    11.301    sysclk_IBUF
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    11.392 r  sysclk_IBUF_BUFG_inst/O
-                         net (fo=264, routed)         1.470    12.862    U_SEQ_MEM/CLK
-    SLICE_X34Y74         FDRE                                         r  U_SEQ_MEM/data_out_reg[0]/C
-                         clock pessimism              0.391    13.253    
-                         clock uncertainty           -0.035    13.217    
-    SLICE_X34Y74         FDRE (Setup_fdre_C_D)        0.113    13.330    U_SEQ_MEM/data_out_reg[0]
+                         net (fo=260, routed)         1.476    12.868    U_SEQ_MEM/CLK
+    SLICE_X32Y70         FDRE                                         r  U_SEQ_MEM/ram_block_reg[24][0]/C
+                         clock pessimism              0.391    13.259    
+                         clock uncertainty           -0.035    13.223    
+    SLICE_X32Y70         FDRE (Setup_fdre_C_CE)      -0.169    13.054    U_SEQ_MEM/ram_block_reg[24][0]
   -------------------------------------------------------------------
-                         required time                         13.330    
-                         arrival time                          -9.923    
+                         required time                         13.054    
+                         arrival time                          -9.981    
   -------------------------------------------------------------------
-                         slack                                  3.407    
+                         slack                                  3.074    
 
-Slack (MET) :             3.426ns  (required time - arrival time)
-  Source:                 U_GAME_LOGIC/U_FSM/FSM_onehot_state_reg[1]/C
+Slack (MET) :             3.074ns  (required time - arrival time)
+  Source:                 U_GAME_LOGIC/U_FSM/FSM_sequential_state_reg[0]/C
                             (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@4.000ns period=8.000ns})
-  Destination:            U_SEQ_MEM/ram_block_reg[9][0]/CE
+  Destination:            U_SEQ_MEM/ram_block_reg[24][1]/CE
                             (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@4.000ns period=8.000ns})
   Path Group:             sys_clk_pin
   Path Type:              Setup (Max at Slow Process Corner)
   Requirement:            8.000ns  (sys_clk_pin rise@8.000ns - sys_clk_pin rise@0.000ns)
-  Data Path Delay:        3.991ns  (logic 1.020ns (25.558%)  route 2.971ns (74.442%))
-  Logic Levels:           2  (LUT4=2)
-  Clock Path Skew:        -0.141ns (DCD - SCD + CPR)
-    Destination Clock Delay (DCD):    4.864ns = ( 12.864 - 8.000 ) 
-    Source Clock Delay      (SCD):    5.396ns
+  Data Path Delay:        4.583ns  (logic 0.704ns (15.361%)  route 3.879ns (84.639%))
+  Logic Levels:           2  (LUT4=1 LUT6=1)
+  Clock Path Skew:        -0.139ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    4.868ns = ( 12.868 - 8.000 ) 
+    Source Clock Delay      (SCD):    5.398ns
     Clock Pessimism Removal (CPR):    0.391ns
   Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
     Total System Jitter     (TSJ):    0.071ns
@@ -471,16 +455,16 @@ Slack (MET) :             3.426ns  (required time - arrival time)
     K17                  IBUF (Prop_ibuf_I_O)         1.492     1.492 r  sysclk_IBUF_inst/O
                          net (fo=1, routed)           2.076     3.568    sysclk_IBUF
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.101     3.669 r  sysclk_IBUF_BUFG_inst/O
-                         net (fo=264, routed)         1.727     5.396    U_GAME_LOGIC/U_FSM/CLK
-    SLICE_X42Y70         FDRE                                         r  U_GAME_LOGIC/U_FSM/FSM_onehot_state_reg[1]/C
+                         net (fo=260, routed)         1.729     5.398    U_GAME_LOGIC/U_FSM/CLK
+    SLICE_X39Y67         FDRE                                         r  U_GAME_LOGIC/U_FSM/FSM_sequential_state_reg[0]/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X42Y70         FDRE (Prop_fdre_C_Q)         0.518     5.914 r  U_GAME_LOGIC/U_FSM/FSM_onehot_state_reg[1]/Q
-                         net (fo=14, routed)          1.235     7.149    U_GAME_LOGIC/U_FSM/sig_en_gen
-    SLICE_X35Y71         LUT4 (Prop_lut4_I3_O)        0.150     7.299 f  U_GAME_LOGIC/U_FSM/ram_block[8][3]_i_2/O
-                         net (fo=8, routed)           1.162     8.461    U_GAME_LOGIC/U_FSM/ram_block[8][3]_i_2_n_0
-    SLICE_X36Y75         LUT4 (Prop_lut4_I3_O)        0.352     8.813 r  U_GAME_LOGIC/U_FSM/ram_block[9][3]_i_1/O
-                         net (fo=4, routed)           0.574     9.387    U_SEQ_MEM/ram_block_reg[9][3]_1[0]
-    SLICE_X35Y76         FDRE                                         r  U_SEQ_MEM/ram_block_reg[9][0]/CE
+    SLICE_X39Y67         FDRE (Prop_fdre_C_Q)         0.456     5.854 r  U_GAME_LOGIC/U_FSM/FSM_sequential_state_reg[0]/Q
+                         net (fo=35, routed)          1.655     7.509    U_GAME_LOGIC/U_FSM/Q[0]
+    SLICE_X37Y67         LUT4 (Prop_lut4_I2_O)        0.124     7.633 r  U_GAME_LOGIC/U_FSM/ram_block[0][3]_i_3/O
+                         net (fo=32, routed)          1.825     9.458    U_GAME_LOGIC/U_FSM/sig_we
+    SLICE_X32Y70         LUT6 (Prop_lut6_I0_O)        0.124     9.582 r  U_GAME_LOGIC/U_FSM/ram_block[24][3]_i_1/O
+                         net (fo=4, routed)           0.399     9.981    U_SEQ_MEM/ram_block_reg[24][3]_0[0]
+    SLICE_X32Y70         FDRE                                         r  U_SEQ_MEM/ram_block_reg[24][1]/CE
   -------------------------------------------------------------------    -------------------
 
                          (clock sys_clk_pin rise edge)
@@ -490,30 +474,30 @@ Slack (MET) :             3.426ns  (required time - arrival time)
     K17                  IBUF (Prop_ibuf_I_O)         1.421     9.421 r  sysclk_IBUF_inst/O
                          net (fo=1, routed)           1.880    11.301    sysclk_IBUF
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    11.392 r  sysclk_IBUF_BUFG_inst/O
-                         net (fo=264, routed)         1.472    12.864    U_SEQ_MEM/CLK
-    SLICE_X35Y76         FDRE                                         r  U_SEQ_MEM/ram_block_reg[9][0]/C
-                         clock pessimism              0.391    13.255    
-                         clock uncertainty           -0.035    13.219    
-    SLICE_X35Y76         FDRE (Setup_fdre_C_CE)      -0.407    12.812    U_SEQ_MEM/ram_block_reg[9][0]
+                         net (fo=260, routed)         1.476    12.868    U_SEQ_MEM/CLK
+    SLICE_X32Y70         FDRE                                         r  U_SEQ_MEM/ram_block_reg[24][1]/C
+                         clock pessimism              0.391    13.259    
+                         clock uncertainty           -0.035    13.223    
+    SLICE_X32Y70         FDRE (Setup_fdre_C_CE)      -0.169    13.054    U_SEQ_MEM/ram_block_reg[24][1]
   -------------------------------------------------------------------
-                         required time                         12.812    
-                         arrival time                          -9.387    
+                         required time                         13.054    
+                         arrival time                          -9.981    
   -------------------------------------------------------------------
-                         slack                                  3.426    
+                         slack                                  3.074    
 
-Slack (MET) :             3.426ns  (required time - arrival time)
-  Source:                 U_GAME_LOGIC/U_FSM/FSM_onehot_state_reg[1]/C
+Slack (MET) :             3.074ns  (required time - arrival time)
+  Source:                 U_GAME_LOGIC/U_FSM/FSM_sequential_state_reg[0]/C
                             (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@4.000ns period=8.000ns})
-  Destination:            U_SEQ_MEM/ram_block_reg[9][1]/CE
+  Destination:            U_SEQ_MEM/ram_block_reg[24][2]/CE
                             (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@4.000ns period=8.000ns})
   Path Group:             sys_clk_pin
   Path Type:              Setup (Max at Slow Process Corner)
   Requirement:            8.000ns  (sys_clk_pin rise@8.000ns - sys_clk_pin rise@0.000ns)
-  Data Path Delay:        3.991ns  (logic 1.020ns (25.558%)  route 2.971ns (74.442%))
-  Logic Levels:           2  (LUT4=2)
-  Clock Path Skew:        -0.141ns (DCD - SCD + CPR)
-    Destination Clock Delay (DCD):    4.864ns = ( 12.864 - 8.000 ) 
-    Source Clock Delay      (SCD):    5.396ns
+  Data Path Delay:        4.583ns  (logic 0.704ns (15.361%)  route 3.879ns (84.639%))
+  Logic Levels:           2  (LUT4=1 LUT6=1)
+  Clock Path Skew:        -0.139ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    4.868ns = ( 12.868 - 8.000 ) 
+    Source Clock Delay      (SCD):    5.398ns
     Clock Pessimism Removal (CPR):    0.391ns
   Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
     Total System Jitter     (TSJ):    0.071ns
@@ -530,16 +514,16 @@ Slack (MET) :             3.426ns  (required time - arrival time)
     K17                  IBUF (Prop_ibuf_I_O)         1.492     1.492 r  sysclk_IBUF_inst/O
                          net (fo=1, routed)           2.076     3.568    sysclk_IBUF
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.101     3.669 r  sysclk_IBUF_BUFG_inst/O
-                         net (fo=264, routed)         1.727     5.396    U_GAME_LOGIC/U_FSM/CLK
-    SLICE_X42Y70         FDRE                                         r  U_GAME_LOGIC/U_FSM/FSM_onehot_state_reg[1]/C
+                         net (fo=260, routed)         1.729     5.398    U_GAME_LOGIC/U_FSM/CLK
+    SLICE_X39Y67         FDRE                                         r  U_GAME_LOGIC/U_FSM/FSM_sequential_state_reg[0]/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X42Y70         FDRE (Prop_fdre_C_Q)         0.518     5.914 r  U_GAME_LOGIC/U_FSM/FSM_onehot_state_reg[1]/Q
-                         net (fo=14, routed)          1.235     7.149    U_GAME_LOGIC/U_FSM/sig_en_gen
-    SLICE_X35Y71         LUT4 (Prop_lut4_I3_O)        0.150     7.299 f  U_GAME_LOGIC/U_FSM/ram_block[8][3]_i_2/O
-                         net (fo=8, routed)           1.162     8.461    U_GAME_LOGIC/U_FSM/ram_block[8][3]_i_2_n_0
-    SLICE_X36Y75         LUT4 (Prop_lut4_I3_O)        0.352     8.813 r  U_GAME_LOGIC/U_FSM/ram_block[9][3]_i_1/O
-                         net (fo=4, routed)           0.574     9.387    U_SEQ_MEM/ram_block_reg[9][3]_1[0]
-    SLICE_X35Y76         FDRE                                         r  U_SEQ_MEM/ram_block_reg[9][1]/CE
+    SLICE_X39Y67         FDRE (Prop_fdre_C_Q)         0.456     5.854 r  U_GAME_LOGIC/U_FSM/FSM_sequential_state_reg[0]/Q
+                         net (fo=35, routed)          1.655     7.509    U_GAME_LOGIC/U_FSM/Q[0]
+    SLICE_X37Y67         LUT4 (Prop_lut4_I2_O)        0.124     7.633 r  U_GAME_LOGIC/U_FSM/ram_block[0][3]_i_3/O
+                         net (fo=32, routed)          1.825     9.458    U_GAME_LOGIC/U_FSM/sig_we
+    SLICE_X32Y70         LUT6 (Prop_lut6_I0_O)        0.124     9.582 r  U_GAME_LOGIC/U_FSM/ram_block[24][3]_i_1/O
+                         net (fo=4, routed)           0.399     9.981    U_SEQ_MEM/ram_block_reg[24][3]_0[0]
+    SLICE_X32Y70         FDRE                                         r  U_SEQ_MEM/ram_block_reg[24][2]/CE
   -------------------------------------------------------------------    -------------------
 
                          (clock sys_clk_pin rise edge)
@@ -549,30 +533,30 @@ Slack (MET) :             3.426ns  (required time - arrival time)
     K17                  IBUF (Prop_ibuf_I_O)         1.421     9.421 r  sysclk_IBUF_inst/O
                          net (fo=1, routed)           1.880    11.301    sysclk_IBUF
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    11.392 r  sysclk_IBUF_BUFG_inst/O
-                         net (fo=264, routed)         1.472    12.864    U_SEQ_MEM/CLK
-    SLICE_X35Y76         FDRE                                         r  U_SEQ_MEM/ram_block_reg[9][1]/C
-                         clock pessimism              0.391    13.255    
-                         clock uncertainty           -0.035    13.219    
-    SLICE_X35Y76         FDRE (Setup_fdre_C_CE)      -0.407    12.812    U_SEQ_MEM/ram_block_reg[9][1]
+                         net (fo=260, routed)         1.476    12.868    U_SEQ_MEM/CLK
+    SLICE_X32Y70         FDRE                                         r  U_SEQ_MEM/ram_block_reg[24][2]/C
+                         clock pessimism              0.391    13.259    
+                         clock uncertainty           -0.035    13.223    
+    SLICE_X32Y70         FDRE (Setup_fdre_C_CE)      -0.169    13.054    U_SEQ_MEM/ram_block_reg[24][2]
   -------------------------------------------------------------------
-                         required time                         12.812    
-                         arrival time                          -9.387    
+                         required time                         13.054    
+                         arrival time                          -9.981    
   -------------------------------------------------------------------
-                         slack                                  3.426    
+                         slack                                  3.074    
 
-Slack (MET) :             3.426ns  (required time - arrival time)
-  Source:                 U_GAME_LOGIC/U_FSM/FSM_onehot_state_reg[1]/C
+Slack (MET) :             3.074ns  (required time - arrival time)
+  Source:                 U_GAME_LOGIC/U_FSM/FSM_sequential_state_reg[0]/C
                             (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@4.000ns period=8.000ns})
-  Destination:            U_SEQ_MEM/ram_block_reg[9][2]/CE
+  Destination:            U_SEQ_MEM/ram_block_reg[24][3]/CE
                             (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@4.000ns period=8.000ns})
   Path Group:             sys_clk_pin
   Path Type:              Setup (Max at Slow Process Corner)
   Requirement:            8.000ns  (sys_clk_pin rise@8.000ns - sys_clk_pin rise@0.000ns)
-  Data Path Delay:        3.991ns  (logic 1.020ns (25.558%)  route 2.971ns (74.442%))
-  Logic Levels:           2  (LUT4=2)
-  Clock Path Skew:        -0.141ns (DCD - SCD + CPR)
-    Destination Clock Delay (DCD):    4.864ns = ( 12.864 - 8.000 ) 
-    Source Clock Delay      (SCD):    5.396ns
+  Data Path Delay:        4.583ns  (logic 0.704ns (15.361%)  route 3.879ns (84.639%))
+  Logic Levels:           2  (LUT4=1 LUT6=1)
+  Clock Path Skew:        -0.139ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    4.868ns = ( 12.868 - 8.000 ) 
+    Source Clock Delay      (SCD):    5.398ns
     Clock Pessimism Removal (CPR):    0.391ns
   Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
     Total System Jitter     (TSJ):    0.071ns
@@ -589,16 +573,16 @@ Slack (MET) :             3.426ns  (required time - arrival time)
     K17                  IBUF (Prop_ibuf_I_O)         1.492     1.492 r  sysclk_IBUF_inst/O
                          net (fo=1, routed)           2.076     3.568    sysclk_IBUF
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.101     3.669 r  sysclk_IBUF_BUFG_inst/O
-                         net (fo=264, routed)         1.727     5.396    U_GAME_LOGIC/U_FSM/CLK
-    SLICE_X42Y70         FDRE                                         r  U_GAME_LOGIC/U_FSM/FSM_onehot_state_reg[1]/C
+                         net (fo=260, routed)         1.729     5.398    U_GAME_LOGIC/U_FSM/CLK
+    SLICE_X39Y67         FDRE                                         r  U_GAME_LOGIC/U_FSM/FSM_sequential_state_reg[0]/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X42Y70         FDRE (Prop_fdre_C_Q)         0.518     5.914 r  U_GAME_LOGIC/U_FSM/FSM_onehot_state_reg[1]/Q
-                         net (fo=14, routed)          1.235     7.149    U_GAME_LOGIC/U_FSM/sig_en_gen
-    SLICE_X35Y71         LUT4 (Prop_lut4_I3_O)        0.150     7.299 f  U_GAME_LOGIC/U_FSM/ram_block[8][3]_i_2/O
-                         net (fo=8, routed)           1.162     8.461    U_GAME_LOGIC/U_FSM/ram_block[8][3]_i_2_n_0
-    SLICE_X36Y75         LUT4 (Prop_lut4_I3_O)        0.352     8.813 r  U_GAME_LOGIC/U_FSM/ram_block[9][3]_i_1/O
-                         net (fo=4, routed)           0.574     9.387    U_SEQ_MEM/ram_block_reg[9][3]_1[0]
-    SLICE_X35Y76         FDRE                                         r  U_SEQ_MEM/ram_block_reg[9][2]/CE
+    SLICE_X39Y67         FDRE (Prop_fdre_C_Q)         0.456     5.854 r  U_GAME_LOGIC/U_FSM/FSM_sequential_state_reg[0]/Q
+                         net (fo=35, routed)          1.655     7.509    U_GAME_LOGIC/U_FSM/Q[0]
+    SLICE_X37Y67         LUT4 (Prop_lut4_I2_O)        0.124     7.633 r  U_GAME_LOGIC/U_FSM/ram_block[0][3]_i_3/O
+                         net (fo=32, routed)          1.825     9.458    U_GAME_LOGIC/U_FSM/sig_we
+    SLICE_X32Y70         LUT6 (Prop_lut6_I0_O)        0.124     9.582 r  U_GAME_LOGIC/U_FSM/ram_block[24][3]_i_1/O
+                         net (fo=4, routed)           0.399     9.981    U_SEQ_MEM/ram_block_reg[24][3]_0[0]
+    SLICE_X32Y70         FDRE                                         r  U_SEQ_MEM/ram_block_reg[24][3]/CE
   -------------------------------------------------------------------    -------------------
 
                          (clock sys_clk_pin rise edge)
@@ -608,30 +592,30 @@ Slack (MET) :             3.426ns  (required time - arrival time)
     K17                  IBUF (Prop_ibuf_I_O)         1.421     9.421 r  sysclk_IBUF_inst/O
                          net (fo=1, routed)           1.880    11.301    sysclk_IBUF
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    11.392 r  sysclk_IBUF_BUFG_inst/O
-                         net (fo=264, routed)         1.472    12.864    U_SEQ_MEM/CLK
-    SLICE_X35Y76         FDRE                                         r  U_SEQ_MEM/ram_block_reg[9][2]/C
-                         clock pessimism              0.391    13.255    
-                         clock uncertainty           -0.035    13.219    
-    SLICE_X35Y76         FDRE (Setup_fdre_C_CE)      -0.407    12.812    U_SEQ_MEM/ram_block_reg[9][2]
+                         net (fo=260, routed)         1.476    12.868    U_SEQ_MEM/CLK
+    SLICE_X32Y70         FDRE                                         r  U_SEQ_MEM/ram_block_reg[24][3]/C
+                         clock pessimism              0.391    13.259    
+                         clock uncertainty           -0.035    13.223    
+    SLICE_X32Y70         FDRE (Setup_fdre_C_CE)      -0.169    13.054    U_SEQ_MEM/ram_block_reg[24][3]
   -------------------------------------------------------------------
-                         required time                         12.812    
-                         arrival time                          -9.387    
+                         required time                         13.054    
+                         arrival time                          -9.981    
   -------------------------------------------------------------------
-                         slack                                  3.426    
+                         slack                                  3.074    
 
-Slack (MET) :             3.426ns  (required time - arrival time)
-  Source:                 U_GAME_LOGIC/U_FSM/FSM_onehot_state_reg[1]/C
+Slack (MET) :             3.130ns  (required time - arrival time)
+  Source:                 U_GAME_LOGIC/U_FSM/FSM_sequential_state_reg[0]/C
                             (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@4.000ns period=8.000ns})
-  Destination:            U_SEQ_MEM/ram_block_reg[9][3]/CE
+  Destination:            U_SEQ_MEM/ram_block_reg[26][0]/CE
                             (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@4.000ns period=8.000ns})
   Path Group:             sys_clk_pin
   Path Type:              Setup (Max at Slow Process Corner)
   Requirement:            8.000ns  (sys_clk_pin rise@8.000ns - sys_clk_pin rise@0.000ns)
-  Data Path Delay:        3.991ns  (logic 1.020ns (25.558%)  route 2.971ns (74.442%))
-  Logic Levels:           2  (LUT4=2)
-  Clock Path Skew:        -0.141ns (DCD - SCD + CPR)
-    Destination Clock Delay (DCD):    4.864ns = ( 12.864 - 8.000 ) 
-    Source Clock Delay      (SCD):    5.396ns
+  Data Path Delay:        4.528ns  (logic 0.704ns (15.547%)  route 3.824ns (84.453%))
+  Logic Levels:           2  (LUT4=1 LUT6=1)
+  Clock Path Skew:        -0.138ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    4.869ns = ( 12.869 - 8.000 ) 
+    Source Clock Delay      (SCD):    5.398ns
     Clock Pessimism Removal (CPR):    0.391ns
   Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
     Total System Jitter     (TSJ):    0.071ns
@@ -648,16 +632,16 @@ Slack (MET) :             3.426ns  (required time - arrival time)
     K17                  IBUF (Prop_ibuf_I_O)         1.492     1.492 r  sysclk_IBUF_inst/O
                          net (fo=1, routed)           2.076     3.568    sysclk_IBUF
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.101     3.669 r  sysclk_IBUF_BUFG_inst/O
-                         net (fo=264, routed)         1.727     5.396    U_GAME_LOGIC/U_FSM/CLK
-    SLICE_X42Y70         FDRE                                         r  U_GAME_LOGIC/U_FSM/FSM_onehot_state_reg[1]/C
+                         net (fo=260, routed)         1.729     5.398    U_GAME_LOGIC/U_FSM/CLK
+    SLICE_X39Y67         FDRE                                         r  U_GAME_LOGIC/U_FSM/FSM_sequential_state_reg[0]/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X42Y70         FDRE (Prop_fdre_C_Q)         0.518     5.914 r  U_GAME_LOGIC/U_FSM/FSM_onehot_state_reg[1]/Q
-                         net (fo=14, routed)          1.235     7.149    U_GAME_LOGIC/U_FSM/sig_en_gen
-    SLICE_X35Y71         LUT4 (Prop_lut4_I3_O)        0.150     7.299 f  U_GAME_LOGIC/U_FSM/ram_block[8][3]_i_2/O
-                         net (fo=8, routed)           1.162     8.461    U_GAME_LOGIC/U_FSM/ram_block[8][3]_i_2_n_0
-    SLICE_X36Y75         LUT4 (Prop_lut4_I3_O)        0.352     8.813 r  U_GAME_LOGIC/U_FSM/ram_block[9][3]_i_1/O
-                         net (fo=4, routed)           0.574     9.387    U_SEQ_MEM/ram_block_reg[9][3]_1[0]
-    SLICE_X35Y76         FDRE                                         r  U_SEQ_MEM/ram_block_reg[9][3]/CE
+    SLICE_X39Y67         FDRE (Prop_fdre_C_Q)         0.456     5.854 r  U_GAME_LOGIC/U_FSM/FSM_sequential_state_reg[0]/Q
+                         net (fo=35, routed)          1.655     7.509    U_GAME_LOGIC/U_FSM/Q[0]
+    SLICE_X37Y67         LUT4 (Prop_lut4_I2_O)        0.124     7.633 r  U_GAME_LOGIC/U_FSM/ram_block[0][3]_i_3/O
+                         net (fo=32, routed)          1.823     9.456    U_GAME_LOGIC/U_FSM/sig_we
+    SLICE_X32Y70         LUT6 (Prop_lut6_I0_O)        0.124     9.580 r  U_GAME_LOGIC/U_FSM/ram_block[26][3]_i_1/O
+                         net (fo=4, routed)           0.346     9.926    U_SEQ_MEM/ram_block_reg[26][3]_0[0]
+    SLICE_X32Y68         FDRE                                         r  U_SEQ_MEM/ram_block_reg[26][0]/CE
   -------------------------------------------------------------------    -------------------
 
                          (clock sys_clk_pin rise edge)
@@ -667,30 +651,30 @@ Slack (MET) :             3.426ns  (required time - arrival time)
     K17                  IBUF (Prop_ibuf_I_O)         1.421     9.421 r  sysclk_IBUF_inst/O
                          net (fo=1, routed)           1.880    11.301    sysclk_IBUF
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    11.392 r  sysclk_IBUF_BUFG_inst/O
-                         net (fo=264, routed)         1.472    12.864    U_SEQ_MEM/CLK
-    SLICE_X35Y76         FDRE                                         r  U_SEQ_MEM/ram_block_reg[9][3]/C
-                         clock pessimism              0.391    13.255    
-                         clock uncertainty           -0.035    13.219    
-    SLICE_X35Y76         FDRE (Setup_fdre_C_CE)      -0.407    12.812    U_SEQ_MEM/ram_block_reg[9][3]
+                         net (fo=260, routed)         1.477    12.869    U_SEQ_MEM/CLK
+    SLICE_X32Y68         FDRE                                         r  U_SEQ_MEM/ram_block_reg[26][0]/C
+                         clock pessimism              0.391    13.260    
+                         clock uncertainty           -0.035    13.224    
+    SLICE_X32Y68         FDRE (Setup_fdre_C_CE)      -0.169    13.055    U_SEQ_MEM/ram_block_reg[26][0]
   -------------------------------------------------------------------
-                         required time                         12.812    
-                         arrival time                          -9.387    
+                         required time                         13.055    
+                         arrival time                          -9.926    
   -------------------------------------------------------------------
-                         slack                                  3.426    
+                         slack                                  3.130    
 
-Slack (MET) :             3.465ns  (required time - arrival time)
-  Source:                 U_GAME_LOGIC/U_FSM/FSM_onehot_state_reg[1]/C
+Slack (MET) :             3.134ns  (required time - arrival time)
+  Source:                 U_GAME_LOGIC/U_FSM/FSM_sequential_state_reg[0]/C
                             (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@4.000ns period=8.000ns})
-  Destination:            U_SEQ_MEM/ram_block_reg[13][0]/CE
+  Destination:            U_SEQ_MEM/ram_block_reg[25][0]/CE
                             (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@4.000ns period=8.000ns})
   Path Group:             sys_clk_pin
   Path Type:              Setup (Max at Slow Process Corner)
   Requirement:            8.000ns  (sys_clk_pin rise@8.000ns - sys_clk_pin rise@0.000ns)
-  Data Path Delay:        3.982ns  (logic 1.020ns (25.614%)  route 2.962ns (74.386%))
-  Logic Levels:           2  (LUT4=2)
-  Clock Path Skew:        -0.141ns (DCD - SCD + CPR)
-    Destination Clock Delay (DCD):    4.864ns = ( 12.864 - 8.000 ) 
-    Source Clock Delay      (SCD):    5.396ns
+  Data Path Delay:        4.522ns  (logic 0.704ns (15.567%)  route 3.818ns (84.433%))
+  Logic Levels:           2  (LUT4=1 LUT6=1)
+  Clock Path Skew:        -0.139ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    4.868ns = ( 12.868 - 8.000 ) 
+    Source Clock Delay      (SCD):    5.398ns
     Clock Pessimism Removal (CPR):    0.391ns
   Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
     Total System Jitter     (TSJ):    0.071ns
@@ -707,16 +691,16 @@ Slack (MET) :             3.465ns  (required time - arrival time)
     K17                  IBUF (Prop_ibuf_I_O)         1.492     1.492 r  sysclk_IBUF_inst/O
                          net (fo=1, routed)           2.076     3.568    sysclk_IBUF
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.101     3.669 r  sysclk_IBUF_BUFG_inst/O
-                         net (fo=264, routed)         1.727     5.396    U_GAME_LOGIC/U_FSM/CLK
-    SLICE_X42Y70         FDRE                                         r  U_GAME_LOGIC/U_FSM/FSM_onehot_state_reg[1]/C
+                         net (fo=260, routed)         1.729     5.398    U_GAME_LOGIC/U_FSM/CLK
+    SLICE_X39Y67         FDRE                                         r  U_GAME_LOGIC/U_FSM/FSM_sequential_state_reg[0]/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X42Y70         FDRE (Prop_fdre_C_Q)         0.518     5.914 r  U_GAME_LOGIC/U_FSM/FSM_onehot_state_reg[1]/Q
-                         net (fo=14, routed)          1.235     7.149    U_GAME_LOGIC/U_FSM/sig_en_gen
-    SLICE_X35Y71         LUT4 (Prop_lut4_I3_O)        0.150     7.299 f  U_GAME_LOGIC/U_FSM/ram_block[8][3]_i_2/O
-                         net (fo=8, routed)           1.151     8.450    U_GAME_LOGIC/U_FSM/ram_block[8][3]_i_2_n_0
-    SLICE_X36Y75         LUT4 (Prop_lut4_I3_O)        0.352     8.802 r  U_GAME_LOGIC/U_FSM/ram_block[13][3]_i_1/O
-                         net (fo=4, routed)           0.576     9.378    U_SEQ_MEM/ram_block_reg[13][3]_1[0]
-    SLICE_X34Y76         FDRE                                         r  U_SEQ_MEM/ram_block_reg[13][0]/CE
+    SLICE_X39Y67         FDRE (Prop_fdre_C_Q)         0.456     5.854 r  U_GAME_LOGIC/U_FSM/FSM_sequential_state_reg[0]/Q
+                         net (fo=35, routed)          1.655     7.509    U_GAME_LOGIC/U_FSM/Q[0]
+    SLICE_X37Y67         LUT4 (Prop_lut4_I2_O)        0.124     7.633 r  U_GAME_LOGIC/U_FSM/ram_block[0][3]_i_3/O
+                         net (fo=32, routed)          1.764     9.397    U_GAME_LOGIC/U_FSM/sig_we
+    SLICE_X32Y69         LUT6 (Prop_lut6_I0_O)        0.124     9.521 r  U_GAME_LOGIC/U_FSM/ram_block[25][3]_i_1/O
+                         net (fo=4, routed)           0.399     9.920    U_SEQ_MEM/ram_block_reg[25][3]_0[0]
+    SLICE_X32Y69         FDRE                                         r  U_SEQ_MEM/ram_block_reg[25][0]/CE
   -------------------------------------------------------------------    -------------------
 
                          (clock sys_clk_pin rise edge)
@@ -726,30 +710,30 @@ Slack (MET) :             3.465ns  (required time - arrival time)
     K17                  IBUF (Prop_ibuf_I_O)         1.421     9.421 r  sysclk_IBUF_inst/O
                          net (fo=1, routed)           1.880    11.301    sysclk_IBUF
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    11.392 r  sysclk_IBUF_BUFG_inst/O
-                         net (fo=264, routed)         1.472    12.864    U_SEQ_MEM/CLK
-    SLICE_X34Y76         FDRE                                         r  U_SEQ_MEM/ram_block_reg[13][0]/C
-                         clock pessimism              0.391    13.255    
-                         clock uncertainty           -0.035    13.219    
-    SLICE_X34Y76         FDRE (Setup_fdre_C_CE)      -0.377    12.842    U_SEQ_MEM/ram_block_reg[13][0]
+                         net (fo=260, routed)         1.476    12.868    U_SEQ_MEM/CLK
+    SLICE_X32Y69         FDRE                                         r  U_SEQ_MEM/ram_block_reg[25][0]/C
+                         clock pessimism              0.391    13.259    
+                         clock uncertainty           -0.035    13.223    
+    SLICE_X32Y69         FDRE (Setup_fdre_C_CE)      -0.169    13.054    U_SEQ_MEM/ram_block_reg[25][0]
   -------------------------------------------------------------------
-                         required time                         12.842    
-                         arrival time                          -9.378    
+                         required time                         13.054    
+                         arrival time                          -9.920    
   -------------------------------------------------------------------
-                         slack                                  3.465    
+                         slack                                  3.134    
 
-Slack (MET) :             3.465ns  (required time - arrival time)
-  Source:                 U_GAME_LOGIC/U_FSM/FSM_onehot_state_reg[1]/C
+Slack (MET) :             3.134ns  (required time - arrival time)
+  Source:                 U_GAME_LOGIC/U_FSM/FSM_sequential_state_reg[0]/C
                             (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@4.000ns period=8.000ns})
-  Destination:            U_SEQ_MEM/ram_block_reg[13][1]/CE
+  Destination:            U_SEQ_MEM/ram_block_reg[25][1]/CE
                             (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@4.000ns period=8.000ns})
   Path Group:             sys_clk_pin
   Path Type:              Setup (Max at Slow Process Corner)
   Requirement:            8.000ns  (sys_clk_pin rise@8.000ns - sys_clk_pin rise@0.000ns)
-  Data Path Delay:        3.982ns  (logic 1.020ns (25.614%)  route 2.962ns (74.386%))
-  Logic Levels:           2  (LUT4=2)
-  Clock Path Skew:        -0.141ns (DCD - SCD + CPR)
-    Destination Clock Delay (DCD):    4.864ns = ( 12.864 - 8.000 ) 
-    Source Clock Delay      (SCD):    5.396ns
+  Data Path Delay:        4.522ns  (logic 0.704ns (15.567%)  route 3.818ns (84.433%))
+  Logic Levels:           2  (LUT4=1 LUT6=1)
+  Clock Path Skew:        -0.139ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    4.868ns = ( 12.868 - 8.000 ) 
+    Source Clock Delay      (SCD):    5.398ns
     Clock Pessimism Removal (CPR):    0.391ns
   Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
     Total System Jitter     (TSJ):    0.071ns
@@ -766,16 +750,16 @@ Slack (MET) :             3.465ns  (required time - arrival time)
     K17                  IBUF (Prop_ibuf_I_O)         1.492     1.492 r  sysclk_IBUF_inst/O
                          net (fo=1, routed)           2.076     3.568    sysclk_IBUF
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.101     3.669 r  sysclk_IBUF_BUFG_inst/O
-                         net (fo=264, routed)         1.727     5.396    U_GAME_LOGIC/U_FSM/CLK
-    SLICE_X42Y70         FDRE                                         r  U_GAME_LOGIC/U_FSM/FSM_onehot_state_reg[1]/C
+                         net (fo=260, routed)         1.729     5.398    U_GAME_LOGIC/U_FSM/CLK
+    SLICE_X39Y67         FDRE                                         r  U_GAME_LOGIC/U_FSM/FSM_sequential_state_reg[0]/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X42Y70         FDRE (Prop_fdre_C_Q)         0.518     5.914 r  U_GAME_LOGIC/U_FSM/FSM_onehot_state_reg[1]/Q
-                         net (fo=14, routed)          1.235     7.149    U_GAME_LOGIC/U_FSM/sig_en_gen
-    SLICE_X35Y71         LUT4 (Prop_lut4_I3_O)        0.150     7.299 f  U_GAME_LOGIC/U_FSM/ram_block[8][3]_i_2/O
-                         net (fo=8, routed)           1.151     8.450    U_GAME_LOGIC/U_FSM/ram_block[8][3]_i_2_n_0
-    SLICE_X36Y75         LUT4 (Prop_lut4_I3_O)        0.352     8.802 r  U_GAME_LOGIC/U_FSM/ram_block[13][3]_i_1/O
-                         net (fo=4, routed)           0.576     9.378    U_SEQ_MEM/ram_block_reg[13][3]_1[0]
-    SLICE_X34Y76         FDRE                                         r  U_SEQ_MEM/ram_block_reg[13][1]/CE
+    SLICE_X39Y67         FDRE (Prop_fdre_C_Q)         0.456     5.854 r  U_GAME_LOGIC/U_FSM/FSM_sequential_state_reg[0]/Q
+                         net (fo=35, routed)          1.655     7.509    U_GAME_LOGIC/U_FSM/Q[0]
+    SLICE_X37Y67         LUT4 (Prop_lut4_I2_O)        0.124     7.633 r  U_GAME_LOGIC/U_FSM/ram_block[0][3]_i_3/O
+                         net (fo=32, routed)          1.764     9.397    U_GAME_LOGIC/U_FSM/sig_we
+    SLICE_X32Y69         LUT6 (Prop_lut6_I0_O)        0.124     9.521 r  U_GAME_LOGIC/U_FSM/ram_block[25][3]_i_1/O
+                         net (fo=4, routed)           0.399     9.920    U_SEQ_MEM/ram_block_reg[25][3]_0[0]
+    SLICE_X32Y69         FDRE                                         r  U_SEQ_MEM/ram_block_reg[25][1]/CE
   -------------------------------------------------------------------    -------------------
 
                          (clock sys_clk_pin rise edge)
@@ -785,16 +769,16 @@ Slack (MET) :             3.465ns  (required time - arrival time)
     K17                  IBUF (Prop_ibuf_I_O)         1.421     9.421 r  sysclk_IBUF_inst/O
                          net (fo=1, routed)           1.880    11.301    sysclk_IBUF
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    11.392 r  sysclk_IBUF_BUFG_inst/O
-                         net (fo=264, routed)         1.472    12.864    U_SEQ_MEM/CLK
-    SLICE_X34Y76         FDRE                                         r  U_SEQ_MEM/ram_block_reg[13][1]/C
-                         clock pessimism              0.391    13.255    
-                         clock uncertainty           -0.035    13.219    
-    SLICE_X34Y76         FDRE (Setup_fdre_C_CE)      -0.377    12.842    U_SEQ_MEM/ram_block_reg[13][1]
+                         net (fo=260, routed)         1.476    12.868    U_SEQ_MEM/CLK
+    SLICE_X32Y69         FDRE                                         r  U_SEQ_MEM/ram_block_reg[25][1]/C
+                         clock pessimism              0.391    13.259    
+                         clock uncertainty           -0.035    13.223    
+    SLICE_X32Y69         FDRE (Setup_fdre_C_CE)      -0.169    13.054    U_SEQ_MEM/ram_block_reg[25][1]
   -------------------------------------------------------------------
-                         required time                         12.842    
-                         arrival time                          -9.378    
+                         required time                         13.054    
+                         arrival time                          -9.920    
   -------------------------------------------------------------------
-                         slack                                  3.465    
+                         slack                                  3.134    
 
 
 
@@ -802,71 +786,20 @@ Slack (MET) :             3.465ns  (required time - arrival time)
 
 Min Delay Paths
 --------------------------------------------------------------------------------------
-Slack (MET) :             0.179ns  (arrival time - required time)
-  Source:                 U_GAME_CORE/U_RAND_SEC/sr_reg[3]/C
+Slack (MET) :             0.192ns  (arrival time - required time)
+  Source:                 U_GAME_LOGIC/U_DIS/ptr_reg[2]/C
                             (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@4.000ns period=8.000ns})
-  Destination:            U_GAME_CORE/U_RAND_SEC/sr_reg[6]/D
-                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@4.000ns period=8.000ns})
-  Path Group:             sys_clk_pin
-  Path Type:              Hold (Min at Fast Process Corner)
-  Requirement:            0.000ns  (sys_clk_pin rise@0.000ns - sys_clk_pin rise@0.000ns)
-  Data Path Delay:        0.313ns  (logic 0.186ns (59.358%)  route 0.127ns (40.642%))
-  Logic Levels:           1  (LUT4=1)
-  Clock Path Skew:        0.013ns (DCD - SCD - CPR)
-    Destination Clock Delay (DCD):    2.004ns
-    Source Clock Delay      (SCD):    1.490ns
-    Clock Pessimism Removal (CPR):    0.501ns
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-                         (clock sys_clk_pin rise edge)
-                                                      0.000     0.000 r  
-    K17                                               0.000     0.000 r  sysclk (IN)
-                         net (fo=0)                   0.000     0.000    sysclk
-    K17                  IBUF (Prop_ibuf_I_O)         0.259     0.259 r  sysclk_IBUF_inst/O
-                         net (fo=1, routed)           0.627     0.887    sysclk_IBUF
-    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     0.913 r  sysclk_IBUF_BUFG_inst/O
-                         net (fo=264, routed)         0.578     1.490    U_GAME_CORE/U_RAND_SEC/CLK
-    SLICE_X41Y77         FDRE                                         r  U_GAME_CORE/U_RAND_SEC/sr_reg[3]/C
-  -------------------------------------------------------------------    -------------------
-    SLICE_X41Y77         FDRE (Prop_fdre_C_Q)         0.141     1.631 r  U_GAME_CORE/U_RAND_SEC/sr_reg[3]/Q
-                         net (fo=5, routed)           0.127     1.759    U_GAME_CORE/U_RAND_SEC/p_0_in[4]
-    SLICE_X42Y77         LUT4 (Prop_lut4_I0_O)        0.045     1.804 r  U_GAME_CORE/U_RAND_SEC/sr[6]_i_1/O
-                         net (fo=1, routed)           0.000     1.804    U_GAME_CORE/U_RAND_SEC/p_1_in[6]
-    SLICE_X42Y77         FDRE                                         r  U_GAME_CORE/U_RAND_SEC/sr_reg[6]/D
-  -------------------------------------------------------------------    -------------------
-
-                         (clock sys_clk_pin rise edge)
-                                                      0.000     0.000 r  
-    K17                                               0.000     0.000 r  sysclk (IN)
-                         net (fo=0)                   0.000     0.000    sysclk
-    K17                  IBUF (Prop_ibuf_I_O)         0.447     0.447 r  sysclk_IBUF_inst/O
-                         net (fo=1, routed)           0.683     1.130    sysclk_IBUF
-    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     1.159 r  sysclk_IBUF_BUFG_inst/O
-                         net (fo=264, routed)         0.845     2.004    U_GAME_CORE/U_RAND_SEC/CLK
-    SLICE_X42Y77         FDRE                                         r  U_GAME_CORE/U_RAND_SEC/sr_reg[6]/C
-                         clock pessimism             -0.501     1.503    
-    SLICE_X42Y77         FDRE (Hold_fdre_C_D)         0.121     1.624    U_GAME_CORE/U_RAND_SEC/sr_reg[6]
-  -------------------------------------------------------------------
-                         required time                         -1.624    
-                         arrival time                           1.804    
-  -------------------------------------------------------------------
-                         slack                                  0.179    
-
-Slack (MET) :             0.181ns  (arrival time - required time)
-  Source:                 U_GAME_CORE/U_RAND_SEC/sr_reg[3]/C
-                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@4.000ns period=8.000ns})
-  Destination:            U_GAME_CORE/U_RAND_SEC/sr_reg[2]/D
+  Destination:            U_GAME_LOGIC/U_DIS/ptr_reg[4]/D
                             (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@4.000ns period=8.000ns})
   Path Group:             sys_clk_pin
   Path Type:              Hold (Min at Fast Process Corner)
   Requirement:            0.000ns  (sys_clk_pin rise@0.000ns - sys_clk_pin rise@0.000ns)
-  Data Path Delay:        0.315ns  (logic 0.186ns (58.982%)  route 0.129ns (41.018%))
+  Data Path Delay:        0.312ns  (logic 0.190ns (60.846%)  route 0.122ns (39.154%))
   Logic Levels:           1  (LUT5=1)
   Clock Path Skew:        0.013ns (DCD - SCD - CPR)
-    Destination Clock Delay (DCD):    2.004ns
-    Source Clock Delay      (SCD):    1.490ns
-    Clock Pessimism Removal (CPR):    0.501ns
+    Destination Clock Delay (DCD):    2.008ns
+    Source Clock Delay      (SCD):    1.493ns
+    Clock Pessimism Removal (CPR):    0.502ns
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
   -------------------------------------------------------------------    -------------------
@@ -877,14 +810,14 @@ Slack (MET) :             0.181ns  (arrival time - required time)
     K17                  IBUF (Prop_ibuf_I_O)         0.259     0.259 r  sysclk_IBUF_inst/O
                          net (fo=1, routed)           0.627     0.887    sysclk_IBUF
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     0.913 r  sysclk_IBUF_BUFG_inst/O
-                         net (fo=264, routed)         0.578     1.490    U_GAME_CORE/U_RAND_SEC/CLK
-    SLICE_X41Y77         FDRE                                         r  U_GAME_CORE/U_RAND_SEC/sr_reg[3]/C
+                         net (fo=260, routed)         0.581     1.493    U_GAME_LOGIC/U_DIS/CLK
+    SLICE_X41Y68         FDRE                                         r  U_GAME_LOGIC/U_DIS/ptr_reg[2]/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X41Y77         FDRE (Prop_fdre_C_Q)         0.141     1.631 r  U_GAME_CORE/U_RAND_SEC/sr_reg[3]/Q
-                         net (fo=5, routed)           0.129     1.761    U_GAME_CORE/U_RAND_SEC/p_0_in[4]
-    SLICE_X42Y77         LUT5 (Prop_lut5_I2_O)        0.045     1.806 r  U_GAME_CORE/U_RAND_SEC/sr[2]_i_1/O
-                         net (fo=1, routed)           0.000     1.806    U_GAME_CORE/U_RAND_SEC/sr[2]_i_1_n_0
-    SLICE_X42Y77         FDRE                                         r  U_GAME_CORE/U_RAND_SEC/sr_reg[2]/D
+    SLICE_X41Y68         FDRE (Prop_fdre_C_Q)         0.141     1.634 r  U_GAME_LOGIC/U_DIS/ptr_reg[2]/Q
+                         net (fo=5, routed)           0.122     1.757    U_GAME_LOGIC/U_DIS/Q[2]
+    SLICE_X40Y68         LUT5 (Prop_lut5_I0_O)        0.049     1.806 r  U_GAME_LOGIC/U_DIS/ptr[4]_i_2/O
+                         net (fo=1, routed)           0.000     1.806    U_GAME_LOGIC/U_DIS/plusOp[4]
+    SLICE_X40Y68         FDRE                                         r  U_GAME_LOGIC/U_DIS/ptr_reg[4]/D
   -------------------------------------------------------------------    -------------------
 
                          (clock sys_clk_pin rise edge)
@@ -894,30 +827,30 @@ Slack (MET) :             0.181ns  (arrival time - required time)
     K17                  IBUF (Prop_ibuf_I_O)         0.447     0.447 r  sysclk_IBUF_inst/O
                          net (fo=1, routed)           0.683     1.130    sysclk_IBUF
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     1.159 r  sysclk_IBUF_BUFG_inst/O
-                         net (fo=264, routed)         0.845     2.004    U_GAME_CORE/U_RAND_SEC/CLK
-    SLICE_X42Y77         FDRE                                         r  U_GAME_CORE/U_RAND_SEC/sr_reg[2]/C
-                         clock pessimism             -0.501     1.503    
-    SLICE_X42Y77         FDRE (Hold_fdre_C_D)         0.121     1.624    U_GAME_CORE/U_RAND_SEC/sr_reg[2]
+                         net (fo=260, routed)         0.849     2.008    U_GAME_LOGIC/U_DIS/CLK
+    SLICE_X40Y68         FDRE                                         r  U_GAME_LOGIC/U_DIS/ptr_reg[4]/C
+                         clock pessimism             -0.502     1.506    
+    SLICE_X40Y68         FDRE (Hold_fdre_C_D)         0.107     1.613    U_GAME_LOGIC/U_DIS/ptr_reg[4]
   -------------------------------------------------------------------
-                         required time                         -1.624    
+                         required time                         -1.613    
                          arrival time                           1.806    
   -------------------------------------------------------------------
-                         slack                                  0.181    
+                         slack                                  0.192    
 
-Slack (MET) :             0.185ns  (arrival time - required time)
-  Source:                 U_GAME_LOGIC/U_INPUT/sync1_reg[0]/C
+Slack (MET) :             0.203ns  (arrival time - required time)
+  Source:                 U_GAME_LOGIC/U_DIS/ptr_reg[2]/C
                             (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@4.000ns period=8.000ns})
-  Destination:            U_GAME_LOGIC/U_INPUT/sync2_reg[0]/D
+  Destination:            U_GAME_LOGIC/U_DIS/ptr_reg[3]/D
                             (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@4.000ns period=8.000ns})
   Path Group:             sys_clk_pin
   Path Type:              Hold (Min at Fast Process Corner)
   Requirement:            0.000ns  (sys_clk_pin rise@0.000ns - sys_clk_pin rise@0.000ns)
-  Data Path Delay:        0.255ns  (logic 0.141ns (55.385%)  route 0.114ns (44.615%))
-  Logic Levels:           0  
-  Clock Path Skew:        0.000ns (DCD - SCD - CPR)
-    Destination Clock Delay (DCD):    2.010ns
-    Source Clock Delay      (SCD):    1.495ns
-    Clock Pessimism Removal (CPR):    0.515ns
+  Data Path Delay:        0.308ns  (logic 0.186ns (60.338%)  route 0.122ns (39.662%))
+  Logic Levels:           1  (LUT4=1)
+  Clock Path Skew:        0.013ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    2.008ns
+    Source Clock Delay      (SCD):    1.493ns
+    Clock Pessimism Removal (CPR):    0.502ns
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
   -------------------------------------------------------------------    -------------------
@@ -928,12 +861,14 @@ Slack (MET) :             0.185ns  (arrival time - required time)
     K17                  IBUF (Prop_ibuf_I_O)         0.259     0.259 r  sysclk_IBUF_inst/O
                          net (fo=1, routed)           0.627     0.887    sysclk_IBUF
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     0.913 r  sysclk_IBUF_BUFG_inst/O
-                         net (fo=264, routed)         0.583     1.495    U_GAME_LOGIC/U_INPUT/CLK
-    SLICE_X40Y66         FDRE                                         r  U_GAME_LOGIC/U_INPUT/sync1_reg[0]/C
+                         net (fo=260, routed)         0.581     1.493    U_GAME_LOGIC/U_DIS/CLK
+    SLICE_X41Y68         FDRE                                         r  U_GAME_LOGIC/U_DIS/ptr_reg[2]/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X40Y66         FDRE (Prop_fdre_C_Q)         0.141     1.636 r  U_GAME_LOGIC/U_INPUT/sync1_reg[0]/Q
-                         net (fo=1, routed)           0.114     1.750    U_GAME_LOGIC/U_INPUT/sync1[0]
-    SLICE_X40Y66         FDRE                                         r  U_GAME_LOGIC/U_INPUT/sync2_reg[0]/D
+    SLICE_X41Y68         FDRE (Prop_fdre_C_Q)         0.141     1.634 r  U_GAME_LOGIC/U_DIS/ptr_reg[2]/Q
+                         net (fo=5, routed)           0.122     1.757    U_GAME_LOGIC/U_DIS/Q[2]
+    SLICE_X40Y68         LUT4 (Prop_lut4_I2_O)        0.045     1.802 r  U_GAME_LOGIC/U_DIS/ptr[3]_i_1/O
+                         net (fo=1, routed)           0.000     1.802    U_GAME_LOGIC/U_DIS/plusOp[3]
+    SLICE_X40Y68         FDRE                                         r  U_GAME_LOGIC/U_DIS/ptr_reg[3]/D
   -------------------------------------------------------------------    -------------------
 
                          (clock sys_clk_pin rise edge)
@@ -943,17 +878,17 @@ Slack (MET) :             0.185ns  (arrival time - required time)
     K17                  IBUF (Prop_ibuf_I_O)         0.447     0.447 r  sysclk_IBUF_inst/O
                          net (fo=1, routed)           0.683     1.130    sysclk_IBUF
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     1.159 r  sysclk_IBUF_BUFG_inst/O
-                         net (fo=264, routed)         0.851     2.010    U_GAME_LOGIC/U_INPUT/CLK
-    SLICE_X40Y66         FDRE                                         r  U_GAME_LOGIC/U_INPUT/sync2_reg[0]/C
-                         clock pessimism             -0.515     1.495    
-    SLICE_X40Y66         FDRE (Hold_fdre_C_D)         0.070     1.565    U_GAME_LOGIC/U_INPUT/sync2_reg[0]
+                         net (fo=260, routed)         0.849     2.008    U_GAME_LOGIC/U_DIS/CLK
+    SLICE_X40Y68         FDRE                                         r  U_GAME_LOGIC/U_DIS/ptr_reg[3]/C
+                         clock pessimism             -0.502     1.506    
+    SLICE_X40Y68         FDRE (Hold_fdre_C_D)         0.092     1.598    U_GAME_LOGIC/U_DIS/ptr_reg[3]
   -------------------------------------------------------------------
-                         required time                         -1.565    
-                         arrival time                           1.750    
+                         required time                         -1.598    
+                         arrival time                           1.802    
   -------------------------------------------------------------------
-                         slack                                  0.185    
+                         slack                                  0.203    
 
-Slack (MET) :             0.185ns  (arrival time - required time)
+Slack (MET) :             0.211ns  (arrival time - required time)
   Source:                 U_GAME_LOGIC/U_INPUT/sync1_reg[1]/C
                             (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@4.000ns period=8.000ns})
   Destination:            U_GAME_LOGIC/U_INPUT/sync2_reg[1]/D
@@ -961,11 +896,11 @@ Slack (MET) :             0.185ns  (arrival time - required time)
   Path Group:             sys_clk_pin
   Path Type:              Hold (Min at Fast Process Corner)
   Requirement:            0.000ns  (sys_clk_pin rise@0.000ns - sys_clk_pin rise@0.000ns)
-  Data Path Delay:        0.255ns  (logic 0.141ns (55.385%)  route 0.114ns (44.615%))
+  Data Path Delay:        0.274ns  (logic 0.164ns (59.853%)  route 0.110ns (40.147%))
   Logic Levels:           0  
   Clock Path Skew:        0.000ns (DCD - SCD - CPR)
-    Destination Clock Delay (DCD):    2.012ns
-    Source Clock Delay      (SCD):    1.496ns
+    Destination Clock Delay (DCD):    2.013ns
+    Source Clock Delay      (SCD):    1.497ns
     Clock Pessimism Removal (CPR):    0.516ns
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
@@ -977,12 +912,12 @@ Slack (MET) :             0.185ns  (arrival time - required time)
     K17                  IBUF (Prop_ibuf_I_O)         0.259     0.259 r  sysclk_IBUF_inst/O
                          net (fo=1, routed)           0.627     0.887    sysclk_IBUF
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     0.913 r  sysclk_IBUF_BUFG_inst/O
-                         net (fo=264, routed)         0.584     1.496    U_GAME_LOGIC/U_INPUT/CLK
-    SLICE_X40Y64         FDRE                                         r  U_GAME_LOGIC/U_INPUT/sync1_reg[1]/C
+                         net (fo=260, routed)         0.585     1.497    U_GAME_LOGIC/U_INPUT/CLK
+    SLICE_X42Y62         FDRE                                         r  U_GAME_LOGIC/U_INPUT/sync1_reg[1]/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X40Y64         FDRE (Prop_fdre_C_Q)         0.141     1.637 r  U_GAME_LOGIC/U_INPUT/sync1_reg[1]/Q
-                         net (fo=1, routed)           0.114     1.751    U_GAME_LOGIC/U_INPUT/sync1[1]
-    SLICE_X40Y64         FDRE                                         r  U_GAME_LOGIC/U_INPUT/sync2_reg[1]/D
+    SLICE_X42Y62         FDRE (Prop_fdre_C_Q)         0.164     1.661 r  U_GAME_LOGIC/U_INPUT/sync1_reg[1]/Q
+                         net (fo=1, routed)           0.110     1.771    U_GAME_LOGIC/U_INPUT/sync1[1]
+    SLICE_X42Y62         FDRE                                         r  U_GAME_LOGIC/U_INPUT/sync2_reg[1]/D
   -------------------------------------------------------------------    -------------------
 
                          (clock sys_clk_pin rise edge)
@@ -992,80 +927,29 @@ Slack (MET) :             0.185ns  (arrival time - required time)
     K17                  IBUF (Prop_ibuf_I_O)         0.447     0.447 r  sysclk_IBUF_inst/O
                          net (fo=1, routed)           0.683     1.130    sysclk_IBUF
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     1.159 r  sysclk_IBUF_BUFG_inst/O
-                         net (fo=264, routed)         0.853     2.012    U_GAME_LOGIC/U_INPUT/CLK
-    SLICE_X40Y64         FDRE                                         r  U_GAME_LOGIC/U_INPUT/sync2_reg[1]/C
-                         clock pessimism             -0.516     1.496    
-    SLICE_X40Y64         FDRE (Hold_fdre_C_D)         0.070     1.566    U_GAME_LOGIC/U_INPUT/sync2_reg[1]
+                         net (fo=260, routed)         0.854     2.013    U_GAME_LOGIC/U_INPUT/CLK
+    SLICE_X42Y62         FDRE                                         r  U_GAME_LOGIC/U_INPUT/sync2_reg[1]/C
+                         clock pessimism             -0.516     1.497    
+    SLICE_X42Y62         FDRE (Hold_fdre_C_D)         0.063     1.560    U_GAME_LOGIC/U_INPUT/sync2_reg[1]
   -------------------------------------------------------------------
-                         required time                         -1.566    
-                         arrival time                           1.751    
+                         required time                         -1.560    
+                         arrival time                           1.771    
   -------------------------------------------------------------------
-                         slack                                  0.185    
+                         slack                                  0.211    
 
-Slack (MET) :             0.216ns  (arrival time - required time)
-  Source:                 U_GAME_LOGIC/U_FSM/FSM_onehot_state_reg[4]/C
+Slack (MET) :             0.212ns  (arrival time - required time)
+  Source:                 U_SEQ_MEM/data_out_reg[3]/C
                             (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@4.000ns period=8.000ns})
-  Destination:            U_GAME_LOGIC/U_FSM/FSM_onehot_state_reg[0]/D
-                            (rising edge-triggered cell FDSE clocked by sys_clk_pin  {rise@0.000ns fall@4.000ns period=8.000ns})
+  Destination:            U_GAME_LOGIC/U_DIS/led_reg[3]/D
+                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@4.000ns period=8.000ns})
   Path Group:             sys_clk_pin
   Path Type:              Hold (Min at Fast Process Corner)
   Requirement:            0.000ns  (sys_clk_pin rise@0.000ns - sys_clk_pin rise@0.000ns)
-  Data Path Delay:        0.336ns  (logic 0.246ns (73.158%)  route 0.090ns (26.842%))
+  Data Path Delay:        0.332ns  (logic 0.189ns (56.894%)  route 0.143ns (43.106%))
   Logic Levels:           1  (LUT2=1)
-  Clock Path Skew:        0.000ns (DCD - SCD - CPR)
-    Destination Clock Delay (DCD):    2.006ns
-    Source Clock Delay      (SCD):    1.491ns
-    Clock Pessimism Removal (CPR):    0.515ns
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-                         (clock sys_clk_pin rise edge)
-                                                      0.000     0.000 r  
-    K17                                               0.000     0.000 r  sysclk (IN)
-                         net (fo=0)                   0.000     0.000    sysclk
-    K17                  IBUF (Prop_ibuf_I_O)         0.259     0.259 r  sysclk_IBUF_inst/O
-                         net (fo=1, routed)           0.627     0.887    sysclk_IBUF
-    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     0.913 r  sysclk_IBUF_BUFG_inst/O
-                         net (fo=264, routed)         0.579     1.491    U_GAME_LOGIC/U_FSM/CLK
-    SLICE_X42Y70         FDRE                                         r  U_GAME_LOGIC/U_FSM/FSM_onehot_state_reg[4]/C
-  -------------------------------------------------------------------    -------------------
-    SLICE_X42Y70         FDRE (Prop_fdre_C_Q)         0.148     1.639 r  U_GAME_LOGIC/U_FSM/FSM_onehot_state_reg[4]/Q
-                         net (fo=2, routed)           0.090     1.730    U_GAME_LOGIC/U_FSM/FSM_onehot_state_reg_n_0_[4]
-    SLICE_X42Y70         LUT2 (Prop_lut2_I0_O)        0.098     1.828 r  U_GAME_LOGIC/U_FSM/FSM_onehot_state[0]_i_1/O
-                         net (fo=2, routed)           0.000     1.828    U_GAME_LOGIC/U_FSM/FSM_onehot_state[0]_i_1_n_0
-    SLICE_X42Y70         FDSE                                         r  U_GAME_LOGIC/U_FSM/FSM_onehot_state_reg[0]/D
-  -------------------------------------------------------------------    -------------------
-
-                         (clock sys_clk_pin rise edge)
-                                                      0.000     0.000 r  
-    K17                                               0.000     0.000 r  sysclk (IN)
-                         net (fo=0)                   0.000     0.000    sysclk
-    K17                  IBUF (Prop_ibuf_I_O)         0.447     0.447 r  sysclk_IBUF_inst/O
-                         net (fo=1, routed)           0.683     1.130    sysclk_IBUF
-    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     1.159 r  sysclk_IBUF_BUFG_inst/O
-                         net (fo=264, routed)         0.847     2.006    U_GAME_LOGIC/U_FSM/CLK
-    SLICE_X42Y70         FDSE                                         r  U_GAME_LOGIC/U_FSM/FSM_onehot_state_reg[0]/C
-                         clock pessimism             -0.515     1.491    
-    SLICE_X42Y70         FDSE (Hold_fdse_C_D)         0.120     1.611    U_GAME_LOGIC/U_FSM/FSM_onehot_state_reg[0]
-  -------------------------------------------------------------------
-                         required time                         -1.611    
-                         arrival time                           1.828    
-  -------------------------------------------------------------------
-                         slack                                  0.216    
-
-Slack (MET) :             0.228ns  (arrival time - required time)
-  Source:                 U_GAME_CORE/U_RAND_SEC/sr_reg[4]/C
-                            (rising edge-triggered cell FDSE clocked by sys_clk_pin  {rise@0.000ns fall@4.000ns period=8.000ns})
-  Destination:            U_GAME_CORE/U_RAND_SEC/sr_reg[1]/D
-                            (rising edge-triggered cell FDSE clocked by sys_clk_pin  {rise@0.000ns fall@4.000ns period=8.000ns})
-  Path Group:             sys_clk_pin
-  Path Type:              Hold (Min at Fast Process Corner)
-  Requirement:            0.000ns  (sys_clk_pin rise@0.000ns - sys_clk_pin rise@0.000ns)
-  Data Path Delay:        0.372ns  (logic 0.189ns (50.872%)  route 0.183ns (49.128%))
-  Logic Levels:           1  (LUT4=1)
   Clock Path Skew:        0.013ns (DCD - SCD - CPR)
-    Destination Clock Delay (DCD):    2.004ns
-    Source Clock Delay      (SCD):    1.490ns
+    Destination Clock Delay (DCD):    2.006ns
+    Source Clock Delay      (SCD):    1.492ns
     Clock Pessimism Removal (CPR):    0.501ns
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
@@ -1077,65 +961,14 @@ Slack (MET) :             0.228ns  (arrival time - required time)
     K17                  IBUF (Prop_ibuf_I_O)         0.259     0.259 r  sysclk_IBUF_inst/O
                          net (fo=1, routed)           0.627     0.887    sysclk_IBUF
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     0.913 r  sysclk_IBUF_BUFG_inst/O
-                         net (fo=264, routed)         0.578     1.490    U_GAME_CORE/U_RAND_SEC/CLK
-    SLICE_X41Y77         FDSE                                         r  U_GAME_CORE/U_RAND_SEC/sr_reg[4]/C
+                         net (fo=260, routed)         0.580     1.492    U_SEQ_MEM/CLK
+    SLICE_X36Y67         FDRE                                         r  U_SEQ_MEM/data_out_reg[3]/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X41Y77         FDSE (Prop_fdse_C_Q)         0.141     1.631 r  U_GAME_CORE/U_RAND_SEC/sr_reg[4]/Q
-                         net (fo=7, routed)           0.183     1.814    U_GAME_CORE/U_RAND_SEC/p_0_in[5]
-    SLICE_X42Y77         LUT4 (Prop_lut4_I1_O)        0.048     1.862 r  U_GAME_CORE/U_RAND_SEC/sr[1]_i_1/O
-                         net (fo=1, routed)           0.000     1.862    U_GAME_CORE/U_RAND_SEC/sr[1]_i_1_n_0
-    SLICE_X42Y77         FDSE                                         r  U_GAME_CORE/U_RAND_SEC/sr_reg[1]/D
-  -------------------------------------------------------------------    -------------------
-
-                         (clock sys_clk_pin rise edge)
-                                                      0.000     0.000 r  
-    K17                                               0.000     0.000 r  sysclk (IN)
-                         net (fo=0)                   0.000     0.000    sysclk
-    K17                  IBUF (Prop_ibuf_I_O)         0.447     0.447 r  sysclk_IBUF_inst/O
-                         net (fo=1, routed)           0.683     1.130    sysclk_IBUF
-    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     1.159 r  sysclk_IBUF_BUFG_inst/O
-                         net (fo=264, routed)         0.845     2.004    U_GAME_CORE/U_RAND_SEC/CLK
-    SLICE_X42Y77         FDSE                                         r  U_GAME_CORE/U_RAND_SEC/sr_reg[1]/C
-                         clock pessimism             -0.501     1.503    
-    SLICE_X42Y77         FDSE (Hold_fdse_C_D)         0.131     1.634    U_GAME_CORE/U_RAND_SEC/sr_reg[1]
-  -------------------------------------------------------------------
-                         required time                         -1.634    
-                         arrival time                           1.862    
-  -------------------------------------------------------------------
-                         slack                                  0.228    
-
-Slack (MET) :             0.229ns  (arrival time - required time)
-  Source:                 U_GAME_LOGIC/U_INPUT/btn_debounced_reg[0]/C
-                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@4.000ns period=8.000ns})
-  Destination:            U_GAME_LOGIC/U_INPUT/btn_valid_reg/D
-                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@4.000ns period=8.000ns})
-  Path Group:             sys_clk_pin
-  Path Type:              Hold (Min at Fast Process Corner)
-  Requirement:            0.000ns  (sys_clk_pin rise@0.000ns - sys_clk_pin rise@0.000ns)
-  Data Path Delay:        0.380ns  (logic 0.186ns (48.908%)  route 0.194ns (51.092%))
-  Logic Levels:           1  (LUT6=1)
-  Clock Path Skew:        0.031ns (DCD - SCD - CPR)
-    Destination Clock Delay (DCD):    2.008ns
-    Source Clock Delay      (SCD):    1.496ns
-    Clock Pessimism Removal (CPR):    0.481ns
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-                         (clock sys_clk_pin rise edge)
-                                                      0.000     0.000 r  
-    K17                                               0.000     0.000 r  sysclk (IN)
-                         net (fo=0)                   0.000     0.000    sysclk
-    K17                  IBUF (Prop_ibuf_I_O)         0.259     0.259 r  sysclk_IBUF_inst/O
-                         net (fo=1, routed)           0.627     0.887    sysclk_IBUF
-    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     0.913 r  sysclk_IBUF_BUFG_inst/O
-                         net (fo=264, routed)         0.584     1.496    U_GAME_LOGIC/U_INPUT/CLK
-    SLICE_X40Y65         FDRE                                         r  U_GAME_LOGIC/U_INPUT/btn_debounced_reg[0]/C
-  -------------------------------------------------------------------    -------------------
-    SLICE_X40Y65         FDRE (Prop_fdre_C_Q)         0.141     1.637 r  U_GAME_LOGIC/U_INPUT/btn_debounced_reg[0]/Q
-                         net (fo=6, routed)           0.194     1.832    U_GAME_LOGIC/U_INPUT/btn_debounced_reg_n_0_[0]
-    SLICE_X38Y66         LUT6 (Prop_lut6_I3_O)        0.045     1.877 r  U_GAME_LOGIC/U_INPUT/btn_valid_i_1/O
-                         net (fo=1, routed)           0.000     1.877    U_GAME_LOGIC/U_INPUT/btn_valid_i_1_n_0
-    SLICE_X38Y66         FDRE                                         r  U_GAME_LOGIC/U_INPUT/btn_valid_reg/D
+    SLICE_X36Y67         FDRE (Prop_fdre_C_Q)         0.141     1.633 r  U_SEQ_MEM/data_out_reg[3]/Q
+                         net (fo=2, routed)           0.143     1.776    U_SEQ_MEM/Q[3]
+    SLICE_X39Y68         LUT2 (Prop_lut2_I0_O)        0.048     1.824 r  U_SEQ_MEM/led[3]_i_2__0/O
+                         net (fo=1, routed)           0.000     1.824    U_GAME_LOGIC/U_DIS/led_reg[3]_1[3]
+    SLICE_X39Y68         FDRE                                         r  U_GAME_LOGIC/U_DIS/led_reg[3]/D
   -------------------------------------------------------------------    -------------------
 
                          (clock sys_clk_pin rise edge)
@@ -1145,77 +978,28 @@ Slack (MET) :             0.229ns  (arrival time - required time)
     K17                  IBUF (Prop_ibuf_I_O)         0.447     0.447 r  sysclk_IBUF_inst/O
                          net (fo=1, routed)           0.683     1.130    sysclk_IBUF
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     1.159 r  sysclk_IBUF_BUFG_inst/O
-                         net (fo=264, routed)         0.849     2.008    U_GAME_LOGIC/U_INPUT/CLK
-    SLICE_X38Y66         FDRE                                         r  U_GAME_LOGIC/U_INPUT/btn_valid_reg/C
-                         clock pessimism             -0.481     1.527    
-    SLICE_X38Y66         FDRE (Hold_fdre_C_D)         0.120     1.647    U_GAME_LOGIC/U_INPUT/btn_valid_reg
+                         net (fo=260, routed)         0.847     2.006    U_GAME_LOGIC/U_DIS/CLK
+    SLICE_X39Y68         FDRE                                         r  U_GAME_LOGIC/U_DIS/led_reg[3]/C
+                         clock pessimism             -0.501     1.505    
+    SLICE_X39Y68         FDRE (Hold_fdre_C_D)         0.107     1.612    U_GAME_LOGIC/U_DIS/led_reg[3]
   -------------------------------------------------------------------
-                         required time                         -1.647    
-                         arrival time                           1.877    
+                         required time                         -1.612    
+                         arrival time                           1.824    
   -------------------------------------------------------------------
-                         slack                                  0.229    
+                         slack                                  0.212    
 
-Slack (MET) :             0.231ns  (arrival time - required time)
-  Source:                 U_GAME_LOGIC/U_INPUT/sync2_reg[1]/C
+Slack (MET) :             0.218ns  (arrival time - required time)
+  Source:                 U_GAME_LOGIC/U_DIS/phase_reg/C
                             (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@4.000ns period=8.000ns})
-  Destination:            U_GAME_LOGIC/U_INPUT/btn_debounced_reg[1]/D
+  Destination:            U_GAME_LOGIC/U_DIS/led_reg[1]/D
                             (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@4.000ns period=8.000ns})
   Path Group:             sys_clk_pin
   Path Type:              Hold (Min at Fast Process Corner)
   Requirement:            0.000ns  (sys_clk_pin rise@0.000ns - sys_clk_pin rise@0.000ns)
-  Data Path Delay:        0.333ns  (logic 0.141ns (42.389%)  route 0.192ns (57.611%))
-  Logic Levels:           0  
+  Data Path Delay:        0.357ns  (logic 0.190ns (53.242%)  route 0.167ns (46.758%))
+  Logic Levels:           1  (LUT2=1)
   Clock Path Skew:        0.032ns (DCD - SCD - CPR)
-    Destination Clock Delay (DCD):    2.009ns
-    Source Clock Delay      (SCD):    1.496ns
-    Clock Pessimism Removal (CPR):    0.481ns
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-                         (clock sys_clk_pin rise edge)
-                                                      0.000     0.000 r  
-    K17                                               0.000     0.000 r  sysclk (IN)
-                         net (fo=0)                   0.000     0.000    sysclk
-    K17                  IBUF (Prop_ibuf_I_O)         0.259     0.259 r  sysclk_IBUF_inst/O
-                         net (fo=1, routed)           0.627     0.887    sysclk_IBUF
-    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     0.913 r  sysclk_IBUF_BUFG_inst/O
-                         net (fo=264, routed)         0.584     1.496    U_GAME_LOGIC/U_INPUT/CLK
-    SLICE_X40Y64         FDRE                                         r  U_GAME_LOGIC/U_INPUT/sync2_reg[1]/C
-  -------------------------------------------------------------------    -------------------
-    SLICE_X40Y64         FDRE (Prop_fdre_C_Q)         0.141     1.637 r  U_GAME_LOGIC/U_INPUT/sync2_reg[1]/Q
-                         net (fo=2, routed)           0.192     1.829    U_GAME_LOGIC/U_INPUT/sync2[1]
-    SLICE_X39Y65         FDRE                                         r  U_GAME_LOGIC/U_INPUT/btn_debounced_reg[1]/D
-  -------------------------------------------------------------------    -------------------
-
-                         (clock sys_clk_pin rise edge)
-                                                      0.000     0.000 r  
-    K17                                               0.000     0.000 r  sysclk (IN)
-                         net (fo=0)                   0.000     0.000    sysclk
-    K17                  IBUF (Prop_ibuf_I_O)         0.447     0.447 r  sysclk_IBUF_inst/O
-                         net (fo=1, routed)           0.683     1.130    sysclk_IBUF
-    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     1.159 r  sysclk_IBUF_BUFG_inst/O
-                         net (fo=264, routed)         0.850     2.009    U_GAME_LOGIC/U_INPUT/CLK
-    SLICE_X39Y65         FDRE                                         r  U_GAME_LOGIC/U_INPUT/btn_debounced_reg[1]/C
-                         clock pessimism             -0.481     1.528    
-    SLICE_X39Y65         FDRE (Hold_fdre_C_D)         0.070     1.598    U_GAME_LOGIC/U_INPUT/btn_debounced_reg[1]
-  -------------------------------------------------------------------
-                         required time                         -1.598    
-                         arrival time                           1.829    
-  -------------------------------------------------------------------
-                         slack                                  0.231    
-
-Slack (MET) :             0.232ns  (arrival time - required time)
-  Source:                 U_GAME_LOGIC/U_INPUT/sync2_reg[2]/C
-                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@4.000ns period=8.000ns})
-  Destination:            U_GAME_LOGIC/U_INPUT/btn_debounced_reg[2]/D
-                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@4.000ns period=8.000ns})
-  Path Group:             sys_clk_pin
-  Path Type:              Hold (Min at Fast Process Corner)
-  Requirement:            0.000ns  (sys_clk_pin rise@0.000ns - sys_clk_pin rise@0.000ns)
-  Data Path Delay:        0.331ns  (logic 0.141ns (42.648%)  route 0.190ns (57.352%))
-  Logic Levels:           0  
-  Clock Path Skew:        0.033ns (DCD - SCD - CPR)
-    Destination Clock Delay (DCD):    2.009ns
+    Destination Clock Delay (DCD):    2.008ns
     Source Clock Delay      (SCD):    1.495ns
     Clock Pessimism Removal (CPR):    0.481ns
 
@@ -1228,12 +1012,14 @@ Slack (MET) :             0.232ns  (arrival time - required time)
     K17                  IBUF (Prop_ibuf_I_O)         0.259     0.259 r  sysclk_IBUF_inst/O
                          net (fo=1, routed)           0.627     0.887    sysclk_IBUF
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     0.913 r  sysclk_IBUF_BUFG_inst/O
-                         net (fo=264, routed)         0.583     1.495    U_GAME_LOGIC/U_INPUT/CLK
-    SLICE_X40Y66         FDRE                                         r  U_GAME_LOGIC/U_INPUT/sync2_reg[2]/C
+                         net (fo=260, routed)         0.583     1.495    U_GAME_LOGIC/U_DIS/CLK
+    SLICE_X41Y66         FDRE                                         r  U_GAME_LOGIC/U_DIS/phase_reg/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X40Y66         FDRE (Prop_fdre_C_Q)         0.141     1.636 r  U_GAME_LOGIC/U_INPUT/sync2_reg[2]/Q
-                         net (fo=2, routed)           0.190     1.826    U_GAME_LOGIC/U_INPUT/sync2[2]
-    SLICE_X39Y65         FDRE                                         r  U_GAME_LOGIC/U_INPUT/btn_debounced_reg[2]/D
+    SLICE_X41Y66         FDRE (Prop_fdre_C_Q)         0.141     1.636 f  U_GAME_LOGIC/U_DIS/phase_reg/Q
+                         net (fo=7, routed)           0.167     1.803    U_SEQ_MEM/phase
+    SLICE_X39Y66         LUT2 (Prop_lut2_I1_O)        0.049     1.852 r  U_SEQ_MEM/led[1]_i_1__0/O
+                         net (fo=1, routed)           0.000     1.852    U_GAME_LOGIC/U_DIS/led_reg[3]_1[1]
+    SLICE_X39Y66         FDRE                                         r  U_GAME_LOGIC/U_DIS/led_reg[1]/D
   -------------------------------------------------------------------    -------------------
 
                          (clock sys_clk_pin rise edge)
@@ -1243,29 +1029,29 @@ Slack (MET) :             0.232ns  (arrival time - required time)
     K17                  IBUF (Prop_ibuf_I_O)         0.447     0.447 r  sysclk_IBUF_inst/O
                          net (fo=1, routed)           0.683     1.130    sysclk_IBUF
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     1.159 r  sysclk_IBUF_BUFG_inst/O
-                         net (fo=264, routed)         0.850     2.009    U_GAME_LOGIC/U_INPUT/CLK
-    SLICE_X39Y65         FDRE                                         r  U_GAME_LOGIC/U_INPUT/btn_debounced_reg[2]/C
-                         clock pessimism             -0.481     1.528    
-    SLICE_X39Y65         FDRE (Hold_fdre_C_D)         0.066     1.594    U_GAME_LOGIC/U_INPUT/btn_debounced_reg[2]
+                         net (fo=260, routed)         0.849     2.008    U_GAME_LOGIC/U_DIS/CLK
+    SLICE_X39Y66         FDRE                                         r  U_GAME_LOGIC/U_DIS/led_reg[1]/C
+                         clock pessimism             -0.481     1.527    
+    SLICE_X39Y66         FDRE (Hold_fdre_C_D)         0.107     1.634    U_GAME_LOGIC/U_DIS/led_reg[1]
   -------------------------------------------------------------------
-                         required time                         -1.594    
-                         arrival time                           1.826    
+                         required time                         -1.634    
+                         arrival time                           1.852    
   -------------------------------------------------------------------
-                         slack                                  0.232    
+                         slack                                  0.218    
 
-Slack (MET) :             0.239ns  (arrival time - required time)
-  Source:                 U_GAME_LOGIC/U_DIS/ptr_reg[0]/C
+Slack (MET) :             0.220ns  (arrival time - required time)
+  Source:                 U_GAME_LOGIC/U_INPUT/sync2_reg[1]/C
                             (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@4.000ns period=8.000ns})
-  Destination:            U_GAME_LOGIC/U_DIS/ptr_reg[2]/D
+  Destination:            U_GAME_LOGIC/U_INPUT/btn_debounced_reg[1]/D
                             (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@4.000ns period=8.000ns})
   Path Group:             sys_clk_pin
   Path Type:              Hold (Min at Fast Process Corner)
   Requirement:            0.000ns  (sys_clk_pin rise@0.000ns - sys_clk_pin rise@0.000ns)
-  Data Path Delay:        0.383ns  (logic 0.189ns (49.286%)  route 0.194ns (50.714%))
-  Logic Levels:           1  (LUT3=1)
-  Clock Path Skew:        0.013ns (DCD - SCD - CPR)
-    Destination Clock Delay (DCD):    2.003ns
-    Source Clock Delay      (SCD):    1.489ns
+  Data Path Delay:        0.286ns  (logic 0.164ns (57.315%)  route 0.122ns (42.685%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.014ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    2.012ns
+    Source Clock Delay      (SCD):    1.497ns
     Clock Pessimism Removal (CPR):    0.501ns
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
@@ -1277,14 +1063,12 @@ Slack (MET) :             0.239ns  (arrival time - required time)
     K17                  IBUF (Prop_ibuf_I_O)         0.259     0.259 r  sysclk_IBUF_inst/O
                          net (fo=1, routed)           0.627     0.887    sysclk_IBUF
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     0.913 r  sysclk_IBUF_BUFG_inst/O
-                         net (fo=264, routed)         0.577     1.489    U_GAME_LOGIC/U_DIS/CLK
-    SLICE_X39Y70         FDRE                                         r  U_GAME_LOGIC/U_DIS/ptr_reg[0]/C
+                         net (fo=260, routed)         0.585     1.497    U_GAME_LOGIC/U_INPUT/CLK
+    SLICE_X42Y62         FDRE                                         r  U_GAME_LOGIC/U_INPUT/sync2_reg[1]/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X39Y70         FDRE (Prop_fdre_C_Q)         0.141     1.630 r  U_GAME_LOGIC/U_DIS/ptr_reg[0]/Q
-                         net (fo=70, routed)          0.194     1.825    U_GAME_LOGIC/U_DIS/ptr_reg[4]_0[0]
-    SLICE_X38Y71         LUT3 (Prop_lut3_I1_O)        0.048     1.873 r  U_GAME_LOGIC/U_DIS/ptr[2]_i_1/O
-                         net (fo=1, routed)           0.000     1.873    U_GAME_LOGIC/U_DIS/plusOp__0[2]
-    SLICE_X38Y71         FDRE                                         r  U_GAME_LOGIC/U_DIS/ptr_reg[2]/D
+    SLICE_X42Y62         FDRE (Prop_fdre_C_Q)         0.164     1.661 r  U_GAME_LOGIC/U_INPUT/sync2_reg[1]/Q
+                         net (fo=2, routed)           0.122     1.783    U_GAME_LOGIC/U_INPUT/sync2[1]
+    SLICE_X42Y63         FDRE                                         r  U_GAME_LOGIC/U_INPUT/btn_debounced_reg[1]/D
   -------------------------------------------------------------------    -------------------
 
                          (clock sys_clk_pin rise edge)
@@ -1294,15 +1078,217 @@ Slack (MET) :             0.239ns  (arrival time - required time)
     K17                  IBUF (Prop_ibuf_I_O)         0.447     0.447 r  sysclk_IBUF_inst/O
                          net (fo=1, routed)           0.683     1.130    sysclk_IBUF
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     1.159 r  sysclk_IBUF_BUFG_inst/O
-                         net (fo=264, routed)         0.844     2.003    U_GAME_LOGIC/U_DIS/CLK
-    SLICE_X38Y71         FDRE                                         r  U_GAME_LOGIC/U_DIS/ptr_reg[2]/C
-                         clock pessimism             -0.501     1.502    
-    SLICE_X38Y71         FDRE (Hold_fdre_C_D)         0.131     1.633    U_GAME_LOGIC/U_DIS/ptr_reg[2]
+                         net (fo=260, routed)         0.853     2.012    U_GAME_LOGIC/U_INPUT/CLK
+    SLICE_X42Y63         FDRE                                         r  U_GAME_LOGIC/U_INPUT/btn_debounced_reg[1]/C
+                         clock pessimism             -0.501     1.511    
+    SLICE_X42Y63         FDRE (Hold_fdre_C_D)         0.052     1.563    U_GAME_LOGIC/U_INPUT/btn_debounced_reg[1]
   -------------------------------------------------------------------
-                         required time                         -1.633    
-                         arrival time                           1.873    
+                         required time                         -1.563    
+                         arrival time                           1.783    
   -------------------------------------------------------------------
-                         slack                                  0.239    
+                         slack                                  0.220    
+
+Slack (MET) :             0.221ns  (arrival time - required time)
+  Source:                 U_GAME_LOGIC/U_INPUT/btn_debounced_reg[2]/C
+                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@4.000ns period=8.000ns})
+  Destination:            U_GAME_LOGIC/U_INPUT/btn_prev_reg[2]/D
+                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@4.000ns period=8.000ns})
+  Path Group:             sys_clk_pin
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (sys_clk_pin rise@0.000ns - sys_clk_pin rise@0.000ns)
+  Data Path Delay:        0.299ns  (logic 0.164ns (54.831%)  route 0.135ns (45.169%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.015ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    2.012ns
+    Source Clock Delay      (SCD):    1.496ns
+    Clock Pessimism Removal (CPR):    0.501ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    K17                                               0.000     0.000 r  sysclk (IN)
+                         net (fo=0)                   0.000     0.000    sysclk
+    K17                  IBUF (Prop_ibuf_I_O)         0.259     0.259 r  sysclk_IBUF_inst/O
+                         net (fo=1, routed)           0.627     0.887    sysclk_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     0.913 r  sysclk_IBUF_BUFG_inst/O
+                         net (fo=260, routed)         0.584     1.496    U_GAME_LOGIC/U_INPUT/CLK
+    SLICE_X42Y63         FDRE                                         r  U_GAME_LOGIC/U_INPUT/btn_debounced_reg[2]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X42Y63         FDRE (Prop_fdre_C_Q)         0.164     1.660 r  U_GAME_LOGIC/U_INPUT/btn_debounced_reg[2]/Q
+                         net (fo=5, routed)           0.135     1.795    U_GAME_LOGIC/U_INPUT/btn_debounced_reg_n_0_[2]
+    SLICE_X42Y64         FDRE                                         r  U_GAME_LOGIC/U_INPUT/btn_prev_reg[2]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    K17                                               0.000     0.000 r  sysclk (IN)
+                         net (fo=0)                   0.000     0.000    sysclk
+    K17                  IBUF (Prop_ibuf_I_O)         0.447     0.447 r  sysclk_IBUF_inst/O
+                         net (fo=1, routed)           0.683     1.130    sysclk_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     1.159 r  sysclk_IBUF_BUFG_inst/O
+                         net (fo=260, routed)         0.853     2.012    U_GAME_LOGIC/U_INPUT/CLK
+    SLICE_X42Y64         FDRE                                         r  U_GAME_LOGIC/U_INPUT/btn_prev_reg[2]/C
+                         clock pessimism             -0.501     1.511    
+    SLICE_X42Y64         FDRE (Hold_fdre_C_D)         0.063     1.574    U_GAME_LOGIC/U_INPUT/btn_prev_reg[2]
+  -------------------------------------------------------------------
+                         required time                         -1.574    
+                         arrival time                           1.795    
+  -------------------------------------------------------------------
+                         slack                                  0.221    
+
+Slack (MET) :             0.223ns  (arrival time - required time)
+  Source:                 U_GAME_LOGIC/U_INPUT/btn_debounced_reg[0]/C
+                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@4.000ns period=8.000ns})
+  Destination:            U_GAME_LOGIC/U_INPUT/btn_valid_reg/D
+                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@4.000ns period=8.000ns})
+  Path Group:             sys_clk_pin
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (sys_clk_pin rise@0.000ns - sys_clk_pin rise@0.000ns)
+  Data Path Delay:        0.327ns  (logic 0.209ns (64.004%)  route 0.118ns (35.996%))
+  Logic Levels:           1  (LUT6=1)
+  Clock Path Skew:        0.013ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    2.012ns
+    Source Clock Delay      (SCD):    1.496ns
+    Clock Pessimism Removal (CPR):    0.503ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    K17                                               0.000     0.000 r  sysclk (IN)
+                         net (fo=0)                   0.000     0.000    sysclk
+    K17                  IBUF (Prop_ibuf_I_O)         0.259     0.259 r  sysclk_IBUF_inst/O
+                         net (fo=1, routed)           0.627     0.887    sysclk_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     0.913 r  sysclk_IBUF_BUFG_inst/O
+                         net (fo=260, routed)         0.584     1.496    U_GAME_LOGIC/U_INPUT/CLK
+    SLICE_X42Y63         FDRE                                         r  U_GAME_LOGIC/U_INPUT/btn_debounced_reg[0]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X42Y63         FDRE (Prop_fdre_C_Q)         0.164     1.660 r  U_GAME_LOGIC/U_INPUT/btn_debounced_reg[0]/Q
+                         net (fo=5, routed)           0.118     1.778    U_GAME_LOGIC/U_INPUT/btn_debounced_reg_n_0_[0]
+    SLICE_X43Y63         LUT6 (Prop_lut6_I3_O)        0.045     1.823 r  U_GAME_LOGIC/U_INPUT/btn_valid_i_1/O
+                         net (fo=1, routed)           0.000     1.823    U_GAME_LOGIC/U_INPUT/btn_valid_i_1_n_0
+    SLICE_X43Y63         FDRE                                         r  U_GAME_LOGIC/U_INPUT/btn_valid_reg/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    K17                                               0.000     0.000 r  sysclk (IN)
+                         net (fo=0)                   0.000     0.000    sysclk
+    K17                  IBUF (Prop_ibuf_I_O)         0.447     0.447 r  sysclk_IBUF_inst/O
+                         net (fo=1, routed)           0.683     1.130    sysclk_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     1.159 r  sysclk_IBUF_BUFG_inst/O
+                         net (fo=260, routed)         0.853     2.012    U_GAME_LOGIC/U_INPUT/CLK
+    SLICE_X43Y63         FDRE                                         r  U_GAME_LOGIC/U_INPUT/btn_valid_reg/C
+                         clock pessimism             -0.503     1.509    
+    SLICE_X43Y63         FDRE (Hold_fdre_C_D)         0.091     1.600    U_GAME_LOGIC/U_INPUT/btn_valid_reg
+  -------------------------------------------------------------------
+                         required time                         -1.600    
+                         arrival time                           1.823    
+  -------------------------------------------------------------------
+                         slack                                  0.223    
+
+Slack (MET) :             0.224ns  (arrival time - required time)
+  Source:                 U_GAME_LOGIC/U_TIMER/count_reg[1]/C
+                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@4.000ns period=8.000ns})
+  Destination:            U_GAME_LOGIC/U_TIMER/count_reg[5]/D
+                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@4.000ns period=8.000ns})
+  Path Group:             sys_clk_pin
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (sys_clk_pin rise@0.000ns - sys_clk_pin rise@0.000ns)
+  Data Path Delay:        0.331ns  (logic 0.186ns (56.132%)  route 0.145ns (43.868%))
+  Logic Levels:           1  (LUT6=1)
+  Clock Path Skew:        0.015ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    2.012ns
+    Source Clock Delay      (SCD):    1.496ns
+    Clock Pessimism Removal (CPR):    0.501ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    K17                                               0.000     0.000 r  sysclk (IN)
+                         net (fo=0)                   0.000     0.000    sysclk
+    K17                  IBUF (Prop_ibuf_I_O)         0.259     0.259 r  sysclk_IBUF_inst/O
+                         net (fo=1, routed)           0.627     0.887    sysclk_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     0.913 r  sysclk_IBUF_BUFG_inst/O
+                         net (fo=260, routed)         0.584     1.496    U_GAME_LOGIC/U_TIMER/CLK
+    SLICE_X43Y64         FDRE                                         r  U_GAME_LOGIC/U_TIMER/count_reg[1]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X43Y64         FDRE (Prop_fdre_C_Q)         0.141     1.637 r  U_GAME_LOGIC/U_TIMER/count_reg[1]/Q
+                         net (fo=12, routed)          0.145     1.783    U_GAME_LOGIC/U_TIMER/count_reg[1]
+    SLICE_X41Y64         LUT6 (Prop_lut6_I1_O)        0.045     1.828 r  U_GAME_LOGIC/U_TIMER/count[5]_i_1/O
+                         net (fo=1, routed)           0.000     1.828    U_GAME_LOGIC/U_TIMER/p_0_in__0[5]
+    SLICE_X41Y64         FDRE                                         r  U_GAME_LOGIC/U_TIMER/count_reg[5]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    K17                                               0.000     0.000 r  sysclk (IN)
+                         net (fo=0)                   0.000     0.000    sysclk
+    K17                  IBUF (Prop_ibuf_I_O)         0.447     0.447 r  sysclk_IBUF_inst/O
+                         net (fo=1, routed)           0.683     1.130    sysclk_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     1.159 r  sysclk_IBUF_BUFG_inst/O
+                         net (fo=260, routed)         0.853     2.012    U_GAME_LOGIC/U_TIMER/CLK
+    SLICE_X41Y64         FDRE                                         r  U_GAME_LOGIC/U_TIMER/count_reg[5]/C
+                         clock pessimism             -0.501     1.511    
+    SLICE_X41Y64         FDRE (Hold_fdre_C_D)         0.092     1.603    U_GAME_LOGIC/U_TIMER/count_reg[5]
+  -------------------------------------------------------------------
+                         required time                         -1.603    
+                         arrival time                           1.828    
+  -------------------------------------------------------------------
+                         slack                                  0.224    
+
+Slack (MET) :             0.229ns  (arrival time - required time)
+  Source:                 U_GAME_LOGIC/U_DIS/phase_reg/C
+                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@4.000ns period=8.000ns})
+  Destination:            U_GAME_LOGIC/U_DIS/led_reg[0]/D
+                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@4.000ns period=8.000ns})
+  Path Group:             sys_clk_pin
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (sys_clk_pin rise@0.000ns - sys_clk_pin rise@0.000ns)
+  Data Path Delay:        0.353ns  (logic 0.186ns (52.712%)  route 0.167ns (47.288%))
+  Logic Levels:           1  (LUT2=1)
+  Clock Path Skew:        0.032ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    2.008ns
+    Source Clock Delay      (SCD):    1.495ns
+    Clock Pessimism Removal (CPR):    0.481ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    K17                                               0.000     0.000 r  sysclk (IN)
+                         net (fo=0)                   0.000     0.000    sysclk
+    K17                  IBUF (Prop_ibuf_I_O)         0.259     0.259 r  sysclk_IBUF_inst/O
+                         net (fo=1, routed)           0.627     0.887    sysclk_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     0.913 r  sysclk_IBUF_BUFG_inst/O
+                         net (fo=260, routed)         0.583     1.495    U_GAME_LOGIC/U_DIS/CLK
+    SLICE_X41Y66         FDRE                                         r  U_GAME_LOGIC/U_DIS/phase_reg/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X41Y66         FDRE (Prop_fdre_C_Q)         0.141     1.636 f  U_GAME_LOGIC/U_DIS/phase_reg/Q
+                         net (fo=7, routed)           0.167     1.803    U_SEQ_MEM/phase
+    SLICE_X39Y66         LUT2 (Prop_lut2_I1_O)        0.045     1.848 r  U_SEQ_MEM/led[0]_i_1/O
+                         net (fo=1, routed)           0.000     1.848    U_GAME_LOGIC/U_DIS/led_reg[3]_1[0]
+    SLICE_X39Y66         FDRE                                         r  U_GAME_LOGIC/U_DIS/led_reg[0]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    K17                                               0.000     0.000 r  sysclk (IN)
+                         net (fo=0)                   0.000     0.000    sysclk
+    K17                  IBUF (Prop_ibuf_I_O)         0.447     0.447 r  sysclk_IBUF_inst/O
+                         net (fo=1, routed)           0.683     1.130    sysclk_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     1.159 r  sysclk_IBUF_BUFG_inst/O
+                         net (fo=260, routed)         0.849     2.008    U_GAME_LOGIC/U_DIS/CLK
+    SLICE_X39Y66         FDRE                                         r  U_GAME_LOGIC/U_DIS/led_reg[0]/C
+                         clock pessimism             -0.481     1.527    
+    SLICE_X39Y66         FDRE (Hold_fdre_C_D)         0.092     1.619    U_GAME_LOGIC/U_DIS/led_reg[0]
+  -------------------------------------------------------------------
+                         required time                         -1.619    
+                         arrival time                           1.848    
+  -------------------------------------------------------------------
+                         slack                                  0.229    
 
 
 
@@ -1317,35 +1303,35 @@ Sources:            { sysclk }
 
 Check Type        Corner  Lib Pin  Reference Pin  Required(ns)  Actual(ns)  Slack(ns)  Location        Pin
 Min Period        n/a     BUFG/I   n/a            2.155         8.000       5.845      BUFGCTRL_X0Y16  sysclk_IBUF_BUFG_inst/I
-Min Period        n/a     FDRE/C   n/a            1.000         8.000       7.000      SLICE_X39Y73    U_GAME_CORE/U_GCLK_SEL/counter_reg[0]/C
-Min Period        n/a     FDRE/C   n/a            1.000         8.000       7.000      SLICE_X39Y75    U_GAME_CORE/U_GCLK_SEL/counter_reg[10]/C
-Min Period        n/a     FDRE/C   n/a            1.000         8.000       7.000      SLICE_X39Y75    U_GAME_CORE/U_GCLK_SEL/counter_reg[11]/C
-Min Period        n/a     FDRE/C   n/a            1.000         8.000       7.000      SLICE_X39Y76    U_GAME_CORE/U_GCLK_SEL/counter_reg[12]/C
-Min Period        n/a     FDRE/C   n/a            1.000         8.000       7.000      SLICE_X39Y76    U_GAME_CORE/U_GCLK_SEL/counter_reg[13]/C
-Min Period        n/a     FDRE/C   n/a            1.000         8.000       7.000      SLICE_X39Y76    U_GAME_CORE/U_GCLK_SEL/counter_reg[14]/C
-Min Period        n/a     FDRE/C   n/a            1.000         8.000       7.000      SLICE_X39Y78    U_GAME_CORE/U_GCLK_SEL/counter_reg[20]/C
-Min Period        n/a     FDRE/C   n/a            1.000         8.000       7.000      SLICE_X39Y78    U_GAME_CORE/U_GCLK_SEL/counter_reg[21]/C
-Min Period        n/a     FDRE/C   n/a            1.000         8.000       7.000      SLICE_X39Y78    U_GAME_CORE/U_GCLK_SEL/counter_reg[22]/C
-Low Pulse Width   Fast    FDRE/C   n/a            0.500         4.000       3.500      SLICE_X39Y75    U_GAME_CORE/U_GCLK_SEL/counter_reg[10]/C
-Low Pulse Width   Fast    FDRE/C   n/a            0.500         4.000       3.500      SLICE_X39Y75    U_GAME_CORE/U_GCLK_SEL/counter_reg[11]/C
-Low Pulse Width   Fast    FDRE/C   n/a            0.500         4.000       3.500      SLICE_X39Y74    U_GAME_CORE/U_GCLK_SEL/counter_reg[5]/C
-Low Pulse Width   Fast    FDRE/C   n/a            0.500         4.000       3.500      SLICE_X39Y74    U_GAME_CORE/U_GCLK_SEL/counter_reg[6]/C
-Low Pulse Width   Fast    FDRE/C   n/a            0.500         4.000       3.500      SLICE_X39Y74    U_GAME_CORE/U_GCLK_SEL/counter_reg[7]/C
-Low Pulse Width   Fast    FDRE/C   n/a            0.500         4.000       3.500      SLICE_X39Y75    U_GAME_CORE/U_GCLK_SEL/counter_reg[8]/C
-Low Pulse Width   Fast    FDRE/C   n/a            0.500         4.000       3.500      SLICE_X39Y75    U_GAME_CORE/U_GCLK_SEL/counter_reg[9]/C
-Low Pulse Width   Fast    FDRE/C   n/a            0.500         4.000       3.500      SLICE_X37Y66    U_GAME_LOGIC/U_INPUT/btn_prev_reg[0]/C
-Low Pulse Width   Fast    FDRE/C   n/a            0.500         4.000       3.500      SLICE_X37Y66    U_GAME_LOGIC/U_INPUT/btn_prev_reg[1]/C
-Low Pulse Width   Fast    FDRE/C   n/a            0.500         4.000       3.500      SLICE_X37Y66    U_GAME_LOGIC/U_INPUT/btn_prev_reg[2]/C
-High Pulse Width  Slow    FDRE/C   n/a            0.500         4.000       3.500      SLICE_X39Y75    U_GAME_CORE/U_GCLK_SEL/counter_reg[10]/C
-High Pulse Width  Slow    FDRE/C   n/a            0.500         4.000       3.500      SLICE_X39Y75    U_GAME_CORE/U_GCLK_SEL/counter_reg[11]/C
-High Pulse Width  Slow    FDRE/C   n/a            0.500         4.000       3.500      SLICE_X39Y78    U_GAME_CORE/U_GCLK_SEL/counter_reg[20]/C
-High Pulse Width  Slow    FDRE/C   n/a            0.500         4.000       3.500      SLICE_X39Y78    U_GAME_CORE/U_GCLK_SEL/counter_reg[21]/C
-High Pulse Width  Slow    FDRE/C   n/a            0.500         4.000       3.500      SLICE_X39Y78    U_GAME_CORE/U_GCLK_SEL/counter_reg[22]/C
-High Pulse Width  Slow    FDRE/C   n/a            0.500         4.000       3.500      SLICE_X39Y78    U_GAME_CORE/U_GCLK_SEL/counter_reg[23]/C
-High Pulse Width  Slow    FDRE/C   n/a            0.500         4.000       3.500      SLICE_X39Y79    U_GAME_CORE/U_GCLK_SEL/counter_reg[24]/C
-High Pulse Width  Slow    FDRE/C   n/a            0.500         4.000       3.500      SLICE_X39Y79    U_GAME_CORE/U_GCLK_SEL/counter_reg[25]/C
-High Pulse Width  Slow    FDRE/C   n/a            0.500         4.000       3.500      SLICE_X39Y79    U_GAME_CORE/U_GCLK_SEL/counter_reg[26]/C
-High Pulse Width  Slow    FDRE/C   n/a            0.500         4.000       3.500      SLICE_X39Y79    U_GAME_CORE/U_GCLK_SEL/counter_reg[27]/C
+Min Period        n/a     FDRE/C   n/a            1.000         8.000       7.000      SLICE_X40Y69    U_GAME_CORE/U_GCLK_SEL/counter_reg[0]/C
+Min Period        n/a     FDRE/C   n/a            1.000         8.000       7.000      SLICE_X40Y71    U_GAME_CORE/U_GCLK_SEL/counter_reg[10]/C
+Min Period        n/a     FDRE/C   n/a            1.000         8.000       7.000      SLICE_X40Y71    U_GAME_CORE/U_GCLK_SEL/counter_reg[11]/C
+Min Period        n/a     FDRE/C   n/a            1.000         8.000       7.000      SLICE_X40Y72    U_GAME_CORE/U_GCLK_SEL/counter_reg[12]/C
+Min Period        n/a     FDRE/C   n/a            1.000         8.000       7.000      SLICE_X40Y73    U_GAME_CORE/U_GCLK_SEL/counter_reg[19]/C
+Min Period        n/a     FDRE/C   n/a            1.000         8.000       7.000      SLICE_X40Y69    U_GAME_CORE/U_GCLK_SEL/counter_reg[1]/C
+Min Period        n/a     FDRE/C   n/a            1.000         8.000       7.000      SLICE_X40Y74    U_GAME_CORE/U_GCLK_SEL/counter_reg[20]/C
+Min Period        n/a     FDRE/C   n/a            1.000         8.000       7.000      SLICE_X40Y74    U_GAME_CORE/U_GCLK_SEL/counter_reg[21]/C
+Min Period        n/a     FDRE/C   n/a            1.000         8.000       7.000      SLICE_X40Y74    U_GAME_CORE/U_GCLK_SEL/counter_reg[22]/C
+Low Pulse Width   Fast    FDRE/C   n/a            0.500         4.000       3.500      SLICE_X42Y67    U_GAME_LOGIC/U_CMP/lose_reg_reg/C
+Low Pulse Width   Fast    FDRE/C   n/a            0.500         4.000       3.500      SLICE_X42Y67    U_GAME_LOGIC/U_CMP/win_reg_reg/C
+Low Pulse Width   Fast    FDRE/C   n/a            0.500         4.000       3.500      SLICE_X39Y64    U_GAME_LOGIC/U_INPUT/btn_out_reg[2]/C
+Low Pulse Width   Fast    FDRE/C   n/a            0.500         4.000       3.500      SLICE_X39Y64    U_GAME_LOGIC/U_INPUT/btn_out_reg[3]/C
+Low Pulse Width   Fast    FDRE/C   n/a            0.500         4.000       3.500      SLICE_X43Y67    U_GAME_LOGIC/U_INPUT/sync1_reg[0]/C
+Low Pulse Width   Fast    FDRE/C   n/a            0.500         4.000       3.500      SLICE_X43Y67    U_GAME_LOGIC/U_INPUT/sync2_reg[0]/C
+Low Pulse Width   Fast    FDRE/C   n/a            0.500         4.000       3.500      SLICE_X43Y67    U_GAME_LOGIC/U_TIMER/led_reg[0]/C
+Low Pulse Width   Fast    FDRE/C   n/a            0.500         4.000       3.500      SLICE_X43Y67    U_GAME_LOGIC/U_TIMER/led_reg[1]/C
+Low Pulse Width   Fast    FDRE/C   n/a            0.500         4.000       3.500      SLICE_X43Y67    U_GAME_LOGIC/U_TIMER/led_reg[2]/C
+Low Pulse Width   Fast    FDRE/C   n/a            0.500         4.000       3.500      SLICE_X43Y67    U_GAME_LOGIC/U_TIMER/led_reg[3]/C
+High Pulse Width  Slow    FDRE/C   n/a            0.500         4.000       3.500      SLICE_X40Y69    U_GAME_CORE/U_GCLK_SEL/counter_reg[0]/C
+High Pulse Width  Fast    FDRE/C   n/a            0.500         4.000       3.500      SLICE_X40Y69    U_GAME_CORE/U_GCLK_SEL/counter_reg[0]/C
+High Pulse Width  Slow    FDRE/C   n/a            0.500         4.000       3.500      SLICE_X40Y71    U_GAME_CORE/U_GCLK_SEL/counter_reg[10]/C
+High Pulse Width  Slow    FDRE/C   n/a            0.500         4.000       3.500      SLICE_X40Y71    U_GAME_CORE/U_GCLK_SEL/counter_reg[11]/C
+High Pulse Width  Fast    FDRE/C   n/a            0.500         4.000       3.500      SLICE_X40Y73    U_GAME_CORE/U_GCLK_SEL/counter_reg[19]/C
+High Pulse Width  Slow    FDRE/C   n/a            0.500         4.000       3.500      SLICE_X40Y69    U_GAME_CORE/U_GCLK_SEL/counter_reg[1]/C
+High Pulse Width  Fast    FDRE/C   n/a            0.500         4.000       3.500      SLICE_X40Y69    U_GAME_CORE/U_GCLK_SEL/counter_reg[1]/C
+High Pulse Width  Fast    FDRE/C   n/a            0.500         4.000       3.500      SLICE_X40Y76    U_GAME_CORE/U_GCLK_SEL/counter_reg[28]/C
+High Pulse Width  Slow    FDRE/C   n/a            0.500         4.000       3.500      SLICE_X40Y70    U_GAME_CORE/U_GCLK_SEL/counter_reg[4]/C
+High Pulse Width  Fast    FDRE/C   n/a            0.500         4.000       3.500      SLICE_X40Y70    U_GAME_CORE/U_GCLK_SEL/counter_reg[4]/C
 
 
 

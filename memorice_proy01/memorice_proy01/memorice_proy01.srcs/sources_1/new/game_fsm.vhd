@@ -16,7 +16,7 @@ entity game_fsm is
         lvl        : out std_logic_vector(1 downto 0);
         num_seq    : out std_logic_vector(4 downto 0);
         en_lfsr    : out std_logic;
-        en_gen     : out std_logic; -- Habilita el guardado en memoria
+        en_gen     : out std_logic;
         en_show    : out std_logic;
         en_input   : out std_logic;
         mem_rd_sel : out std_logic;
@@ -32,6 +32,7 @@ architecture Behavioral of game_fsm is
     signal num_seq_reg : integer range 0 to 31 := 4;
 begin
 
+    -- 1. PROCESO SÍNCRONO: Actualización de Estado y Registros
     SYNC_PROC: process(clk)
     begin
         if rising_edge(clk) then
@@ -41,19 +42,26 @@ begin
                 num_seq_reg <= 4;
             else
                 state <= next_state;
-                if state = IDLE then
-                    lvl_reg <= "00";
-                    num_seq_reg <= 4;
-                elsif state = LEVEL_OK then
+                
+                -- CORRECCIÓN 1: Incrementar el nivel SOLO UNA VEZ durante 
+                -- el salto exacto desde INPUT hacia LEVEL_OK.
+                if state = INPUT and next_state = LEVEL_OK then
                     if lvl_reg < "11" then
                         lvl_reg <= lvl_reg + 1;
                         num_seq_reg <= num_seq_reg + 4;
                     end if;
                 end if;
+
+                -- Reiniciar los niveles si el juego vuelve a IDLE (por perder o reiniciar)
+                if next_state = IDLE then
+                    lvl_reg <= "00";
+                    num_seq_reg <= 4;
+                end if;
             end if;
         end if;
     end process;
 
+    -- 2. LÓGICA COMBINACIONAL: Transiciones y Salidas
     OUTPUT_DECODE: process(state, start, gen_done, seq_done, win, lose, lvl_reg)
     begin
         next_state <= state;
@@ -67,22 +75,22 @@ begin
 
         case state is
             when IDLE =>
-                rgb <= "111";
-                en_lfsr <= '1'; -- Genera aleatoriedad constante en reposo
+                rgb <= "111"; -- Blanco
+                en_lfsr <= '1'; 
                 if start = '1' then
                     next_state <= GEN;
                 end if;
 
             when GEN =>
-                rgb <= "010";
+                rgb <= "010"; -- Verde
                 en_lfsr <= '1';
-                en_gen  <= '1'; -- Indica a game_logic que guarde los datos
+                en_gen  <= '1'; 
                 if gen_done = '1' then
                     next_state <= SHOW;
                 end if;
 
             when SHOW =>
-                rgb <= "010";
+                rgb <= "010"; -- Verde
                 en_show <= '1';
                 mem_rd_sel <= '0';
                 mux_sel <= "01";   
@@ -91,7 +99,7 @@ begin
                 end if;
 
             when INPUT =>
-                rgb <= "110";
+                rgb <= "110"; -- Cyan
                 en_input <= '1';
                 mem_rd_sel <= '1';
                 mux_sel <= "10";   
@@ -106,19 +114,21 @@ begin
                 end if;
 
             when LEVEL_OK =>
-                rgb <= "001"; 
+                -- CORRECCIÓN 2: "100" Enciende el LED Azul en la Zybo Z7 (Bit 2)
+                rgb <= "100"; 
                 if start = '1' then
                     next_state <= GEN; 
                 end if;
 
             when S_LOSE =>
-                rgb <= "100"; 
+                -- CORRECCIÓN 3: "001" Enciende el LED Rojo en la Zybo Z7 (Bit 0)
+                rgb <= "001"; 
                 if start = '1' then
                     next_state <= IDLE;
                 end if;
 
             when S_WIN =>
-                rgb <= "101"; 
+                rgb <= "010"; -- Verde para indicar victoria final
                 if start = '1' then
                     next_state <= IDLE;
                 end if;
