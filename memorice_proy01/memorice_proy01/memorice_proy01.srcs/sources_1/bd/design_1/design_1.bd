@@ -9,14 +9,14 @@
       "tool_version": "2020.1"
     },
     "design_tree": {
-      "seq_mem_axi_0": "",
       "axi_traffic_gen_0": "",
       "axi_traffic_gen_1": "",
       "axi_smc": "",
       "clk_wiz": "",
       "rst_clk_wiz_100M": "",
       "clk_wiz_1": "",
-      "rst_clk_wiz_1_100M": ""
+      "rst_clk_wiz_1_100M": "",
+      "seq_mem_axi_0": ""
     },
     "ports": {
       "sys_clock": {
@@ -51,10 +51,6 @@
       }
     },
     "components": {
-      "seq_mem_axi_0": {
-        "vlnv": "xilinx.com:user:seq_mem_axi:1.0",
-        "xci_name": "design_1_seq_mem_axi_0_0"
-      },
       "axi_traffic_gen_0": {
         "vlnv": "xilinx.com:ip:axi_traffic_gen:3.0",
         "xci_name": "design_1_axi_traffic_gen_0_1",
@@ -212,6 +208,10 @@
       "rst_clk_wiz_1_100M": {
         "vlnv": "xilinx.com:ip:proc_sys_reset:5.0",
         "xci_name": "design_1_rst_clk_wiz_1_100M_0"
+      },
+      "seq_mem_axi_0": {
+        "vlnv": "xilinx.com:user:seq_mem_axi:1.0",
+        "xci_name": "design_1_seq_mem_axi_0_0"
       }
     },
     "interface_nets": {
@@ -261,8 +261,8 @@
       "clk_wiz_1_clk_out1": {
         "ports": [
           "clk_wiz_1/clk_out1",
-          "seq_mem_axi_0/s00_axi_aclk",
-          "rst_clk_wiz_1_100M/slowest_sync_clk"
+          "rst_clk_wiz_1_100M/slowest_sync_clk",
+          "seq_mem_axi_0/s00_axi_aclk"
         ]
       },
       "clk_wiz_1_locked": {
