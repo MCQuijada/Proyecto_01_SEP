@@ -4,12 +4,11 @@ use IEEE.STD_LOGIC_1164.ALL;
 entity game_core is
     Port (
         sysclk   : in  std_logic;
-        rst      : in  std_logic;                     -- NUEVO: Reset global
-        sw       : in  std_logic_vector(3 downto 0);  -- SW(1:0) = LVL, SW(3:2) = SEL
-        en_lfsr  : in  std_logic;                     -- NUEVO: Habilitador desde game_logic
-        tick     : out std_logic;                     -- NUEVO: Salida del reloj lento
-        rand_out : out std_logic_vector(3 downto 0);  -- NUEVO: Salida de la secuencia al exterior
-        led      : out std_logic_vector(3 downto 0)
+        rst      : in  std_logic;
+        lvl      : in  std_logic_vector(1 downto 0);  -- Nivel automático desde la FSM
+        en_lfsr  : in  std_logic;
+        tick     : out std_logic;
+        rand_out : out std_logic_vector(3 downto 0)
     );
 end game_core;
 
@@ -44,23 +43,11 @@ architecture Structural of game_core is
         );
     end component;
 
-    component led_driver is
-        Port ( 
-            clk     : in  std_logic;
-            sel     : in  std_logic_vector(1 downto 0);
-            seq_led : in  std_logic_vector(3 downto 0);
-            bar_led : in  std_logic_vector(3 downto 0);
-            led     : out std_logic_vector(3 downto 0)
-        );
-    end component;
-
-    -- SEÑALES INTERNAS ACTUALIZADAS
     signal sig_tick     : std_logic;
     signal sig_rand_bus : std_logic_vector(3 downto 0);
 
 begin
 
-    -- Asignación de señales internas a los puertos de salida hacia el Top Level
     tick     <= sig_tick;
     rand_out <= sig_rand_bus;
 
@@ -74,8 +61,8 @@ begin
         )
         port map (
             sysclk => sysclk,
-            lvl    => sw(1 downto 0),   -- CONECTADO A SWITCHES PARA CAMBIAR VELOCIDAD EN VIVO
-            tick   => sig_tick          -- EMITE PULSO EN UN CICLO DE SYSCLK
+            lvl    => lvl,
+            tick   => sig_tick
         );
 
     U_RAND_SEC: rand_sec
@@ -85,19 +72,10 @@ begin
         )
         port map (
             clk    => sysclk, 
-            reset  => rst,              -- AHORA CONECTADO AL RESET REAL (Ya no forzado a '0')
-            en     => en_lfsr,          -- AHORA CONTROLADO POR LA FSM DEL JUEGO
-            seedIn => (others => '0'),  -- PARA CARGAR LA SEED_DEFAULT
+            reset  => rst,
+            en     => en_lfsr,
+            seedIn => (others => '0'),
             rndOut => sig_rand_bus
-        );
-
-    U_LED_DRIVER: led_driver
-        port map (
-            clk     => sysclk,
-            sel     => sw(3 downto 2),  -- "01" MUESTRA SECUENCIA, "10" APAGA LEDS EN VIVO
-            seq_led => sig_rand_bus,    -- PATRON DE LEDS ALEATORIO DESDE EL LFSR
-            bar_led => "0000",          -- NO SE USA EN ESTA ETAPA
-            led     => led
         );
 
 end Structural;

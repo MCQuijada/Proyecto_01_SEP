@@ -71,6 +71,7 @@ proc create_report { reportName command } {
 }
 OPTRACE "synth_1" START { ROLLUP_AUTO }
 set_param chipscope.maxJobs 4
+set_param xicom.use_bs_reader 1
 OPTRACE "Creating in-memory project" START { }
 create_project -in_memory -part xc7z010clg400-1
 
@@ -91,10 +92,6 @@ set_property ip_output_repo {c:/SEP y Anal/Proyecto_01_SEP/memorice_proy01/memor
 set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
-add_files {{C:/SEP y Anal/Proyecto_01_SEP/memorice_proy01/memorice_proy01/memorice_proy01.srcs/sources_1/new/data.coe}}
-add_files {{C:/SEP y Anal/Proyecto_01_SEP/memorice_proy01/memorice_proy01/memorice_proy01.srcs/sources_1/new/addr.coe}}
-add_files {{C:/SEP y Anal/Proyecto_01_SEP/memorice_proy01/memorice_proy01/memorice_proy01.srcs/sources_1/new/mask.coe}}
-add_files {{C:/SEP y Anal/Proyecto_01_SEP/memorice_proy01/memorice_proy01/memorice_proy01.srcs/sources_1/new/ctrl.coe}}
 read_vhdl -library xil_defaultlib {
   {C:/SEP y Anal/Proyecto_01_SEP/memorice_proy01/memorice_proy01/memorice_proy01.srcs/sources_1/new/game_core.vhd}
   {C:/SEP y Anal/Proyecto_01_SEP/memorice_proy01/memorice_proy01/memorice_proy01.srcs/sources_1/new/game_fsm.vhd}
@@ -102,7 +99,6 @@ read_vhdl -library xil_defaultlib {
   {C:/SEP y Anal/Proyecto_01_SEP/memorice_proy01/memorice_proy01/memorice_proy01.srcs/sources_1/new/game_pkg.vhd}
   {C:/SEP y Anal/Proyecto_01_SEP/memorice_proy01/memorice_proy01/memorice_proy01.srcs/sources_1/new/gclk_sel.vhd}
   {C:/SEP y Anal/Proyecto_01_SEP/memorice_proy01/memorice_proy01/memorice_proy01.srcs/sources_1/new/input_det.vhd}
-  {C:/SEP y Anal/Proyecto_01_SEP/memorice_proy01/memorice_proy01/memorice_proy01.srcs/sources_1/new/led_driver.vhd}
   {C:/SEP y Anal/Proyecto_01_SEP/memorice_proy01/memorice_proy01/memorice_proy01.srcs/sources_1/new/rand_sec.vhd}
   {C:/SEP y Anal/Proyecto_01_SEP/memorice_proy01/memorice_proy01/memorice_proy01.srcs/sources_1/new/seq_cmp.vhd}
   {C:/SEP y Anal/Proyecto_01_SEP/memorice_proy01/memorice_proy01/memorice_proy01.srcs/sources_1/new/seq_dis.vhd}

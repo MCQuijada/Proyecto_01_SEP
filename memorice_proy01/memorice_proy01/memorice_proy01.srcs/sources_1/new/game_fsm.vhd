@@ -4,50 +4,48 @@ use IEEE.NUMERIC_STD.ALL;
 
 entity game_fsm is
     Port (
-        clk        : in  std_logic; -- CLK DE TOP
-        reset      : in  std_logic; -- RESET DE BOTON FISICO
-        start      : in  std_logic; -- INICIO DEL JUEGO AL PRESIONAR CUALQUIER BOTON
-        gen_done   : in  std_logic; -- GENERACION DE SECUENCIA LISTA
-        seq_done   : in  std_logic; -- DISPLAY DE SECUENCIA AL USUARIO LISTO
-        win        : in  std_logic; -- SI GANA EL NIVEL ACTUAL
-        lose       : in  std_logic; -- ERROR AL PRESIONAR LA SECUENCIA O TIMEOUT
+        clk        : in  std_logic;
+        reset      : in  std_logic;
+        start      : in  std_logic;
+        gen_done   : in  std_logic;
+        seq_done   : in  std_logic;
+        win        : in  std_logic;
+        lose       : in  std_logic;
         
-        rgb        : out std_logic_vector(2 downto 0);  -- LED RGB QUE INDICA ESTADOS DE LA FSM
-        lvl        : out std_logic_vector(1 downto 0);  -- NIVEL DE DIFICULTAD A GCLK_SEL
-        num_seq    : out std_logic_vector(4 downto 0);  -- LONGITUD DE LA SECUENCIA A ADIVINAR
-        en_lfsr    : out std_logic; -- MANTIENE ENABLE DE LFSR ITERANDO EN IDLE PARA OBTENER SEMILLA RANDOM
-        en_show    : out std_logic; -- HABILITA EL DISPLAY DE LA SECUENCIA EN LOS LEDS AL USUARIO
-        en_input   : out std_logic; -- HABILITA LA EVALUACION DE LOS BOTONES PRESIONADOS POR EL USUARIO
-        mem_rd_sel : out std_logic; -- CONTROLA LA DIRECCION DE LECTURA A SEQ_MEM (0=SHOW, 1=INPUT_DET)
-        mux_sel    : out std_logic_vector(1 downto 0)   -- ENRUTA LOS LEDS A LA SECUENCIA (01) O AL TIEMPO RESTANTE (10)
+        rgb        : out std_logic_vector(2 downto 0);
+        lvl        : out std_logic_vector(1 downto 0);
+        num_seq    : out std_logic_vector(4 downto 0);
+        en_lfsr    : out std_logic;
+        en_gen     : out std_logic; -- Habilita el guardado en memoria
+        en_show    : out std_logic;
+        en_input   : out std_logic;
+        mem_rd_sel : out std_logic;
+        mux_sel    : out std_logic_vector(1 downto 0)
     );
 end game_fsm;
 
 architecture Behavioral of game_fsm is
-
     type state_type is (IDLE, GEN, SHOW, INPUT, LEVEL_OK, S_LOSE, S_WIN);
     signal state, next_state : state_type;
 
     signal lvl_reg     : unsigned(1 downto 0) := "00";
-    signal num_seq_reg : integer range 0 to 31 := 4; -- INICIA EN 4 SECUENCIAS
-
+    signal num_seq_reg : integer range 0 to 31 := 4;
 begin
 
-    SYNC_PROC: process(clk)     -- SINCRONIZACION CON EL RELOJ
+    SYNC_PROC: process(clk)
     begin
         if rising_edge(clk) then
-            if reset = '1' then         -- RESET ESTADO VUELVE A IDLE, NIVEL FACIL Y 4 SECUENCIAS
+            if reset = '1' then
                 state <= IDLE;
                 lvl_reg <= "00";
                 num_seq_reg <= 4;
             else
                 state <= next_state;
-
                 if state = IDLE then
                     lvl_reg <= "00";
                     num_seq_reg <= 4;
                 elsif state = LEVEL_OK then
-                    if lvl_reg < "11" then      -- PASO AL SIGUIENTE NIVEL DE DIFICULTAD AUMENTANDO LAS SECUENCIAS A ADIVINAR (4->8->12)
+                    if lvl_reg < "11" then
                         lvl_reg <= lvl_reg + 1;
                         num_seq_reg <= num_seq_reg + 4;
                     end if;
@@ -56,37 +54,55 @@ begin
         end if;
     end process;
 
-    OUTPUT_DECODE: process(state, start, gen_done, seq_done, win, lose, lvl_reg)        -- LOGICA DE ESTADOS
+    OUTPUT_DECODE: process(state, start, gen_done, seq_done, win, lose, lvl_reg)
     begin
         next_state <= state;
         rgb        <= "000";
         en_lfsr    <= '0';
+        en_gen     <= '0';
         en_show    <= '0';
         en_input   <= '0';
         mem_rd_sel <= '0';
         mux_sel    <= "00"; 
 
-        case state is       -- (AC1: MAQUINA DE ESTADOS)
-            when IDLE =>        -- ESTADO DE ESPERA: LED BLANCO, MANTIENE EN_LFSR PARA OBTENER SEMILLA RANDOM
+        case state is
+            when IDLE =>
                 rgb <= "111";
-                en_lfsr <= '1'; 
-                if start = '1' then     -- USUARIO PRESIONA BOTON INICIA EL JUEGO
+                en_lfsr <= '1'; -- Genera aleatoriedad constante en reposo
+                if start = '1' then
                     next_state <= GEN;
                 end if;
 
-            when GEN =>         -- ESTADO GENERACION DE SECUENCIA: LED VERDE (INVISIBLE AL OJO, SALTA AL INSTANTE A SHOW)
-                rgb <= "010";   
-                if gen_done = '1' then  -- SI SE GENERO LA SECUENCIA PASA AL SIGUIENTE ESTADO
+            when GEN =>
+                rgb <= "010";
+                en_lfsr <= '1';
+                en_gen  <= '1'; -- Indica a game_logic que guarde los datos
+                if gen_done = '1' then
                     next_state <= SHOW;
                 end if;
 
-            when SHOW =>        -- ESTADO DISPLAY DE SECUENCIA: LED VERDE, EN_SHOW PARA MOSTRAR LA SECUENCIA,
-                rgb <= "010";   -- MEM_RD_SEL PARA LEER MEMORIA POR SEQ_DIS, ENRUTAMIENTO DE LOS LEDS A LA SECUENCIA
+            when SHOW =>
+                rgb <= "010";
                 en_show <= '1';
                 mem_rd_sel <= '0';
                 mux_sel <= "01";   
-                if seq_done = '1' then      -- SE TERMINA DE MOSTRAR LA SECUENCIA
+                if seq_done = '1' then
                     next_state <= INPUT;
+                end if;
+
+            when INPUT =>
+                rgb <= "110";
+                en_input <= '1';
+                mem_rd_sel <= '1';
+                mux_sel <= "10";   
+                if lose = '1' then
+                    next_state <= S_LOSE;
+                elsif win = '1' then
+                    if lvl_reg = "11" then  
+                        next_state <= S_WIN;
+                    else                    
+                        next_state <= LEVEL_OK;
+                    end if;
                 end if;
 
             when LEVEL_OK =>
@@ -95,31 +111,16 @@ begin
                     next_state <= GEN; 
                 end if;
 
-            when S_LOSE =>        -- Actualizado aquí
+            when S_LOSE =>
                 rgb <= "100"; 
                 if start = '1' then
                     next_state <= IDLE;
                 end if;
 
-            when S_WIN =>         -- Actualizado aquí
+            when S_WIN =>
                 rgb <= "101"; 
                 if start = '1' then
                     next_state <= IDLE;
-                end if;
-
-            when INPUT =>
-                rgb <= "110";
-                en_input <= '1';
-                mem_rd_sel <= '1';
-                mux_sel <= "10";   
-                if lose = '1' then      -- Señal del puerto
-                    next_state <= S_LOSE; -- Nuevo nombre del estado
-                elsif win = '1' then    -- Señal del puerto
-                    if lvl_reg = "11" then  
-                        next_state <= S_WIN; -- Nuevo nombre del estado
-                    else                    
-                        next_state <= LEVEL_OK;
-                    end if;
                 end if;
 
             when others =>

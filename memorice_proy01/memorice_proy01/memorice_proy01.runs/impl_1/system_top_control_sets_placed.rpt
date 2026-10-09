@@ -1,7 +1,7 @@
 Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2020.1 (win64) Build 2902540 Wed May 27 19:54:49 MDT 2020
-| Date         : Fri Oct  9 17:37:10 2026
+| Date         : Fri Oct  9 18:52:10 2026
 | Host         : DESKTOP-SHNI0N6 running 64-bit major release  (build 9200)
 | Command      : report_control_sets -verbose -file system_top_control_sets_placed.rpt
 | Design       : system_top
@@ -23,11 +23,11 @@ Table of Contents
 +----------------------------------------------------------+-------+
 |                          Status                          | Count |
 +----------------------------------------------------------+-------+
-| Total control sets                                       |    13 |
-|    Minimum number of control sets                        |    13 |
+| Total control sets                                       |    46 |
+|    Minimum number of control sets                        |    46 |
 |    Addition due to synthesis replication                 |     0 |
 |    Addition due to physical synthesis replication        |     0 |
-| Unused register locations in slices containing registers |    34 |
+| Unused register locations in slices containing registers |   160 |
 +----------------------------------------------------------+-------+
 * Control sets can be merged at opt_design using control_set_merge or merge_equivalent_drivers
 ** Run report_qor_suggestions for automated merging and remapping suggestions
@@ -39,15 +39,15 @@ Table of Contents
 +--------------------+-------+
 |       Fanout       | Count |
 +--------------------+-------+
-| Total control sets |    13 |
+| Total control sets |    46 |
 | >= 0 to < 4        |     0 |
-| >= 4 to < 6        |     6 |
+| >= 4 to < 6        |    39 |
 | >= 6 to < 8        |     1 |
 | >= 8 to < 10       |     2 |
 | >= 10 to < 12      |     0 |
-| >= 12 to < 14      |     2 |
-| >= 14 to < 16      |     0 |
-| >= 16              |     2 |
+| >= 12 to < 14      |     0 |
+| >= 14 to < 16      |     1 |
+| >= 16              |     3 |
 +--------------------+-------+
 * Control sets can be remapped at either synth_design or opt_design
 
@@ -58,34 +58,67 @@ Table of Contents
 +--------------+-----------------------+------------------------+-----------------+--------------+
 | Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
 +--------------+-----------------------+------------------------+-----------------+--------------+
-| No           | No                    | No                     |               8 |            3 |
+| No           | No                    | No                     |              14 |            9 |
 | No           | No                    | Yes                    |               0 |            0 |
-| No           | Yes                   | No                     |              68 |           21 |
+| No           | Yes                   | No                     |              67 |           19 |
 | Yes          | No                    | No                     |               0 |            0 |
 | Yes          | No                    | Yes                    |               0 |            0 |
-| Yes          | Yes                   | No                     |              50 |           15 |
+| Yes          | Yes                   | No                     |             183 |           58 |
 +--------------+-----------------------+------------------------+-----------------+--------------+
 
 
 4. Detailed Control Set Information
 -----------------------------------
 
-+-------------------+------------------------------------------------+-------------------------------------------------+------------------+----------------+--------------+
-|    Clock Signal   |                  Enable Signal                 |                 Set/Reset Signal                | Slice Load Count | Bel Load Count | Bels / Slice |
-+-------------------+------------------------------------------------+-------------------------------------------------+------------------+----------------+--------------+
-|  sysclk_IBUF_BUFG |                                                | U_GAME_LOGIC/U_DIS/ptr_reg[0]_0                 |                1 |              4 |         4.00 |
-|  sysclk_IBUF_BUFG | U_GAME_LOGIC/U_INPUT/btn_out[3]_i_1_n_0        | rst_IBUF                                        |                1 |              4 |         4.00 |
-|  sysclk_IBUF_BUFG | U_GAME_LOGIC/U_INPUT/btn_debounced[3]_i_1_n_0  | rst_IBUF                                        |                1 |              4 |         4.00 |
-|  sysclk_IBUF_BUFG | U_GAME_LOGIC/U_FSM/E[0]                        | U_GAME_LOGIC/U_FSM/FSM_onehot_state_reg[2]_0[0] |                2 |              5 |         2.50 |
-|  sysclk_IBUF_BUFG | U_GAME_LOGIC/U_FSM/lvl_reg                     | U_GAME_LOGIC/U_FSM/lvl_reg[1]_i_1_n_0           |                1 |              5 |         5.00 |
-|  sysclk_IBUF_BUFG | U_GAME_LOGIC/U_CMP/ptr_reg                     | U_GAME_LOGIC/U_FSM/SR[0]                        |                2 |              5 |         2.50 |
-|  sysclk_IBUF_BUFG | U_GAME_LOGIC/U_FSM/FSM_onehot_state[6]_i_1_n_0 | rst_IBUF                                        |                3 |              7 |         2.33 |
-|  sysclk_IBUF_BUFG |                                                |                                                 |                3 |              8 |         2.67 |
-|  sysclk_IBUF_BUFG | U_GAME_LOGIC/U_TIMER/count                     | U_GAME_LOGIC/U_FSM/SR[0]                        |                3 |              8 |         2.67 |
-|  sysclk_IBUF_BUFG | U_GAME_LOGIC/U_FSM/Q[0]                        | rst_IBUF                                        |                2 |             12 |         6.00 |
-|  sysclk_IBUF_BUFG |                                                | rst_IBUF                                        |                4 |             13 |         3.25 |
-|  sysclk_IBUF_BUFG |                                                | U_GAME_LOGIC/U_INPUT/count[19]_i_1_n_0          |                8 |             20 |         2.50 |
-|  sysclk_IBUF_BUFG |                                                | U_GAME_CORE/U_GCLK_SEL/counter0_carry__2_n_0    |                8 |             31 |         3.88 |
-+-------------------+------------------------------------------------+-------------------------------------------------+------------------+----------------+--------------+
++-------------------+-------------------------------------------------+-------------------------------------------------+------------------+----------------+--------------+
+|    Clock Signal   |                  Enable Signal                  |                 Set/Reset Signal                | Slice Load Count | Bel Load Count | Bels / Slice |
++-------------------+-------------------------------------------------+-------------------------------------------------+------------------+----------------+--------------+
+|  sysclk_IBUF_BUFG | U_GAME_LOGIC/U_FSM/gen_ptr_reg[1]_14[0]         | rst_IBUF                                        |                2 |              4 |         2.00 |
+|  sysclk_IBUF_BUFG | U_GAME_LOGIC/U_FSM/gen_ptr_reg[1]_12[0]         | rst_IBUF                                        |                1 |              4 |         4.00 |
+|  sysclk_IBUF_BUFG | U_GAME_LOGIC/U_FSM/gen_ptr_reg[0][0]            | rst_IBUF                                        |                1 |              4 |         4.00 |
+|  sysclk_IBUF_BUFG | U_GAME_LOGIC/U_FSM/gen_ptr_reg[1]_2[0]          | rst_IBUF                                        |                1 |              4 |         4.00 |
+|  sysclk_IBUF_BUFG | U_GAME_CORE/U_GCLK_SEL/sig_tick                 | U_GAME_LOGIC/U_FSM/FSM_onehot_state_reg[2]_0[0] |                1 |              4 |         4.00 |
+|  sysclk_IBUF_BUFG | U_GAME_LOGIC/U_FSM/gen_ptr_reg[0]_3[0]          | rst_IBUF                                        |                1 |              4 |         4.00 |
+|  sysclk_IBUF_BUFG | U_GAME_LOGIC/U_FSM/gen_ptr_reg[0]_1[0]          | rst_IBUF                                        |                1 |              4 |         4.00 |
+|  sysclk_IBUF_BUFG | U_GAME_LOGIC/U_FSM/gen_ptr_reg[0]_2[0]          | rst_IBUF                                        |                1 |              4 |         4.00 |
+|  sysclk_IBUF_BUFG | U_GAME_LOGIC/U_FSM/FSM_onehot_state_reg[1]_2[0] | rst_IBUF                                        |                1 |              4 |         4.00 |
+|  sysclk_IBUF_BUFG | U_GAME_LOGIC/U_FSM/gen_ptr_reg[1]_16[0]         | rst_IBUF                                        |                1 |              4 |         4.00 |
+|  sysclk_IBUF_BUFG | U_GAME_LOGIC/U_FSM/gen_ptr_reg[0]_4[0]          | rst_IBUF                                        |                2 |              4 |         2.00 |
+|  sysclk_IBUF_BUFG | U_GAME_LOGIC/U_FSM/gen_ptr_reg[1]_7[0]          | rst_IBUF                                        |                1 |              4 |         4.00 |
+|  sysclk_IBUF_BUFG | U_GAME_LOGIC/U_FSM/gen_ptr_reg[0]_5[0]          | rst_IBUF                                        |                1 |              4 |         4.00 |
+|  sysclk_IBUF_BUFG | U_GAME_LOGIC/U_FSM/gen_ptr_reg[1]_10[0]         | rst_IBUF                                        |                1 |              4 |         4.00 |
+|  sysclk_IBUF_BUFG | U_GAME_LOGIC/U_FSM/gen_ptr_reg[1]_11[0]         | rst_IBUF                                        |                3 |              4 |         1.33 |
+|  sysclk_IBUF_BUFG | U_GAME_LOGIC/U_FSM/gen_ptr_reg[1]_17[0]         | rst_IBUF                                        |                2 |              4 |         2.00 |
+|  sysclk_IBUF_BUFG | U_GAME_LOGIC/U_FSM/gen_ptr_reg[3][0]            | rst_IBUF                                        |                1 |              4 |         4.00 |
+|  sysclk_IBUF_BUFG | U_GAME_LOGIC/U_FSM/gen_ptr_reg[1]_8[0]          | rst_IBUF                                        |                1 |              4 |         4.00 |
+|  sysclk_IBUF_BUFG | U_GAME_LOGIC/U_FSM/gen_ptr_reg[1]_5[0]          | rst_IBUF                                        |                1 |              4 |         4.00 |
+|  sysclk_IBUF_BUFG | U_GAME_LOGIC/U_FSM/gen_ptr_reg[4][0]            | rst_IBUF                                        |                2 |              4 |         2.00 |
+|  sysclk_IBUF_BUFG | U_GAME_LOGIC/U_FSM/gen_ptr_reg[1]_0[0]          | rst_IBUF                                        |                1 |              4 |         4.00 |
+|  sysclk_IBUF_BUFG | U_GAME_LOGIC/U_FSM/gen_ptr_reg[1]_1[0]          | rst_IBUF                                        |                1 |              4 |         4.00 |
+|  sysclk_IBUF_BUFG | U_GAME_LOGIC/U_FSM/gen_ptr_reg[1]_13[0]         | rst_IBUF                                        |                1 |              4 |         4.00 |
+|  sysclk_IBUF_BUFG | U_GAME_LOGIC/U_FSM/gen_ptr_reg[1]_18[0]         | rst_IBUF                                        |                1 |              4 |         4.00 |
+|  sysclk_IBUF_BUFG | U_GAME_LOGIC/U_FSM/gen_ptr_reg[1][0]            | rst_IBUF                                        |                1 |              4 |         4.00 |
+|  sysclk_IBUF_BUFG | U_GAME_LOGIC/U_FSM/gen_ptr_reg[1]_3[0]          | rst_IBUF                                        |                1 |              4 |         4.00 |
+|  sysclk_IBUF_BUFG | U_GAME_LOGIC/U_FSM/gen_ptr_reg[1]_6[0]          | rst_IBUF                                        |                2 |              4 |         2.00 |
+|  sysclk_IBUF_BUFG | U_GAME_LOGIC/U_FSM/gen_ptr_reg[0]_0[0]          | rst_IBUF                                        |                1 |              4 |         4.00 |
+|  sysclk_IBUF_BUFG | U_GAME_LOGIC/U_FSM/gen_ptr_reg[3]_0[0]          | rst_IBUF                                        |                1 |              4 |         4.00 |
+|  sysclk_IBUF_BUFG | U_GAME_LOGIC/U_FSM/gen_ptr_reg[1]_4[0]          | rst_IBUF                                        |                1 |              4 |         4.00 |
+|  sysclk_IBUF_BUFG | U_GAME_LOGIC/U_FSM/gen_ptr_reg[1]_9[0]          | rst_IBUF                                        |                3 |              4 |         1.33 |
+|  sysclk_IBUF_BUFG | U_GAME_LOGIC/U_FSM/gen_ptr_reg[1]_15[0]         | rst_IBUF                                        |                1 |              4 |         4.00 |
+|  sysclk_IBUF_BUFG | U_GAME_LOGIC/U_FSM/sig_gen_done_reg[0]          | rst_IBUF                                        |                1 |              4 |         4.00 |
+|  sysclk_IBUF_BUFG | U_GAME_LOGIC/U_INPUT/btn_out[3]_i_1_n_0         | rst_IBUF                                        |                1 |              4 |         4.00 |
+|  sysclk_IBUF_BUFG | U_GAME_LOGIC/U_INPUT/btn_debounced[3]_i_1_n_0   | rst_IBUF                                        |                2 |              4 |         2.00 |
+|  sysclk_IBUF_BUFG | U_GAME_LOGIC/U_FSM/lvl_reg                      | U_GAME_LOGIC/U_FSM/num_seq_reg                  |                1 |              5 |         5.00 |
+|  sysclk_IBUF_BUFG | U_GAME_LOGIC/U_FSM/E[0]                         | U_GAME_LOGIC/U_FSM/FSM_onehot_state_reg[2]_0[0] |                2 |              5 |         2.50 |
+|  sysclk_IBUF_BUFG | U_GAME_LOGIC/U_FSM/num_seq_reg_reg[4]_3[0]      | U_GAME_LOGIC/U_FSM/FSM_onehot_state_reg[1]_1[0] |                2 |              5 |         2.50 |
+|  sysclk_IBUF_BUFG | U_GAME_LOGIC/U_INPUT/E[0]                       | U_GAME_LOGIC/U_FSM/SR[0]                        |                1 |              5 |         5.00 |
+|  sysclk_IBUF_BUFG | U_GAME_LOGIC/U_FSM/FSM_onehot_state[6]_i_1_n_0  | rst_IBUF                                        |                2 |              7 |         3.50 |
+|  sysclk_IBUF_BUFG | U_GAME_LOGIC/U_FSM/FSM_onehot_state_reg[1]_3[0] | rst_IBUF                                        |                3 |              8 |         2.67 |
+|  sysclk_IBUF_BUFG | U_GAME_LOGIC/U_TIMER/count                      | U_GAME_LOGIC/U_FSM/SR[0]                        |                2 |              8 |         4.00 |
+|  sysclk_IBUF_BUFG |                                                 |                                                 |                9 |             14 |         1.56 |
+|  sysclk_IBUF_BUFG |                                                 | rst_IBUF                                        |                5 |             16 |         3.20 |
+|  sysclk_IBUF_BUFG |                                                 | U_GAME_LOGIC/U_INPUT/count[19]_i_1_n_0          |                6 |             20 |         3.33 |
+|  sysclk_IBUF_BUFG |                                                 | U_GAME_CORE/U_GCLK_SEL/counter0_carry__2_n_0    |                8 |             31 |         3.88 |
++-------------------+-------------------------------------------------+-------------------------------------------------+------------------+----------------+--------------+
 
 
