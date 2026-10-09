@@ -10,7 +10,7 @@ entity timer is
         tick       : in  std_logic;                    -- Pulso lento de gclk_sel
         num_seq    : in  std_logic_vector(4 downto 0); -- Para calcular el tiempo proporcional
         
-        leds_time  : out std_logic_vector(3 downto 0); -- Visualización de barra de tiempo
+        led  : out std_logic_vector(3 downto 0); -- Visualización de barra de tiempo
         timeout    : out std_logic                     -- 1 si el tiempo se acaba (conecta a 'lose')
     );
 end timer;
@@ -46,13 +46,13 @@ begin
         if rising_edge(clk) then
             if rst = '1' then
                 count <= 0;
-                leds_time <= "0000";
+                led <= "0000";
                 timeout <= '0';
             else
                 if en_input = '0' then
                     -- Si no es el turno del jugador, el timer se reinicia y se pausa
                     count <= 0;
-                    leds_time <= "1111"; -- LEDs encendidos al 100%
+                    led <= "1111"; -- LEDs encendidos al 100%
                     timeout <= '0';
                 else
                     
@@ -70,19 +70,19 @@ begin
                     -- 2. Animación y 3. Timeout
                     -- Evaluamos instantáneamente usando 'v_limite' para ir apagando los LEDs
                     if count >= v_limite then
-                        leds_time <= "0000";
+                        led <= "0000";
                         timeout   <= '1'; -- 3. Timeout: Emite 1 para que la FSM pase al estado LOSE
                     elsif count >= (v_limite * 3 / 4) then
-                        leds_time <= "0001"; -- Queda el 25% del tiempo (1 LED encendido)
+                        led <= "0001"; -- Queda el 25% del tiempo (1 LED encendido)
                         timeout   <= '0';
                     elsif count >= (v_limite * 2 / 4) then
-                        leds_time <= "0011"; -- Queda el 50% del tiempo (2 LEDs encendidos)
+                        led <= "0011"; -- Queda el 50% del tiempo (2 LEDs encendidos)
                         timeout   <= '0';
                     elsif count >= (v_limite * 1 / 4) then
-                        leds_time <= "0111"; -- Queda el 75% del tiempo (3 LEDs encendidos)
+                        led <= "0111"; -- Queda el 75% del tiempo (3 LEDs encendidos)
                         timeout   <= '0';
                     else
-                        leds_time <= "1111"; -- Tiempo completo
+                        led <= "1111"; -- Tiempo completo
                         timeout   <= '0';
                     end if;
                     

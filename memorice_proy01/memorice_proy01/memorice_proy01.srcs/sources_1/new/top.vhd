@@ -12,9 +12,7 @@ entity system_top is
         
         -- Salidas físicas hacia la Zybo Z7
         led       : out std_logic_vector(3 downto 0); -- LEDs básicos (desde game_core)
-        rgb       : out std_logic_vector(2 downto 0); -- LED RGB (desde game_logic)
-        leds_time : out std_logic_vector(3 downto 0); -- LEDs de tiempo
-        leds_seq  : out std_logic_vector(3 downto 0)  -- LEDs de secuencia del juego
+        rgb       : out std_logic_vector(2 downto 0) -- LED RGB (desde game_logic)
     );
 end system_top;
 
@@ -49,9 +47,7 @@ architecture Structural of system_top is
             lvl           : out std_logic_vector(1 downto 0);
             en_lfsr       : out std_logic;
             mux_sel       : out std_logic_vector(1 downto 0);
-            leds_time     : out std_logic_vector(3 downto 0);
-            leds_seq      : out std_logic_vector(3 downto 0);
-            
+            led     : out std_logic_vector(3 downto 0);
             -- AÑADIDOS: Controles de escritura para la memoria
             we            : out std_logic;
             addr_wr       : out std_logic_vector(4 downto 0);
@@ -118,8 +114,7 @@ begin
         lvl           => open,
         en_lfsr       => sig_en_lfsr,
         mux_sel       => open,
-        leds_time     => leds_time,
-        leds_seq      => leds_seq,
+        led     => led,
         
         we            => sig_we,
         addr_wr       => sig_addr_wr,

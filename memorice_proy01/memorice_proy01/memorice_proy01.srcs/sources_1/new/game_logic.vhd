@@ -15,8 +15,7 @@ entity game_logic is
         lvl           : out std_logic_vector(1 downto 0);
         en_lfsr       : out std_logic;
         mux_sel       : out std_logic_vector(1 downto 0);
-        leds_time     : out std_logic_vector(3 downto 0);
-        leds_seq      : out std_logic_vector(3 downto 0);
+        led    : out std_logic_vector(3 downto 0);
         
         -- Puertos expuestos para controlar la memoria externa (seq_mem)
         we            : out std_logic;
@@ -100,7 +99,7 @@ architecture Structural of game_logic is
             en_input  : in  std_logic;
             tick      : in  std_logic;
             num_seq   : in  std_logic_vector(4 downto 0);
-            leds_time : out std_logic_vector(3 downto 0);
+            led       : out std_logic_vector(3 downto 0);
             timeout   : out std_logic
         );
     end component;
@@ -127,6 +126,10 @@ architecture Structural of game_logic is
     signal sig_addr_rd_dis : std_logic_vector(4 downto 0);
     signal sig_addr_rd_cmp : std_logic_vector(4 downto 0);
 
+    signal led_dis : std_logic_vector(3 downto 0);
+    signal led_tmr : std_logic_vector(3 downto 0);
+    signal en_display_s, en_input_s : std_logic;  -- las que ya uses en tu FSM
+
 begin
 
     -- Asignaciones continuas hacia las salidas externas
@@ -141,6 +144,10 @@ begin
 
     -- Condición de derrota (Lógica OR: Por error en botones O por tiempo agotado)
     sig_lose <= sig_cmp_lose or sig_timeout;
+
+    led <= led_dis when en_display_s = '1' else
+       led_tmr when en_input_s   = '1' else
+       "0000";
 
     -- =========================================================
     -- 3. INSTANCIACIÓN Y MAPEO DE PUERTOS
@@ -196,7 +203,7 @@ begin
             num_seq        => sig_num_seq,
             data_from_mem  => data_from_mem,
             addr_rd        => sig_addr_rd_dis,
-            led            => leds_seq,
+            led            => led_dis,
             seq_done       => sig_seq_done
         );
 
@@ -206,7 +213,7 @@ begin
         en_input  => sig_en_input,
         tick      => tick,
         num_seq   => sig_num_seq,
-        leds_time => leds_time,
+        led       => led_tmr,
         timeout   => sig_timeout
     );
 
