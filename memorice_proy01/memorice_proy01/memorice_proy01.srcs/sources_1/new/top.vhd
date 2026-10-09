@@ -115,7 +115,7 @@ begin
         data_from_mem => sig_mem_data,
         
         rgb           => rgb,
-        lvl           => open, -- Si el game_core no usa este nivel, lo dejamos abierto
+        lvl           => open,
         en_lfsr       => sig_en_lfsr,
         mux_sel       => open,
         leds_time     => leds_time,

@@ -25,7 +25,7 @@ end game_fsm;
 
 architecture Behavioral of game_fsm is
 
-    type state_type is (IDLE, GEN, SHOW, INPUT, LEVEL_OK, LOSE, WIN);
+    type state_type is (IDLE, GEN, SHOW, INPUT, LEVEL_OK, S_LOSE, S_WIN);
     signal state, next_state : state_type;
 
     signal lvl_reg     : unsigned(1 downto 0) := "00";
@@ -89,37 +89,37 @@ begin
                     next_state <= INPUT;
                 end if;
 
-            when INPUT =>       -- ESTADO DE ENTRADAS DEL USUARIO: LED AMARILLO, EN_INPUT PARA VALIDAR ENTRADAS, 
-                rgb <= "110";   -- MEM_RD_SEL PARA LEER MEMORIA POR INPUT_DET, ENRUTAMIENTO DE LOS LEDS AL TIEMPO RESTANTE
-                en_input <= '1';
-                mem_rd_sel <= '1';
-                mux_sel <= "10";   
-                if lose = '1' then      -- SI SE EQUIVOCA PASA AL ESTADO DE PERDEDOR
-                    next_state <= LOSE;
-                elsif win = '1' then    
-                    if lvl_reg = "11" then  -- SI LO HACE CORRECTAMENTE Y ESTABA EN EL ULTIMO NIVEL GANA
-                        next_state <= WIN;
-                    else                    -- SI LO HACE CORRECTAMENTE Y FALTAN NIVELES PASA AL SIGUIENTE
-                        next_state <= LEVEL_OK;
-                    end if;
-                end if;
-
-            when LEVEL_OK =>    -- ESTADO DE NIVEL CORRECTO: LED AZUL, ESPERA BOTON PARA PASAR AL SIGUIENTE NIVEL
+            when LEVEL_OK =>
                 rgb <= "001"; 
                 if start = '1' then
                     next_state <= GEN; 
                 end if;
 
-            when LOSE =>        -- ESTADO DE PERDEDOR: LED ROJO
+            when S_LOSE =>        -- Actualizado aquí
                 rgb <= "100"; 
-                if start = '1' then     -- DEBE COMENZAR PARA JUGAR DE NUEVO
+                if start = '1' then
                     next_state <= IDLE;
                 end if;
 
-            when WIN =>         -- ESTADO DE GANADOR: LED MAGENTA (ARCOIRIS)
+            when S_WIN =>         -- Actualizado aquí
                 rgb <= "101"; 
-                if start = '1' then     -- DEBE COMENZAR PARA JUGAR DE NUEVO
+                if start = '1' then
                     next_state <= IDLE;
+                end if;
+
+            when INPUT =>
+                rgb <= "110";
+                en_input <= '1';
+                mem_rd_sel <= '1';
+                mux_sel <= "10";   
+                if lose = '1' then      -- Señal del puerto
+                    next_state <= S_LOSE; -- Nuevo nombre del estado
+                elsif win = '1' then    -- Señal del puerto
+                    if lvl_reg = "11" then  
+                        next_state <= S_WIN; -- Nuevo nombre del estado
+                    else                    
+                        next_state <= LEVEL_OK;
+                    end if;
                 end if;
 
             when others =>

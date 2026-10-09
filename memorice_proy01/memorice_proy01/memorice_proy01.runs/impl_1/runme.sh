@@ -41,7 +41,7 @@ EAStep()
 }
 
 # pre-commands:
-/bin/touch .write_bitstream.begin.rst
-EAStep vivado -log game_core.vdi -applog -m64 -product Vivado -messageDb vivado.pb -mode batch -source game_core.tcl -notrace
+/bin/touch .init_design.begin.rst
+EAStep vivado -log system_top.vdi -applog -m64 -product Vivado -messageDb vivado.pb -mode batch -source system_top.tcl -notrace
 
 

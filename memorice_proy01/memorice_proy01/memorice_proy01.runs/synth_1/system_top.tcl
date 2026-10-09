@@ -4,7 +4,7 @@
 
 set TIME_start [clock seconds] 
 namespace eval ::optrace {
-  variable script "C:/SEP y Anal/Proyecto_01_SEP/memorice_proy01/memorice_proy01/memorice_proy01.runs/synth_1/game_core.tcl"
+  variable script "C:/SEP y Anal/Proyecto_01_SEP/memorice_proy01/memorice_proy01/memorice_proy01.runs/synth_1/system_top.tcl"
   variable category "vivado_synth"
 }
 
@@ -81,15 +81,33 @@ set_property parent.project_path {C:/SEP y Anal/Proyecto_01_SEP/memorice_proy01/
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language VHDL [current_project]
 set_property board_part digilentinc.com:zybo-z7-10:part0:1.2 [current_project]
+set_property ip_repo_paths {
+  {c:/SEP y Anal/Proyecto_01_SEP/memorice_proy01/ip_repo/game_logic_axi_1.0}
+  {c:/SEP y Anal/Proyecto_01_SEP/memorice_proy01/ip_repo/seq_mem_axi_1.0}
+} [current_project]
+update_ip_catalog
 set_property ip_output_repo {c:/SEP y Anal/Proyecto_01_SEP/memorice_proy01/memorice_proy01/memorice_proy01.cache/ip} [current_project]
 set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
+add_files {{C:/SEP y Anal/Proyecto_01_SEP/memorice_proy01/memorice_proy01/memorice_proy01.srcs/sources_1/new/data.coe}}
+add_files {{C:/SEP y Anal/Proyecto_01_SEP/memorice_proy01/memorice_proy01/memorice_proy01.srcs/sources_1/new/addr.coe}}
+add_files {{C:/SEP y Anal/Proyecto_01_SEP/memorice_proy01/memorice_proy01/memorice_proy01.srcs/sources_1/new/mask.coe}}
+add_files {{C:/SEP y Anal/Proyecto_01_SEP/memorice_proy01/memorice_proy01/memorice_proy01.srcs/sources_1/new/ctrl.coe}}
 read_vhdl -library xil_defaultlib {
+  {C:/SEP y Anal/Proyecto_01_SEP/memorice_proy01/memorice_proy01/memorice_proy01.srcs/sources_1/new/game_core.vhd}
+  {C:/SEP y Anal/Proyecto_01_SEP/memorice_proy01/memorice_proy01/memorice_proy01.srcs/sources_1/new/game_fsm.vhd}
+  {C:/SEP y Anal/Proyecto_01_SEP/memorice_proy01/memorice_proy01/memorice_proy01.srcs/sources_1/new/game_logic.vhd}
+  {C:/SEP y Anal/Proyecto_01_SEP/memorice_proy01/memorice_proy01/memorice_proy01.srcs/sources_1/new/game_pkg.vhd}
   {C:/SEP y Anal/Proyecto_01_SEP/memorice_proy01/memorice_proy01/memorice_proy01.srcs/sources_1/new/gclk_sel.vhd}
+  {C:/SEP y Anal/Proyecto_01_SEP/memorice_proy01/memorice_proy01/memorice_proy01.srcs/sources_1/new/input_det.vhd}
   {C:/SEP y Anal/Proyecto_01_SEP/memorice_proy01/memorice_proy01/memorice_proy01.srcs/sources_1/new/led_driver.vhd}
   {C:/SEP y Anal/Proyecto_01_SEP/memorice_proy01/memorice_proy01/memorice_proy01.srcs/sources_1/new/rand_sec.vhd}
-  {C:/SEP y Anal/Proyecto_01_SEP/memorice_proy01/memorice_proy01/memorice_proy01.srcs/sources_1/new/game_core.vhd}
+  {C:/SEP y Anal/Proyecto_01_SEP/memorice_proy01/memorice_proy01/memorice_proy01.srcs/sources_1/new/seq_cmp.vhd}
+  {C:/SEP y Anal/Proyecto_01_SEP/memorice_proy01/memorice_proy01/memorice_proy01.srcs/sources_1/new/seq_dis.vhd}
+  {C:/SEP y Anal/Proyecto_01_SEP/memorice_proy01/memorice_proy01/memorice_proy01.srcs/sources_1/new/seq_mem.vhd}
+  {C:/SEP y Anal/Proyecto_01_SEP/memorice_proy01/memorice_proy01/memorice_proy01.srcs/sources_1/new/timer.vhd}
+  {C:/SEP y Anal/Proyecto_01_SEP/memorice_proy01/memorice_proy01/memorice_proy01.srcs/sources_1/new/top.vhd}
 }
 OPTRACE "Adding files" END { }
 # Mark all dcp files as not used in implementation to prevent them from being
@@ -107,17 +125,17 @@ set_param ips.enableIPCacheLiteLoad 1
 close [open __synthesis_is_running__ w]
 
 OPTRACE "synth_design" START { }
-synth_design -top game_core -part xc7z010clg400-1
+synth_design -top system_top -part xc7z010clg400-1
 OPTRACE "synth_design" END { }
 
 
 OPTRACE "write_checkpoint" START { CHECKPOINT }
 # disable binary constraint mode for synth run checkpoints
 set_param constraints.enableBinaryConstraints false
-write_checkpoint -force -noxdef game_core.dcp
+write_checkpoint -force -noxdef system_top.dcp
 OPTRACE "write_checkpoint" END { }
 OPTRACE "synth reports" START { REPORT }
-create_report "synth_1_synth_report_utilization_0" "report_utilization -file game_core_utilization_synth.rpt -pb game_core_utilization_synth.pb"
+create_report "synth_1_synth_report_utilization_0" "report_utilization -file system_top_utilization_synth.rpt -pb system_top_utilization_synth.pb"
 OPTRACE "synth reports" END { }
 file delete __synthesis_is_running__
 close [open __synthesis_is_complete__ w]

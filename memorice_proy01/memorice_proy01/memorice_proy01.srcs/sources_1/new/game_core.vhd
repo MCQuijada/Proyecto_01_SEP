@@ -3,9 +3,13 @@ use IEEE.STD_LOGIC_1164.ALL;
 
 entity game_core is
     Port (
-        sysclk : in  std_logic;
-        sw     : in  std_logic_vector(3 downto 0);  -- SW(1:0) = LVL, SW(3:2) = SEL
-        led    : out std_logic_vector(3 downto 0)
+        sysclk   : in  std_logic;
+        rst      : in  std_logic;                     -- NUEVO: Reset global
+        sw       : in  std_logic_vector(3 downto 0);  -- SW(1:0) = LVL, SW(3:2) = SEL
+        en_lfsr  : in  std_logic;                     -- NUEVO: Habilitador desde game_logic
+        tick     : out std_logic;                     -- NUEVO: Salida del reloj lento
+        rand_out : out std_logic_vector(3 downto 0);  -- NUEVO: Salida de la secuencia al exterior
+        led      : out std_logic_vector(3 downto 0)
     );
 end game_core;
 
@@ -56,6 +60,10 @@ architecture Structural of game_core is
 
 begin
 
+    -- Asignación de señales internas a los puertos de salida hacia el Top Level
+    tick     <= sig_tick;
+    rand_out <= sig_rand_bus;
+
     U_GCLK_SEL: gclk_sel
         generic map (
             CLK_HZ => 125_000_000,
@@ -77,8 +85,8 @@ begin
         )
         port map (
             clk    => sysclk, 
-            reset  => '0',              -- RESET EN 0 PARA QUE LA PRUEBA FISICA FUNCIONE CONTINUAMENTE
-            en     => sig_tick,         -- HABILITA EL SALTO DEL LFSR CON EL PULSO LENTO
+            reset  => rst,              -- AHORA CONECTADO AL RESET REAL (Ya no forzado a '0')
+            en     => en_lfsr,          -- AHORA CONTROLADO POR LA FSM DEL JUEGO
             seedIn => (others => '0'),  -- PARA CARGAR LA SEED_DEFAULT
             rndOut => sig_rand_bus
         );
